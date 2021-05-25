@@ -1,6 +1,7 @@
 import React from 'react';
 
 import List from './list';
+import { ghUrl } from './config';
 
 const Default = (): JSX.Element => (
   <div>
@@ -12,8 +13,9 @@ const Default = (): JSX.Element => (
       ]}
     />
 
+    <hr/>
     <p>
-      <a href="https://github.com/Nexysweb/mui-list-ts">Source</a> available
+      <a href={ghUrl}>Source</a> available
       under MIT license.
     </p>
   </div>
