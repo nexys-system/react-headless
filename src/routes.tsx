@@ -1,22 +1,16 @@
 import React from 'react';
 
-import { Router, Switch, Route } from 'react-router-dom';
-import * as History from 'history';
+import { Switch, Route } from 'react-router-dom';
 
 import Public from './public';
-import Layout from './layout/index'
+import Layout from './layout/index';
 
-
-const basename: string = import.meta.env.SNOWPACK_PUBLIC_URL || '';
-
-console.log(`basename: ${basename}`);
-
-const history = History.createBrowserHistory({
-  basename
-});
-
-const Routes = (): JSX.Element => <Layout>gd</Layout>
- 
-
+const Routes = (): JSX.Element => (
+  <Layout>
+    <Switch>
+      <Route component={Public} />
+    </Switch>
+  </Layout>
+);
 
 export default Routes;

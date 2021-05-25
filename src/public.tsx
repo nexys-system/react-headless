@@ -1,12 +1,20 @@
 import React from 'react';
 
+import List from './list';
 
 const Default = (): JSX.Element => (
   <div>
-    <p><b>TODO</b>: examples for bootstrap</p>
+    <List
+      data={[{ name: 'Doe', firstName: 'John' }]}
+      def={[
+        { name: 'name', label: 'Name' },
+        { name: 'firstName', label: 'First Name' }
+      ]}
+    />
 
     <p>
-      <a href="https://github.com/Nexysweb/mui-list-ts">Source</a> available under MIT license.
+      <a href="https://github.com/Nexysweb/mui-list-ts">Source</a> available
+      under MIT license.
     </p>
   </div>
 );
