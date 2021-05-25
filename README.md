@@ -11,7 +11,7 @@ See here for Material version: https://nexys-system.github.io/mui-list-ts/
 
 ## Get started
 
-`yarn install @nexys/core-list`
+`yarn add @nexys/core-list`
 
 ## UI Components
 
