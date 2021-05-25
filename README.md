@@ -2,6 +2,8 @@
 
 [![npm version](https://badge.fury.io/js/%40nexys%2Fcore-list.svg)](https://www.npmjs.com/package/@nexys/core-list)
 [![npm version](https://img.shields.io/npm/v/@nexys/core-list.svg)](https://www.npmjs.com/package/@nexys/core-list)
+[![Publish](https://github.com/nexys-system/core-list/actions/workflows/publish.yml/badge.svg)](https://github.com/nexys-system/core-list/actions/workflows/publish.yml)
+[![Deployment](https://github.com/nexys-system/core-list/actions/workflows/deploy.yml/badge.svg)](https://github.com/nexys-system/core-list/actions/workflows/deploy.yml)
 
 Core list functionalities - building block to build data-tables
 
