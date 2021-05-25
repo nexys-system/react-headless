@@ -7,15 +7,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: env var
         run: |
           echo "GITHUB_SHA=$GITHUB_SHA"
@@ -23,7 +16,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Build page
-        run: SNOWPACK_PUBLIC_GIT_SHA=$GITHUB_SHA SNOWPACK_PUBLIC_URL=/mui-list-ts yarn build
+        run: SNOWPACK_PUBLIC_GIT_SHA=$GITHUB_SHA SNOWPACK_PUBLIC_URL=/core-list yarn build
       - name: add 404
         run: cp build/index.html build/404.html
       - name: Deploy to gh-pages
