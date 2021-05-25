@@ -1,4 +1,4 @@
-export const SNOWPACK_PUBLIC_GIT_SHA = "1f526e0f2748bb35cfb1b4fe6673c693e63ffdcc";
+export const SNOWPACK_PUBLIC_GIT_SHA = "d59265eefeca87a1a785d3345263daac5e55e12e";
 export const SNOWPACK_PUBLIC_URL = "/core-list";
 export const MODE = "production";
 export const NODE_ENV = "production";
