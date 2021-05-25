@@ -7,7 +7,7 @@
 
 Core list functionalities - building block to build data-tables
 
-See here for Material version: https://nexysweb.github.io/mui-list-ts/
+See here for Material version: https://nexys-system.github.io/mui-list-ts/
 
 ## Get started
 
