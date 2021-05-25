@@ -15,8 +15,6 @@ jobs:
           echo "GITHUB_SHA_SHORT=$GITHUB_SHA_SHORT"
       - name: Install Packages
         run: npm install
-      - name: Test
-        run: yarn test
       - name: Build page
         run: SNOWPACK_PUBLIC_GIT_SHA=$GITHUB_SHA SNOWPACK_PUBLIC_URL=/core-list yarn build
       - name: add 404
