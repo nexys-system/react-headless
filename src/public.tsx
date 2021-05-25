@@ -3,7 +3,7 @@ import React from 'react';
 
 const Default = (): JSX.Element => (
   <div>
-    <p>Select an option from the menu above</p>
+    <p><b>TODO</b>: examples for bootstrap</p>
 
     <p>
       <a href="https://github.com/Nexysweb/mui-list-ts">Source</a> available under MIT license.
