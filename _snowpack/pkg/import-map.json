@@ -1,5 +1,6 @@
 {
   "imports": {
+    "@nexys/validation": "./@nexys/validation.js",
     "@testing-library/jest-dom": "./@testing-library/jest-dom.js",
     "@testing-library/react": "./@testing-library/react.js",
     "react": "./react.js",

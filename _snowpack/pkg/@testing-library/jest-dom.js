@@ -1,6 +1,6 @@
-import { c as createCommonjsModule, g as getDefaultExportFromNamespaceIfNotNamed, a as commonjsGlobal } from '../common/_commonjsHelpers-0597c316.js';
+import { c as createCommonjsModule, b as getDefaultExportFromNamespaceIfNotNamed, a as commonjsGlobal } from '../common/_commonjsHelpers-37fa8da4.js';
 import { g as global } from '../common/_polyfill-node:global-acbc543a.js';
-import { a as ansiStyles, l as lib } from '../common/index-49e90b4b.js';
+import { a as ansiStyles, d as defineProperty, i as interopRequireDefault$1, m as map$2, g as getIterator, b as isArray$3, c as getIteratorMethod, s as symbol, f as from_1, e as slice, h as defineProperty$1, j as assign, k as keys$1, l as forEach, n as set, o as slicedToArray, p as entries, q as find, r as stringify$3, t as concat, u as keys$2, v as toConsumableArray } from '../common/toConsumableArray-47f528d4.js';
 
 var _typeof_1 = createCommonjsModule(function (module) {
 function _typeof(obj) {
@@ -12586,6 +12586,6179 @@ function getValues(tagName, htmlElement) {
 function getExpectedValues(expectedValue) {
   return expectedValue instanceof Array ? expectedValue : [expectedValue];
 }
+});
+
+var ariaPropsMap_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _map = interopRequireDefault$1(map$2);
+
+var ariaPropsMap = new _map.default([['aria-activedescendant', {
+  'type': 'id'
+}], ['aria-atomic', {
+  'type': 'boolean'
+}], ['aria-autocomplete', {
+  'type': 'token',
+  'values': ['inline', 'list', 'both', 'none']
+}], ['aria-busy', {
+  'type': 'boolean'
+}], ['aria-checked', {
+  'type': 'tristate'
+}], ['aria-colcount', {
+  type: 'integer'
+}], ['aria-colindex', {
+  type: 'integer'
+}], ['aria-colspan', {
+  type: 'integer'
+}], ['aria-controls', {
+  'type': 'idlist'
+}], ['aria-current', {
+  type: 'token',
+  values: ['page', 'step', 'location', 'date', 'time', true, false]
+}], ['aria-describedby', {
+  'type': 'idlist'
+}], ['aria-details', {
+  'type': 'id'
+}], ['aria-disabled', {
+  'type': 'boolean'
+}], ['aria-dropeffect', {
+  'type': 'tokenlist',
+  'values': ['copy', 'execute', 'link', 'move', 'none', 'popup']
+}], ['aria-errormessage', {
+  'type': 'id'
+}], ['aria-expanded', {
+  'type': 'boolean',
+  'allowundefined': true
+}], ['aria-flowto', {
+  'type': 'idlist'
+}], ['aria-grabbed', {
+  'type': 'boolean',
+  'allowundefined': true
+}], ['aria-haspopup', {
+  'type': 'token',
+  'values': [false, true, 'menu', 'listbox', 'tree', 'grid', 'dialog']
+}], ['aria-hidden', {
+  'type': 'boolean',
+  'allowundefined': true
+}], ['aria-invalid', {
+  'type': 'token',
+  'values': ['grammar', false, 'spelling', true]
+}], ['aria-keyshortcuts', {
+  type: 'string'
+}], ['aria-label', {
+  'type': 'string'
+}], ['aria-labelledby', {
+  'type': 'idlist'
+}], ['aria-level', {
+  'type': 'integer'
+}], ['aria-live', {
+  'type': 'token',
+  'values': ['assertive', 'off', 'polite']
+}], ['aria-modal', {
+  type: 'boolean'
+}], ['aria-multiline', {
+  'type': 'boolean'
+}], ['aria-multiselectable', {
+  'type': 'boolean'
+}], ['aria-orientation', {
+  'type': 'token',
+  'values': ['vertical', 'undefined', 'horizontal']
+}], ['aria-owns', {
+  'type': 'idlist'
+}], ['aria-placeholder', {
+  type: 'string'
+}], ['aria-posinset', {
+  'type': 'integer'
+}], ['aria-pressed', {
+  'type': 'tristate'
+}], ['aria-readonly', {
+  'type': 'boolean'
+}], ['aria-relevant', {
+  'type': 'tokenlist',
+  'values': ['additions', 'all', 'removals', 'text']
+}], ['aria-required', {
+  'type': 'boolean'
+}], ['aria-roledescription', {
+  type: 'string'
+}], ['aria-rowcount', {
+  type: 'integer'
+}], ['aria-rowindex', {
+  type: 'integer'
+}], ['aria-rowspan', {
+  type: 'integer'
+}], ['aria-selected', {
+  'type': 'boolean',
+  'allowundefined': true
+}], ['aria-setsize', {
+  'type': 'integer'
+}], ['aria-sort', {
+  'type': 'token',
+  'values': ['ascending', 'descending', 'none', 'other']
+}], ['aria-valuemax', {
+  'type': 'number'
+}], ['aria-valuemin', {
+  'type': 'number'
+}], ['aria-valuenow', {
+  'type': 'number'
+}], ['aria-valuetext', {
+  'type': 'string'
+}]]);
+var _default = ariaPropsMap;
+exports.default = _default;
+});
+
+var domMap_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _map = interopRequireDefault$1(map$2);
+
+var domMap = new _map.default([['a', {
+  reserved: false
+}], ['abbr', {
+  reserved: false
+}], ['acronym', {
+  reserved: false
+}], ['address', {
+  reserved: false
+}], ['applet', {
+  reserved: false
+}], ['area', {
+  reserved: false
+}], ['article', {
+  reserved: false
+}], ['aside', {
+  reserved: false
+}], ['audio', {
+  reserved: false
+}], ['b', {
+  reserved: false
+}], ['base', {
+  reserved: true
+}], ['bdi', {
+  reserved: false
+}], ['bdo', {
+  reserved: false
+}], ['big', {
+  reserved: false
+}], ['blink', {
+  reserved: false
+}], ['blockquote', {
+  reserved: false
+}], ['body', {
+  reserved: false
+}], ['br', {
+  reserved: false
+}], ['button', {
+  reserved: false
+}], ['canvas', {
+  reserved: false
+}], ['caption', {
+  reserved: false
+}], ['center', {
+  reserved: false
+}], ['cite', {
+  reserved: false
+}], ['code', {
+  reserved: false
+}], ['col', {
+  reserved: true
+}], ['colgroup', {
+  reserved: true
+}], ['content', {
+  reserved: false
+}], ['data', {
+  reserved: false
+}], ['datalist', {
+  reserved: false
+}], ['dd', {
+  reserved: false
+}], ['del', {
+  reserved: false
+}], ['details', {
+  reserved: false
+}], ['dfn', {
+  reserved: false
+}], ['dialog', {
+  reserved: false
+}], ['dir', {
+  reserved: false
+}], ['div', {
+  reserved: false
+}], ['dl', {
+  reserved: false
+}], ['dt', {
+  reserved: false
+}], ['em', {
+  reserved: false
+}], ['embed', {
+  reserved: false
+}], ['fieldset', {
+  reserved: false
+}], ['figcaption', {
+  reserved: false
+}], ['figure', {
+  reserved: false
+}], ['font', {
+  reserved: false
+}], ['footer', {
+  reserved: false
+}], ['form', {
+  reserved: false
+}], ['frame', {
+  reserved: false
+}], ['frameset', {
+  reserved: false
+}], ['h1', {
+  reserved: false
+}], ['h2', {
+  reserved: false
+}], ['h3', {
+  reserved: false
+}], ['h4', {
+  reserved: false
+}], ['h5', {
+  reserved: false
+}], ['h6', {
+  reserved: false
+}], ['head', {
+  reserved: true
+}], ['header', {
+  reserved: false
+}], ['hgroup', {
+  reserved: false
+}], ['hr', {
+  reserved: false
+}], ['html', {
+  reserved: true
+}], ['i', {
+  reserved: false
+}], ['iframe', {
+  reserved: false
+}], ['img', {
+  reserved: false
+}], ['input', {
+  reserved: false
+}], ['ins', {
+  reserved: false
+}], ['kbd', {
+  reserved: false
+}], ['keygen', {
+  reserved: false
+}], ['label', {
+  reserved: false
+}], ['legend', {
+  reserved: false
+}], ['li', {
+  reserved: false
+}], ['link', {
+  reserved: true
+}], ['main', {
+  reserved: false
+}], ['map', {
+  reserved: false
+}], ['mark', {
+  reserved: false
+}], ['marquee', {
+  reserved: false
+}], ['menu', {
+  reserved: false
+}], ['menuitem', {
+  reserved: false
+}], ['meta', {
+  reserved: true
+}], ['meter', {
+  reserved: false
+}], ['nav', {
+  reserved: false
+}], ['noembed', {
+  reserved: true
+}], ['noscript', {
+  reserved: true
+}], ['object', {
+  reserved: false
+}], ['ol', {
+  reserved: false
+}], ['optgroup', {
+  reserved: false
+}], ['option', {
+  reserved: false
+}], ['output', {
+  reserved: false
+}], ['p', {
+  reserved: false
+}], ['param', {
+  reserved: true
+}], ['picture', {
+  reserved: true
+}], ['pre', {
+  reserved: false
+}], ['progress', {
+  reserved: false
+}], ['q', {
+  reserved: false
+}], ['rp', {
+  reserved: false
+}], ['rt', {
+  reserved: false
+}], ['rtc', {
+  reserved: false
+}], ['ruby', {
+  reserved: false
+}], ['s', {
+  reserved: false
+}], ['samp', {
+  reserved: false
+}], ['script', {
+  reserved: true
+}], ['section', {
+  reserved: false
+}], ['select', {
+  reserved: false
+}], ['small', {
+  reserved: false
+}], ['source', {
+  reserved: true
+}], ['spacer', {
+  reserved: false
+}], ['span', {
+  reserved: false
+}], ['strike', {
+  reserved: false
+}], ['strong', {
+  reserved: false
+}], ['style', {
+  reserved: true
+}], ['sub', {
+  reserved: false
+}], ['summary', {
+  reserved: false
+}], ['sup', {
+  reserved: false
+}], ['table', {
+  reserved: false
+}], ['tbody', {
+  reserved: false
+}], ['td', {
+  reserved: false
+}], ['textarea', {
+  reserved: false
+}], ['tfoot', {
+  reserved: false
+}], ['th', {
+  reserved: false
+}], ['thead', {
+  reserved: false
+}], ['time', {
+  reserved: false
+}], ['title', {
+  reserved: true
+}], ['tr', {
+  reserved: false
+}], ['track', {
+  reserved: true
+}], ['tt', {
+  reserved: false
+}], ['u', {
+  reserved: false
+}], ['ul', {
+  reserved: false
+}], ['var', {
+  reserved: false
+}], ['video', {
+  reserved: false
+}], ['wbr', {
+  reserved: false
+}], ['xmp', {
+  reserved: false
+}]]);
+var _default = domMap;
+exports.default = _default;
+});
+
+var commandRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var commandRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'menuitem'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget']]
+};
+var _default = commandRole;
+exports.default = _default;
+});
+
+var compositeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var compositeRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-activedescendant': null,
+    'aria-disabled': null
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget']]
+};
+var _default = compositeRole;
+exports.default = _default;
+});
+
+var inputRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var inputRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'input'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget']]
+};
+var _default = inputRole;
+exports.default = _default;
+});
+
+var landmarkRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var landmarkRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = landmarkRole;
+exports.default = _default;
+});
+
+var rangeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var rangeRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-valuemax': null,
+    'aria-valuemin': null,
+    'aria-valuenow': null,
+    'aria-valuetext': null
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = rangeRole;
+exports.default = _default;
+});
+
+var roletypeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var roletypeRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: [],
+  prohibitedProps: [],
+  props: {
+    'aria-atomic': null,
+    'aria-busy': null,
+    'aria-controls': null,
+    'aria-current': null,
+    'aria-describedby': null,
+    'aria-details': null,
+    'aria-dropeffect': null,
+    'aria-flowto': null,
+    'aria-grabbed': null,
+    'aria-hidden': null,
+    'aria-keyshortcuts': null,
+    'aria-label': null,
+    'aria-labelledby': null,
+    'aria-live': null,
+    'aria-owns': null,
+    'aria-relevant': null,
+    'aria-roledescription': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'rel'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'role'
+    },
+    module: 'XHTML'
+  }, {
+    concept: {
+      name: 'type'
+    },
+    module: 'Dublin Core'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: []
+};
+var _default = roletypeRole;
+exports.default = _default;
+});
+
+var sectionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var sectionRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: [],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'frontmatter'
+    },
+    module: 'DTB'
+  }, {
+    concept: {
+      name: 'level'
+    },
+    module: 'DTB'
+  }, {
+    concept: {
+      name: 'level'
+    },
+    module: 'SMIL'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = sectionRole;
+exports.default = _default;
+});
+
+var sectionheadRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var sectionheadRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = sectionheadRole;
+exports.default = _default;
+});
+
+var selectRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var selectRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-orientation': null
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite'], ['roletype', 'structure', 'section', 'group']]
+};
+var _default = selectRole;
+exports.default = _default;
+});
+
+var structureRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var structureRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: [],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype']]
+};
+var _default = structureRole;
+exports.default = _default;
+});
+
+var widgetRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var widgetRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: [],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype']]
+};
+var _default = widgetRole;
+exports.default = _default;
+});
+
+var windowRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var windowRole = {
+  abstract: true,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-modal': null
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype']]
+};
+var _default = windowRole;
+exports.default = _default;
+});
+
+var ariaAbstractRoles_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _map = interopRequireDefault$1(map$2);
+
+var _commandRole = interopRequireDefault$1(commandRole_1);
+
+var _compositeRole = interopRequireDefault$1(compositeRole_1);
+
+var _inputRole = interopRequireDefault$1(inputRole_1);
+
+var _landmarkRole = interopRequireDefault$1(landmarkRole_1);
+
+var _rangeRole = interopRequireDefault$1(rangeRole_1);
+
+var _roletypeRole = interopRequireDefault$1(roletypeRole_1);
+
+var _sectionRole = interopRequireDefault$1(sectionRole_1);
+
+var _sectionheadRole = interopRequireDefault$1(sectionheadRole_1);
+
+var _selectRole = interopRequireDefault$1(selectRole_1);
+
+var _structureRole = interopRequireDefault$1(structureRole_1);
+
+var _widgetRole = interopRequireDefault$1(widgetRole_1);
+
+var _windowRole = interopRequireDefault$1(windowRole_1);
+
+var ariaAbstractRoles = new _map.default([['command', _commandRole.default], ['composite', _compositeRole.default], ['input', _inputRole.default], ['landmark', _landmarkRole.default], ['range', _rangeRole.default], ['roletype', _roletypeRole.default], ['section', _sectionRole.default], ['sectionhead', _sectionheadRole.default], ['select', _selectRole.default], ['structure', _structureRole.default], ['widget', _widgetRole.default], ['window', _windowRole.default]]);
+var _default = ariaAbstractRoles;
+exports.default = _default;
+});
+
+var alertRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var alertRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-atomic': 'true',
+    'aria-live': 'assertive'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'alert'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = alertRole;
+exports.default = _default;
+});
+
+var alertdialogRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var alertdialogRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'alert'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'alert'], ['roletype', 'window', 'dialog']]
+};
+var _default = alertdialogRole;
+exports.default = _default;
+});
+
+var applicationRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var applicationRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-activedescendant': null,
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'Device Independence Delivery Unit'
+    }
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = applicationRole;
+exports.default = _default;
+});
+
+var articleRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var articleRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-posinset': null,
+    'aria-setsize': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'article'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'document']]
+};
+var _default = articleRole;
+exports.default = _default;
+});
+
+var bannerRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var bannerRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      constraints: ['direct descendant of document'],
+      name: 'header'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = bannerRole;
+exports.default = _default;
+});
+
+var blockquoteRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var blockquoteRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = blockquoteRole;
+exports.default = _default;
+});
+
+var buttonRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var buttonRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-pressed': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'aria-pressed'
+      }, {
+        name: 'type',
+        value: 'checkbox'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'aria-expanded',
+        value: 'false'
+      }],
+      name: 'summary'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'aria-expanded',
+        value: 'true'
+      }],
+      constraints: ['direct descendant of details element with the open attribute defined'],
+      name: 'summary'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'button'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'image'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'reset'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'submit'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'button'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'trigger'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command']]
+};
+var _default = buttonRole;
+exports.default = _default;
+});
+
+var captionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var captionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: ['figure', 'grid', 'table'],
+  requiredContextRole: ['figure', 'grid', 'table'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = captionRole;
+exports.default = _default;
+});
+
+var cellRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var cellRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-colindex': null,
+    'aria-colspan': null,
+    'aria-rowindex': null,
+    'aria-rowspan': null
+  },
+  relatedConcepts: [{
+    concept: {
+      constraints: ['descendant of table'],
+      name: 'td'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['row'],
+  requiredContextRole: ['row'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = cellRole;
+exports.default = _default;
+});
+
+var checkboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var checkboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-checked': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-required': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'checkbox'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'option'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-checked': null
+  },
+  superClass: [['roletype', 'widget', 'input']]
+};
+var _default = checkboxRole;
+exports.default = _default;
+});
+
+var codeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var codeRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = codeRole;
+exports.default = _default;
+});
+
+var columnheaderRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var columnheaderRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-sort': null
+  },
+  relatedConcepts: [{
+    attributes: [{
+      name: 'scope',
+      value: 'col'
+    }],
+    concept: {
+      name: 'th'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['row'],
+  requiredContextRole: ['row'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'cell'], ['roletype', 'structure', 'section', 'cell', 'gridcell'], ['roletype', 'widget', 'gridcell'], ['roletype', 'structure', 'sectionhead']]
+};
+var _default = columnheaderRole;
+exports.default = _default;
+});
+
+var comboboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var comboboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-activedescendant': null,
+    'aria-autocomplete': null,
+    'aria-errormessage': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-required': null,
+    'aria-expanded': 'false',
+    'aria-haspopup': 'listbox'
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'email'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'search'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'tel'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'text'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'url'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'url'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'multiple'
+      }, {
+        constraints: ['undefined'],
+        name: 'size'
+      }],
+      name: 'select'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'multiple'
+      }, {
+        name: 'size',
+        value: 1
+      }],
+      name: 'select'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'select'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-controls': null,
+    'aria-expanded': 'false'
+  },
+  superClass: [['roletype', 'widget', 'input']]
+};
+var _default = comboboxRole;
+exports.default = _default;
+});
+
+var complementaryRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var complementaryRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'aside'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = complementaryRole;
+exports.default = _default;
+});
+
+var contentinfoRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var contentinfoRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      constraints: ['direct descendant of document'],
+      name: 'footer'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = contentinfoRole;
+exports.default = _default;
+});
+
+var definitionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var definitionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'dd'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = definitionRole;
+exports.default = _default;
+});
+
+var deletionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var deletionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = deletionRole;
+exports.default = _default;
+});
+
+var dialogRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var dialogRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'dialog'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'window']]
+};
+var _default = dialogRole;
+exports.default = _default;
+});
+
+var directoryRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var directoryRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    module: 'DAISY Guide'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'list']]
+};
+var _default = directoryRole;
+exports.default = _default;
+});
+
+var documentRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var documentRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'Device Independence Delivery Unit'
+    }
+  }, {
+    concept: {
+      name: 'body'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = documentRole;
+exports.default = _default;
+});
+
+var emphasisRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var emphasisRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = emphasisRole;
+exports.default = _default;
+});
+
+var feedRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var feedRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['article']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'list']]
+};
+var _default = feedRole;
+exports.default = _default;
+});
+
+var figureRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var figureRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'figure'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = figureRole;
+exports.default = _default;
+});
+
+var formRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var formRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'aria-label'
+      }],
+      name: 'form'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'aria-labelledby'
+      }],
+      name: 'form'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'name'
+      }],
+      name: 'form'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = formRole;
+exports.default = _default;
+});
+
+var genericRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var genericRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'span'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'div'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = genericRole;
+exports.default = _default;
+});
+
+var gridRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var gridRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-multiselectable': null,
+    'aria-readonly': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'role',
+        value: 'grid'
+      }],
+      name: 'table'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['row'], ['row', 'rowgroup']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite'], ['roletype', 'structure', 'section', 'table']]
+};
+var _default = gridRole;
+exports.default = _default;
+});
+
+var gridcellRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var gridcellRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-required': null,
+    'aria-selected': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'role',
+        value: 'gridcell'
+      }],
+      name: 'td'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['row'],
+  requiredContextRole: ['row'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'cell'], ['roletype', 'widget']]
+};
+var _default = gridcellRole;
+exports.default = _default;
+});
+
+var groupRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var groupRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-activedescendant': null,
+    'aria-disabled': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'details'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'fieldset'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'optgroup'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = groupRole;
+exports.default = _default;
+});
+
+var headingRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var headingRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-level': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'h1'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'h2'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'h3'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'h4'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'h5'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'h6'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-level': 2
+  },
+  superClass: [['roletype', 'structure', 'sectionhead']]
+};
+var _default = headingRole;
+exports.default = _default;
+});
+
+var imgRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var imgRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'alt'
+      }],
+      name: 'img'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'alt'
+      }],
+      name: 'img'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'imggroup'
+    },
+    module: 'DTB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = imgRole;
+exports.default = _default;
+});
+
+var insertionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var insertionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = insertionRole;
+exports.default = _default;
+});
+
+var linkRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var linkRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-expanded': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'href'
+      }],
+      name: 'a'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'href'
+      }],
+      name: 'area'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'href'
+      }],
+      name: 'link'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command']]
+};
+var _default = linkRole;
+exports.default = _default;
+});
+
+var listRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var listRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'menu'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'ol'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'ul'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['listitem']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = listRole;
+exports.default = _default;
+});
+
+var listboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var listboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-invalid': null,
+    'aria-multiselectable': null,
+    'aria-readonly': null,
+    'aria-required': null,
+    'aria-orientation': 'vertical'
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['>1'],
+        name: 'size'
+      }, {
+        name: 'multiple'
+      }],
+      name: 'select'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['>1'],
+        name: 'size'
+      }],
+      name: 'select'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        name: 'multiple'
+      }],
+      name: 'select'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'datalist'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'list'
+    },
+    module: 'ARIA'
+  }, {
+    concept: {
+      name: 'select'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['option', 'group'], ['option']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'select'], ['roletype', 'structure', 'section', 'group', 'select']]
+};
+var _default = listboxRole;
+exports.default = _default;
+});
+
+var listitemRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var listitemRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-level': null,
+    'aria-posinset': null,
+    'aria-setsize': null
+  },
+  relatedConcepts: [{
+    concept: {
+      constraints: ['direct descendant of ol, ul or menu'],
+      name: 'li'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'item'
+    },
+    module: 'XForms'
+  }],
+  requireContextRole: ['directory', 'list'],
+  requiredContextRole: ['directory', 'list'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = listitemRole;
+exports.default = _default;
+});
+
+var logRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var logRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-live': 'polite'
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = logRole;
+exports.default = _default;
+});
+
+var mainRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var mainRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'main'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = mainRole;
+exports.default = _default;
+});
+
+var marqueeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var marqueeRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = marqueeRole;
+exports.default = _default;
+});
+
+var mathRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var mathRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'math'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = mathRole;
+exports.default = _default;
+});
+
+var menuRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var menuRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-orientation': 'vertical'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'MENU'
+    },
+    module: 'JAPI'
+  }, {
+    concept: {
+      name: 'list'
+    },
+    module: 'ARIA'
+  }, {
+    concept: {
+      name: 'select'
+    },
+    module: 'XForms'
+  }, {
+    concept: {
+      name: 'sidebar'
+    },
+    module: 'DTB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['menuitem', 'group'], ['menuitemradio', 'group'], ['menuitemcheckbox', 'group'], ['menuitem'], ['menuitemcheckbox'], ['menuitemradio']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'select'], ['roletype', 'structure', 'section', 'group', 'select']]
+};
+var _default = menuRole;
+exports.default = _default;
+});
+
+var menubarRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var menubarRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-orientation': 'horizontal'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'toolbar'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['menuitem', 'group'], ['menuitemradio', 'group'], ['menuitemcheckbox', 'group'], ['menuitem'], ['menuitemcheckbox'], ['menuitemradio']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'select', 'menu'], ['roletype', 'structure', 'section', 'group', 'select', 'menu']]
+};
+var _default = menubarRole;
+exports.default = _default;
+});
+
+var menuitemRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var menuitemRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-posinset': null,
+    'aria-setsize': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'MENU_ITEM'
+    },
+    module: 'JAPI'
+  }, {
+    concept: {
+      name: 'listitem'
+    },
+    module: 'ARIA'
+  }, {
+    concept: {
+      name: 'menuitem'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'option'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: ['group', 'menu', 'menubar'],
+  requiredContextRole: ['group', 'menu', 'menubar'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command']]
+};
+var _default = menuitemRole;
+exports.default = _default;
+});
+
+var menuitemcheckboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var menuitemcheckboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'menuitem'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: ['group', 'menu', 'menubar'],
+  requiredContextRole: ['group', 'menu', 'menubar'],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-checked': null
+  },
+  superClass: [['roletype', 'widget', 'input', 'checkbox'], ['roletype', 'widget', 'command', 'menuitem']]
+};
+var _default = menuitemcheckboxRole;
+exports.default = _default;
+});
+
+var menuitemradioRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var menuitemradioRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'menuitem'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: ['group', 'menu', 'menubar'],
+  requiredContextRole: ['group', 'menu', 'menubar'],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-checked': null
+  },
+  superClass: [['roletype', 'widget', 'input', 'checkbox', 'menuitemcheckbox'], ['roletype', 'widget', 'command', 'menuitem', 'menuitemcheckbox'], ['roletype', 'widget', 'input', 'radio']]
+};
+var _default = menuitemradioRole;
+exports.default = _default;
+});
+
+var meterRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var meterRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-valuemax': null,
+    'aria-valuemin': null,
+    'aria-valuenow': null
+  },
+  superClass: [['roletype', 'structure', 'range']]
+};
+var _default = meterRole;
+exports.default = _default;
+});
+
+var navigationRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var navigationRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'nav'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = navigationRole;
+exports.default = _default;
+});
+
+var noneRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var noneRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: [],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: []
+};
+var _default = noneRole;
+exports.default = _default;
+});
+
+var noteRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var noteRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = noteRole;
+exports.default = _default;
+});
+
+var optionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var optionRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-checked': null,
+    'aria-posinset': null,
+    'aria-setsize': null,
+    'aria-selected': 'false'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'item'
+    },
+    module: 'XForms'
+  }, {
+    concept: {
+      name: 'listitem'
+    },
+    module: 'ARIA'
+  }, {
+    concept: {
+      name: 'option'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-selected': 'false'
+  },
+  superClass: [['roletype', 'widget', 'input']]
+};
+var _default = optionRole;
+exports.default = _default;
+});
+
+var paragraphRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var paragraphRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = paragraphRole;
+exports.default = _default;
+});
+
+var presentationRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var presentationRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = presentationRole;
+exports.default = _default;
+});
+
+var progressbarRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var progressbarRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'progress'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'status'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'range'], ['roletype', 'widget']]
+};
+var _default = progressbarRole;
+exports.default = _default;
+});
+
+var radioRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var radioRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-checked': null,
+    'aria-posinset': null,
+    'aria-setsize': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'radio'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-checked': null
+  },
+  superClass: [['roletype', 'widget', 'input']]
+};
+var _default = radioRole;
+exports.default = _default;
+});
+
+var radiogroupRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var radiogroupRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-required': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'list'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['radio']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'select'], ['roletype', 'structure', 'section', 'group', 'select']]
+};
+var _default = radiogroupRole;
+exports.default = _default;
+});
+
+var regionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var regionRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'aria-label'
+      }],
+      name: 'section'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['set'],
+        name: 'aria-labelledby'
+      }],
+      name: 'section'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'Device Independence Glossart perceivable unit'
+    }
+  }, {
+    concept: {
+      name: 'frame'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = regionRole;
+exports.default = _default;
+});
+
+var rowRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var rowRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-colindex': null,
+    'aria-expanded': null,
+    'aria-level': null,
+    'aria-posinset': null,
+    'aria-rowindex': null,
+    'aria-selected': null,
+    'aria-setsize': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'tr'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['grid', 'rowgroup', 'table', 'treegrid'],
+  requiredContextRole: ['grid', 'rowgroup', 'table', 'treegrid'],
+  requiredOwnedElements: [['cell'], ['columnheader'], ['gridcell'], ['rowheader']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'group'], ['roletype', 'widget']]
+};
+var _default = rowRole;
+exports.default = _default;
+});
+
+var rowgroupRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var rowgroupRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'tbody'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'tfoot'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'thead'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['grid', 'table', 'treegrid'],
+  requiredContextRole: ['grid', 'table', 'treegrid'],
+  requiredOwnedElements: [['row']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = rowgroupRole;
+exports.default = _default;
+});
+
+var rowheaderRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var rowheaderRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-sort': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'scope',
+        value: 'row'
+      }],
+      name: 'th'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: ['row'],
+  requiredContextRole: ['row'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'cell'], ['roletype', 'structure', 'section', 'cell', 'gridcell'], ['roletype', 'widget', 'gridcell'], ['roletype', 'structure', 'sectionhead']]
+};
+var _default = rowheaderRole;
+exports.default = _default;
+});
+
+var scrollbarRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var scrollbarRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-orientation': 'vertical',
+    'aria-valuemax': '100',
+    'aria-valuemin': '0'
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-controls': null,
+    'aria-valuenow': null
+  },
+  superClass: [['roletype', 'structure', 'range'], ['roletype', 'widget']]
+};
+var _default = scrollbarRole;
+exports.default = _default;
+});
+
+var searchRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var searchRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = searchRole;
+exports.default = _default;
+});
+
+var searchboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var searchboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'search'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'input', 'textbox']]
+};
+var _default = searchboxRole;
+exports.default = _default;
+});
+
+var separatorRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var separatorRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-valuetext': null,
+    'aria-orientation': 'horizontal',
+    'aria-valuemax': '100',
+    'aria-valuemin': '0'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'hr'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure']]
+};
+var _default = separatorRole;
+exports.default = _default;
+});
+
+var sliderRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var sliderRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-orientation': 'horizontal',
+    'aria-valuemax': '100',
+    'aria-valuemin': '0'
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'range'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-valuenow': null
+  },
+  superClass: [['roletype', 'widget', 'input'], ['roletype', 'structure', 'range']]
+};
+var _default = sliderRole;
+exports.default = _default;
+});
+
+var spinbuttonRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var spinbuttonRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-invalid': null,
+    'aria-readonly': null,
+    'aria-required': null,
+    'aria-valuenow': '0'
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        name: 'type',
+        value: 'number'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite'], ['roletype', 'widget', 'input'], ['roletype', 'structure', 'range']]
+};
+var _default = spinbuttonRole;
+exports.default = _default;
+});
+
+var statusRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var statusRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-atomic': 'true',
+    'aria-live': 'polite'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'output'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = statusRole;
+exports.default = _default;
+});
+
+var strongRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var strongRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = strongRole;
+exports.default = _default;
+});
+
+var subscriptRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var subscriptRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = subscriptRole;
+exports.default = _default;
+});
+
+var superscriptRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var superscriptRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['prohibited'],
+  prohibitedProps: ['aria-label', 'aria-labelledby'],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = superscriptRole;
+exports.default = _default;
+});
+
+var switchRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var switchRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'button'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {
+    'aria-checked': null
+  },
+  superClass: [['roletype', 'widget', 'input', 'checkbox']]
+};
+var _default = switchRole;
+exports.default = _default;
+});
+
+var tabRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var tabRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-posinset': null,
+    'aria-setsize': null,
+    'aria-selected': 'false'
+  },
+  relatedConcepts: [],
+  requireContextRole: ['tablist'],
+  requiredContextRole: ['tablist'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'sectionhead'], ['roletype', 'widget']]
+};
+var _default = tabRole;
+exports.default = _default;
+});
+
+var tableRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var tableRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-colcount': null,
+    'aria-rowcount': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'table'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['row'], ['row', 'rowgroup']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = tableRole;
+exports.default = _default;
+});
+
+var tablistRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var tablistRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-level': null,
+    'aria-multiselectable': null,
+    'aria-orientation': 'horizontal'
+  },
+  relatedConcepts: [{
+    module: 'DAISY',
+    concept: {
+      name: 'guide'
+    }
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['tab']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite']]
+};
+var _default = tablistRole;
+exports.default = _default;
+});
+
+var tabpanelRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var tabpanelRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = tabpanelRole;
+exports.default = _default;
+});
+
+var termRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var termRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'dfn'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = termRole;
+exports.default = _default;
+});
+
+var textboxRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var textboxRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-activedescendant': null,
+    'aria-autocomplete': null,
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null,
+    'aria-multiline': null,
+    'aria-placeholder': null,
+    'aria-readonly': null,
+    'aria-required': null
+  },
+  relatedConcepts: [{
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'type'
+      }, {
+        constraints: ['undefined'],
+        name: 'list'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'email'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'tel'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'text'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      attributes: [{
+        constraints: ['undefined'],
+        name: 'list'
+      }, {
+        name: 'type',
+        value: 'url'
+      }],
+      name: 'input'
+    },
+    module: 'HTML'
+  }, {
+    concept: {
+      name: 'input'
+    },
+    module: 'XForms'
+  }, {
+    concept: {
+      name: 'textarea'
+    },
+    module: 'HTML'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'input']]
+};
+var _default = textboxRole;
+exports.default = _default;
+});
+
+var timeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var timeRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = timeRole;
+exports.default = _default;
+});
+
+var timerRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var timerRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'status']]
+};
+var _default = timerRole;
+exports.default = _default;
+});
+
+var toolbarRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var toolbarRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-orientation': 'horizontal'
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'menubar'
+    },
+    module: 'ARIA'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'group']]
+};
+var _default = toolbarRole;
+exports.default = _default;
+});
+
+var tooltipRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var tooltipRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = tooltipRole;
+exports.default = _default;
+});
+
+var treeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var treeRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-invalid': null,
+    'aria-multiselectable': null,
+    'aria-required': null,
+    'aria-orientation': 'vertical'
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['treeitem', 'group'], ['treeitem']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'select'], ['roletype', 'structure', 'section', 'group', 'select']]
+};
+var _default = treeRole;
+exports.default = _default;
+});
+
+var treegridRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var treegridRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['row'], ['row', 'rowgroup']],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'composite', 'grid'], ['roletype', 'structure', 'section', 'table', 'grid'], ['roletype', 'widget', 'composite', 'select', 'tree'], ['roletype', 'structure', 'section', 'group', 'select', 'tree']]
+};
+var _default = treegridRole;
+exports.default = _default;
+});
+
+var treeitemRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var treeitemRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-expanded': null,
+    'aria-haspopup': null
+  },
+  relatedConcepts: [],
+  requireContextRole: ['group', 'tree'],
+  requiredContextRole: ['group', 'tree'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'listitem'], ['roletype', 'widget', 'input', 'option']]
+};
+var _default = treeitemRole;
+exports.default = _default;
+});
+
+var ariaLiteralRoles_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _map = interopRequireDefault$1(map$2);
+
+var _alertRole = interopRequireDefault$1(alertRole_1);
+
+var _alertdialogRole = interopRequireDefault$1(alertdialogRole_1);
+
+var _applicationRole = interopRequireDefault$1(applicationRole_1);
+
+var _articleRole = interopRequireDefault$1(articleRole_1);
+
+var _bannerRole = interopRequireDefault$1(bannerRole_1);
+
+var _blockquoteRole = interopRequireDefault$1(blockquoteRole_1);
+
+var _buttonRole = interopRequireDefault$1(buttonRole_1);
+
+var _captionRole = interopRequireDefault$1(captionRole_1);
+
+var _cellRole = interopRequireDefault$1(cellRole_1);
+
+var _checkboxRole = interopRequireDefault$1(checkboxRole_1);
+
+var _codeRole = interopRequireDefault$1(codeRole_1);
+
+var _columnheaderRole = interopRequireDefault$1(columnheaderRole_1);
+
+var _comboboxRole = interopRequireDefault$1(comboboxRole_1);
+
+var _complementaryRole = interopRequireDefault$1(complementaryRole_1);
+
+var _contentinfoRole = interopRequireDefault$1(contentinfoRole_1);
+
+var _definitionRole = interopRequireDefault$1(definitionRole_1);
+
+var _deletionRole = interopRequireDefault$1(deletionRole_1);
+
+var _dialogRole = interopRequireDefault$1(dialogRole_1);
+
+var _directoryRole = interopRequireDefault$1(directoryRole_1);
+
+var _documentRole = interopRequireDefault$1(documentRole_1);
+
+var _emphasisRole = interopRequireDefault$1(emphasisRole_1);
+
+var _feedRole = interopRequireDefault$1(feedRole_1);
+
+var _figureRole = interopRequireDefault$1(figureRole_1);
+
+var _formRole = interopRequireDefault$1(formRole_1);
+
+var _genericRole = interopRequireDefault$1(genericRole_1);
+
+var _gridRole = interopRequireDefault$1(gridRole_1);
+
+var _gridcellRole = interopRequireDefault$1(gridcellRole_1);
+
+var _groupRole = interopRequireDefault$1(groupRole_1);
+
+var _headingRole = interopRequireDefault$1(headingRole_1);
+
+var _imgRole = interopRequireDefault$1(imgRole_1);
+
+var _insertionRole = interopRequireDefault$1(insertionRole_1);
+
+var _linkRole = interopRequireDefault$1(linkRole_1);
+
+var _listRole = interopRequireDefault$1(listRole_1);
+
+var _listboxRole = interopRequireDefault$1(listboxRole_1);
+
+var _listitemRole = interopRequireDefault$1(listitemRole_1);
+
+var _logRole = interopRequireDefault$1(logRole_1);
+
+var _mainRole = interopRequireDefault$1(mainRole_1);
+
+var _marqueeRole = interopRequireDefault$1(marqueeRole_1);
+
+var _mathRole = interopRequireDefault$1(mathRole_1);
+
+var _menuRole = interopRequireDefault$1(menuRole_1);
+
+var _menubarRole = interopRequireDefault$1(menubarRole_1);
+
+var _menuitemRole = interopRequireDefault$1(menuitemRole_1);
+
+var _menuitemcheckboxRole = interopRequireDefault$1(menuitemcheckboxRole_1);
+
+var _menuitemradioRole = interopRequireDefault$1(menuitemradioRole_1);
+
+var _meterRole = interopRequireDefault$1(meterRole_1);
+
+var _navigationRole = interopRequireDefault$1(navigationRole_1);
+
+var _noneRole = interopRequireDefault$1(noneRole_1);
+
+var _noteRole = interopRequireDefault$1(noteRole_1);
+
+var _optionRole = interopRequireDefault$1(optionRole_1);
+
+var _paragraphRole = interopRequireDefault$1(paragraphRole_1);
+
+var _presentationRole = interopRequireDefault$1(presentationRole_1);
+
+var _progressbarRole = interopRequireDefault$1(progressbarRole_1);
+
+var _radioRole = interopRequireDefault$1(radioRole_1);
+
+var _radiogroupRole = interopRequireDefault$1(radiogroupRole_1);
+
+var _regionRole = interopRequireDefault$1(regionRole_1);
+
+var _rowRole = interopRequireDefault$1(rowRole_1);
+
+var _rowgroupRole = interopRequireDefault$1(rowgroupRole_1);
+
+var _rowheaderRole = interopRequireDefault$1(rowheaderRole_1);
+
+var _scrollbarRole = interopRequireDefault$1(scrollbarRole_1);
+
+var _searchRole = interopRequireDefault$1(searchRole_1);
+
+var _searchboxRole = interopRequireDefault$1(searchboxRole_1);
+
+var _separatorRole = interopRequireDefault$1(separatorRole_1);
+
+var _sliderRole = interopRequireDefault$1(sliderRole_1);
+
+var _spinbuttonRole = interopRequireDefault$1(spinbuttonRole_1);
+
+var _statusRole = interopRequireDefault$1(statusRole_1);
+
+var _strongRole = interopRequireDefault$1(strongRole_1);
+
+var _subscriptRole = interopRequireDefault$1(subscriptRole_1);
+
+var _superscriptRole = interopRequireDefault$1(superscriptRole_1);
+
+var _switchRole = interopRequireDefault$1(switchRole_1);
+
+var _tabRole = interopRequireDefault$1(tabRole_1);
+
+var _tableRole = interopRequireDefault$1(tableRole_1);
+
+var _tablistRole = interopRequireDefault$1(tablistRole_1);
+
+var _tabpanelRole = interopRequireDefault$1(tabpanelRole_1);
+
+var _termRole = interopRequireDefault$1(termRole_1);
+
+var _textboxRole = interopRequireDefault$1(textboxRole_1);
+
+var _timeRole = interopRequireDefault$1(timeRole_1);
+
+var _timerRole = interopRequireDefault$1(timerRole_1);
+
+var _toolbarRole = interopRequireDefault$1(toolbarRole_1);
+
+var _tooltipRole = interopRequireDefault$1(tooltipRole_1);
+
+var _treeRole = interopRequireDefault$1(treeRole_1);
+
+var _treegridRole = interopRequireDefault$1(treegridRole_1);
+
+var _treeitemRole = interopRequireDefault$1(treeitemRole_1);
+
+var ariaLiteralRoles = new _map.default([['alert', _alertRole.default], ['alertdialog', _alertdialogRole.default], ['application', _applicationRole.default], ['article', _articleRole.default], ['banner', _bannerRole.default], ['blockquote', _blockquoteRole.default], ['button', _buttonRole.default], ['caption', _captionRole.default], ['cell', _cellRole.default], ['checkbox', _checkboxRole.default], ['code', _codeRole.default], ['columnheader', _columnheaderRole.default], ['combobox', _comboboxRole.default], ['complementary', _complementaryRole.default], ['contentinfo', _contentinfoRole.default], ['definition', _definitionRole.default], ['deletion', _deletionRole.default], ['dialog', _dialogRole.default], ['directory', _directoryRole.default], ['document', _documentRole.default], ['emphasis', _emphasisRole.default], ['feed', _feedRole.default], ['figure', _figureRole.default], ['form', _formRole.default], ['generic', _genericRole.default], ['grid', _gridRole.default], ['gridcell', _gridcellRole.default], ['group', _groupRole.default], ['heading', _headingRole.default], ['img', _imgRole.default], ['insertion', _insertionRole.default], ['link', _linkRole.default], ['list', _listRole.default], ['listbox', _listboxRole.default], ['listitem', _listitemRole.default], ['log', _logRole.default], ['main', _mainRole.default], ['marquee', _marqueeRole.default], ['math', _mathRole.default], ['menu', _menuRole.default], ['menubar', _menubarRole.default], ['menuitem', _menuitemRole.default], ['menuitemcheckbox', _menuitemcheckboxRole.default], ['menuitemradio', _menuitemradioRole.default], ['meter', _meterRole.default], ['navigation', _navigationRole.default], ['none', _noneRole.default], ['note', _noteRole.default], ['option', _optionRole.default], ['paragraph', _paragraphRole.default], ['presentation', _presentationRole.default], ['progressbar', _progressbarRole.default], ['radio', _radioRole.default], ['radiogroup', _radiogroupRole.default], ['region', _regionRole.default], ['row', _rowRole.default], ['rowgroup', _rowgroupRole.default], ['rowheader', _rowheaderRole.default], ['scrollbar', _scrollbarRole.default], ['search', _searchRole.default], ['searchbox', _searchboxRole.default], ['separator', _separatorRole.default], ['slider', _sliderRole.default], ['spinbutton', _spinbuttonRole.default], ['status', _statusRole.default], ['strong', _strongRole.default], ['subscript', _subscriptRole.default], ['superscript', _superscriptRole.default], ['switch', _switchRole.default], ['tab', _tabRole.default], ['table', _tableRole.default], ['tablist', _tablistRole.default], ['tabpanel', _tabpanelRole.default], ['term', _termRole.default], ['textbox', _textboxRole.default], ['time', _timeRole.default], ['timer', _timerRole.default], ['toolbar', _toolbarRole.default], ['tooltip', _tooltipRole.default], ['tree', _treeRole.default], ['treegrid', _treegridRole.default], ['treeitem', _treeitemRole.default]]);
+var _default = ariaLiteralRoles;
+exports.default = _default;
+});
+
+var docAbstractRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docAbstractRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'abstract [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docAbstractRole;
+exports.default = _default;
+});
+
+var docAcknowledgmentsRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docAcknowledgmentsRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'acknowledgments [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docAcknowledgmentsRole;
+exports.default = _default;
+});
+
+var docAfterwordRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docAfterwordRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'afterword [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docAfterwordRole;
+exports.default = _default;
+});
+
+var docAppendixRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docAppendixRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'appendix [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docAppendixRole;
+exports.default = _default;
+});
+
+var docBacklinkRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docBacklinkRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'content'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'referrer [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command', 'link']]
+};
+var _default = docBacklinkRole;
+exports.default = _default;
+});
+
+var docBiblioentryRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docBiblioentryRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'EPUB biblioentry [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: ['doc-bibliography'],
+  requiredContextRole: ['doc-bibliography'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'listitem']]
+};
+var _default = docBiblioentryRole;
+exports.default = _default;
+});
+
+var docBibliographyRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docBibliographyRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'bibliography [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['doc-biblioentry']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docBibliographyRole;
+exports.default = _default;
+});
+
+var docBibliorefRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docBibliorefRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'biblioref [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command', 'link']]
+};
+var _default = docBibliorefRole;
+exports.default = _default;
+});
+
+var docChapterRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docChapterRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'chapter [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docChapterRole;
+exports.default = _default;
+});
+
+var docColophonRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docColophonRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'colophon [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docColophonRole;
+exports.default = _default;
+});
+
+var docConclusionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docConclusionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'conclusion [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docConclusionRole;
+exports.default = _default;
+});
+
+var docCoverRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docCoverRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'cover [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'img']]
+};
+var _default = docCoverRole;
+exports.default = _default;
+});
+
+var docCreditRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docCreditRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'credit [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docCreditRole;
+exports.default = _default;
+});
+
+var docCreditsRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docCreditsRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'credits [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docCreditsRole;
+exports.default = _default;
+});
+
+var docDedicationRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docDedicationRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'dedication [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docDedicationRole;
+exports.default = _default;
+});
+
+var docEndnoteRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docEndnoteRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'rearnote [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: ['doc-endnotes'],
+  requiredContextRole: ['doc-endnotes'],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'listitem']]
+};
+var _default = docEndnoteRole;
+exports.default = _default;
+});
+
+var docEndnotesRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docEndnotesRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'rearnotes [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['doc-endnote']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docEndnotesRole;
+exports.default = _default;
+});
+
+var docEpigraphRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docEpigraphRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'epigraph [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docEpigraphRole;
+exports.default = _default;
+});
+
+var docEpilogueRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docEpilogueRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'epilogue [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docEpilogueRole;
+exports.default = _default;
+});
+
+var docErrataRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docErrataRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'errata [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docErrataRole;
+exports.default = _default;
+});
+
+var docExampleRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docExampleRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docExampleRole;
+exports.default = _default;
+});
+
+var docFootnoteRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docFootnoteRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'footnote [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docFootnoteRole;
+exports.default = _default;
+});
+
+var docForewordRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docForewordRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'foreword [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docForewordRole;
+exports.default = _default;
+});
+
+var docGlossaryRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docGlossaryRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'glossary [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [['definition'], ['term']],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docGlossaryRole;
+exports.default = _default;
+});
+
+var docGlossrefRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docGlossrefRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'glossref [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command', 'link']]
+};
+var _default = docGlossrefRole;
+exports.default = _default;
+});
+
+var docIndexRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docIndexRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'index [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark', 'navigation']]
+};
+var _default = docIndexRole;
+exports.default = _default;
+});
+
+var docIntroductionRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docIntroductionRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'introduction [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docIntroductionRole;
+exports.default = _default;
+});
+
+var docNoterefRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docNoterefRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author', 'contents'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'noteref [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'widget', 'command', 'link']]
+};
+var _default = docNoterefRole;
+exports.default = _default;
+});
+
+var docNoticeRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docNoticeRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'notice [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'note']]
+};
+var _default = docNoticeRole;
+exports.default = _default;
+});
+
+var docPagebreakRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPagebreakRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: true,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'pagebreak [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'separator']]
+};
+var _default = docPagebreakRole;
+exports.default = _default;
+});
+
+var docPagelistRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPagelistRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'page-list [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark', 'navigation']]
+};
+var _default = docPagelistRole;
+exports.default = _default;
+});
+
+var docPartRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPartRole = {
+  abstract: false,
+  accessibleNameRequired: true,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'part [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docPartRole;
+exports.default = _default;
+});
+
+var docPrefaceRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPrefaceRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'preface [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docPrefaceRole;
+exports.default = _default;
+});
+
+var docPrologueRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPrologueRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'prologue [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark']]
+};
+var _default = docPrologueRole;
+exports.default = _default;
+});
+
+var docPullquoteRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docPullquoteRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {},
+  relatedConcepts: [{
+    concept: {
+      name: 'pullquote [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['none']]
+};
+var _default = docPullquoteRole;
+exports.default = _default;
+});
+
+var docQnaRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docQnaRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'qna [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section']]
+};
+var _default = docQnaRole;
+exports.default = _default;
+});
+
+var docSubtitleRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docSubtitleRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'subtitle [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'sectionhead']]
+};
+var _default = docSubtitleRole;
+exports.default = _default;
+});
+
+var docTipRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docTipRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'help [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'note']]
+};
+var _default = docTipRole;
+exports.default = _default;
+});
+
+var docTocRole_1 = createCommonjsModule(function (module, exports) {
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+var docTocRole = {
+  abstract: false,
+  accessibleNameRequired: false,
+  baseConcepts: [],
+  childrenPresentational: false,
+  nameFrom: ['author'],
+  prohibitedProps: [],
+  props: {
+    'aria-disabled': null,
+    'aria-errormessage': null,
+    'aria-expanded': null,
+    'aria-haspopup': null,
+    'aria-invalid': null
+  },
+  relatedConcepts: [{
+    concept: {
+      name: 'toc [EPUB-SSV]'
+    },
+    module: 'EPUB'
+  }],
+  requireContextRole: [],
+  requiredContextRole: [],
+  requiredOwnedElements: [],
+  requiredProps: {},
+  superClass: [['roletype', 'structure', 'section', 'landmark', 'navigation']]
+};
+var _default = docTocRole;
+exports.default = _default;
+});
+
+var ariaDpubRoles_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _map = interopRequireDefault$1(map$2);
+
+var _docAbstractRole = interopRequireDefault$1(docAbstractRole_1);
+
+var _docAcknowledgmentsRole = interopRequireDefault$1(docAcknowledgmentsRole_1);
+
+var _docAfterwordRole = interopRequireDefault$1(docAfterwordRole_1);
+
+var _docAppendixRole = interopRequireDefault$1(docAppendixRole_1);
+
+var _docBacklinkRole = interopRequireDefault$1(docBacklinkRole_1);
+
+var _docBiblioentryRole = interopRequireDefault$1(docBiblioentryRole_1);
+
+var _docBibliographyRole = interopRequireDefault$1(docBibliographyRole_1);
+
+var _docBibliorefRole = interopRequireDefault$1(docBibliorefRole_1);
+
+var _docChapterRole = interopRequireDefault$1(docChapterRole_1);
+
+var _docColophonRole = interopRequireDefault$1(docColophonRole_1);
+
+var _docConclusionRole = interopRequireDefault$1(docConclusionRole_1);
+
+var _docCoverRole = interopRequireDefault$1(docCoverRole_1);
+
+var _docCreditRole = interopRequireDefault$1(docCreditRole_1);
+
+var _docCreditsRole = interopRequireDefault$1(docCreditsRole_1);
+
+var _docDedicationRole = interopRequireDefault$1(docDedicationRole_1);
+
+var _docEndnoteRole = interopRequireDefault$1(docEndnoteRole_1);
+
+var _docEndnotesRole = interopRequireDefault$1(docEndnotesRole_1);
+
+var _docEpigraphRole = interopRequireDefault$1(docEpigraphRole_1);
+
+var _docEpilogueRole = interopRequireDefault$1(docEpilogueRole_1);
+
+var _docErrataRole = interopRequireDefault$1(docErrataRole_1);
+
+var _docExampleRole = interopRequireDefault$1(docExampleRole_1);
+
+var _docFootnoteRole = interopRequireDefault$1(docFootnoteRole_1);
+
+var _docForewordRole = interopRequireDefault$1(docForewordRole_1);
+
+var _docGlossaryRole = interopRequireDefault$1(docGlossaryRole_1);
+
+var _docGlossrefRole = interopRequireDefault$1(docGlossrefRole_1);
+
+var _docIndexRole = interopRequireDefault$1(docIndexRole_1);
+
+var _docIntroductionRole = interopRequireDefault$1(docIntroductionRole_1);
+
+var _docNoterefRole = interopRequireDefault$1(docNoterefRole_1);
+
+var _docNoticeRole = interopRequireDefault$1(docNoticeRole_1);
+
+var _docPagebreakRole = interopRequireDefault$1(docPagebreakRole_1);
+
+var _docPagelistRole = interopRequireDefault$1(docPagelistRole_1);
+
+var _docPartRole = interopRequireDefault$1(docPartRole_1);
+
+var _docPrefaceRole = interopRequireDefault$1(docPrefaceRole_1);
+
+var _docPrologueRole = interopRequireDefault$1(docPrologueRole_1);
+
+var _docPullquoteRole = interopRequireDefault$1(docPullquoteRole_1);
+
+var _docQnaRole = interopRequireDefault$1(docQnaRole_1);
+
+var _docSubtitleRole = interopRequireDefault$1(docSubtitleRole_1);
+
+var _docTipRole = interopRequireDefault$1(docTipRole_1);
+
+var _docTocRole = interopRequireDefault$1(docTocRole_1);
+
+var ariaDpubRoles = new _map.default([['doc-abstract', _docAbstractRole.default], ['doc-acknowledgments', _docAcknowledgmentsRole.default], ['doc-afterword', _docAfterwordRole.default], ['doc-appendix', _docAppendixRole.default], ['doc-backlink', _docBacklinkRole.default], ['doc-biblioentry', _docBiblioentryRole.default], ['doc-bibliography', _docBibliographyRole.default], ['doc-biblioref', _docBibliorefRole.default], ['doc-chapter', _docChapterRole.default], ['doc-colophon', _docColophonRole.default], ['doc-conclusion', _docConclusionRole.default], ['doc-cover', _docCoverRole.default], ['doc-credit', _docCreditRole.default], ['doc-credits', _docCreditsRole.default], ['doc-dedication', _docDedicationRole.default], ['doc-endnote', _docEndnoteRole.default], ['doc-endnotes', _docEndnotesRole.default], ['doc-epigraph', _docEpigraphRole.default], ['doc-epilogue', _docEpilogueRole.default], ['doc-errata', _docErrataRole.default], ['doc-example', _docExampleRole.default], ['doc-footnote', _docFootnoteRole.default], ['doc-foreword', _docForewordRole.default], ['doc-glossary', _docGlossaryRole.default], ['doc-glossref', _docGlossrefRole.default], ['doc-index', _docIndexRole.default], ['doc-introduction', _docIntroductionRole.default], ['doc-noteref', _docNoterefRole.default], ['doc-notice', _docNoticeRole.default], ['doc-pagebreak', _docPagebreakRole.default], ['doc-pagelist', _docPagelistRole.default], ['doc-part', _docPartRole.default], ['doc-preface', _docPrefaceRole.default], ['doc-prologue', _docPrologueRole.default], ['doc-pullquote', _docPullquoteRole.default], ['doc-qna', _docQnaRole.default], ['doc-subtitle', _docSubtitleRole.default], ['doc-tip', _docTipRole.default], ['doc-toc', _docTocRole.default]]);
+var _default = ariaDpubRoles;
+exports.default = _default;
+});
+
+var rolesMap_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _getIterator2 = interopRequireDefault$1(getIterator);
+
+var _isArray = interopRequireDefault$1(isArray$3);
+
+var _getIteratorMethod2 = interopRequireDefault$1(getIteratorMethod);
+
+var _symbol = interopRequireDefault$1(symbol);
+
+var _from = interopRequireDefault$1(from_1);
+
+var _slice = interopRequireDefault$1(slice);
+
+var _defineProperty2 = interopRequireDefault$1(defineProperty$1);
+
+var _assign = interopRequireDefault$1(assign);
+
+var _keys = interopRequireDefault$1(keys$1);
+
+var _forEach = interopRequireDefault$1(forEach);
+
+var _map = interopRequireDefault$1(map$2);
+
+var _ariaAbstractRoles = interopRequireDefault$1(ariaAbstractRoles_1);
+
+var _ariaLiteralRoles = interopRequireDefault$1(ariaLiteralRoles_1);
+
+var _ariaDpubRoles = interopRequireDefault$1(ariaDpubRoles_1);
+
+var _context;
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof _symbol.default === "undefined" || (0, _getIteratorMethod2.default)(o) == null) { if ((0, _isArray.default)(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = (0, _getIterator2.default)(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { var _context2; if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = (0, _slice.default)(_context2 = Object.prototype.toString.call(o)).call(_context2, 8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return (0, _from.default)(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+var rolesMap = new _map.default([]);
+(0, _forEach.default)(_context = [_ariaAbstractRoles.default, _ariaLiteralRoles.default, _ariaDpubRoles.default]).call(_context, function (roleSet) {
+  (0, _forEach.default)(roleSet).call(roleSet, function (roleDefinition, name) {
+    return rolesMap.set(name, roleDefinition);
+  });
+});
+(0, _forEach.default)(rolesMap).call(rolesMap, function (roleDefinition, name) {
+  // Conglomerate the properties
+  var _iterator = _createForOfIteratorHelper(roleDefinition.superClass),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var superClassIter = _step.value;
+
+      var _iterator2 = _createForOfIteratorHelper(superClassIter),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var superClassName = _step2.value;
+          var superClassDefinition = rolesMap.get(superClassName);
+
+          if (superClassDefinition) {
+            for (var _i = 0, _Object$keys = (0, _keys.default)(superClassDefinition.props); _i < _Object$keys.length; _i++) {
+              var prop = _Object$keys[_i];
+
+              if (!Object.prototype.hasOwnProperty.call(roleDefinition.props, prop)) {
+                (0, _assign.default)(roleDefinition.props, (0, _defineProperty2.default)({}, prop, superClassDefinition.props[prop]));
+              }
+            }
+          }
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+});
+var _default = rolesMap;
+exports.default = _default;
+});
+
+var elementRoleMap_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _set = interopRequireDefault$1(set);
+
+var _slicedToArray2 = interopRequireDefault$1(slicedToArray);
+
+var _entries = interopRequireDefault$1(entries);
+
+var _find = interopRequireDefault$1(find);
+
+var _stringify = interopRequireDefault$1(stringify$3);
+
+var _concat = interopRequireDefault$1(concat);
+
+var _keys = interopRequireDefault$1(keys$2);
+
+var _toConsumableArray2 = interopRequireDefault$1(toConsumableArray);
+
+var _forEach = interopRequireDefault$1(forEach);
+
+var _map = interopRequireDefault$1(map$2);
+
+var _rolesMap = interopRequireDefault$1(rolesMap_1);
+
+var _context;
+
+var elementRoleMap = new _map.default([]);
+(0, _forEach.default)(_context = (0, _toConsumableArray2.default)((0, _keys.default)(_rolesMap.default).call(_rolesMap.default))).call(_context, function (key) {
+  var role = _rolesMap.default.get(key);
+
+  if (role) {
+    var _context2, _context3;
+
+    (0, _forEach.default)(_context2 = (0, _concat.default)(_context3 = []).call(_context3, (0, _toConsumableArray2.default)(role.baseConcepts), (0, _toConsumableArray2.default)(role.relatedConcepts))).call(_context2, function (relation) {
+      if (relation.module === 'HTML') {
+        var concept = relation.concept;
+
+        if (concept) {
+          var _context4;
+
+          var conceptStr = (0, _stringify.default)(concept);
+          var roles = ((0, _find.default)(_context4 = (0, _toConsumableArray2.default)((0, _entries.default)(elementRoleMap).call(elementRoleMap))).call(_context4, function (_ref) {
+            var _ref2 = (0, _slicedToArray2.default)(_ref, 2),
+                key = _ref2[0],
+                value = _ref2[1];
+
+            return (0, _stringify.default)(key) === conceptStr;
+          }) || [])[1];
+
+          if (!roles) {
+            roles = new _set.default([]);
+          }
+
+          roles.add(key);
+          elementRoleMap.set(concept, roles);
+        }
+      }
+    });
+  }
+});
+var _default = elementRoleMap;
+exports.default = _default;
+});
+
+var roleElementMap_1 = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = void 0;
+
+var _set = interopRequireDefault$1(set);
+
+var _concat = interopRequireDefault$1(concat);
+
+var _keys = interopRequireDefault$1(keys$2);
+
+var _toConsumableArray2 = interopRequireDefault$1(toConsumableArray);
+
+var _forEach = interopRequireDefault$1(forEach);
+
+var _map = interopRequireDefault$1(map$2);
+
+var _rolesMap = interopRequireDefault$1(rolesMap_1);
+
+var _context;
+
+var roleElementMap = new _map.default([]);
+(0, _forEach.default)(_context = (0, _toConsumableArray2.default)((0, _keys.default)(_rolesMap.default).call(_rolesMap.default))).call(_context, function (key) {
+  var role = _rolesMap.default.get(key);
+
+  if (role) {
+    var _context2, _context3;
+
+    (0, _forEach.default)(_context2 = (0, _concat.default)(_context3 = []).call(_context3, (0, _toConsumableArray2.default)(role.baseConcepts), (0, _toConsumableArray2.default)(role.relatedConcepts))).call(_context2, function (relation) {
+      if (relation.module === 'HTML') {
+        var concept = relation.concept;
+
+        if (concept) {
+          var relationConcepts = roleElementMap.get(key) || new _set.default([]);
+          relationConcepts.add(concept);
+          roleElementMap.set(key, relationConcepts);
+        }
+      }
+    });
+  }
+});
+var _default = roleElementMap;
+exports.default = _default;
+});
+
+var lib = createCommonjsModule(function (module, exports) {
+
+
+
+
+
+defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.roleElements = exports.elementRoles = exports.roles = exports.dom = exports.aria = void 0;
+
+var _ariaPropsMap = interopRequireDefault$1(ariaPropsMap_1);
+
+var _domMap = interopRequireDefault$1(domMap_1);
+
+var _rolesMap = interopRequireDefault$1(rolesMap_1);
+
+var _elementRoleMap = interopRequireDefault$1(elementRoleMap_1);
+
+var _roleElementMap = interopRequireDefault$1(roleElementMap_1);
+
+var aria = _ariaPropsMap.default;
+exports.aria = aria;
+var dom = _domMap.default;
+exports.dom = dom;
+var roles = _rolesMap.default;
+exports.roles = roles;
+var elementRoles = _elementRoleMap.default;
+exports.elementRoles = elementRoles;
+var roleElements = _roleElementMap.default;
+exports.roleElements = roleElements;
 });
 
 var toBeChecked_1 = createCommonjsModule(function (module, exports) {
