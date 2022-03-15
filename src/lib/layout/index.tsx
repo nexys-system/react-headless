@@ -2,38 +2,48 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import * as T from './type';
-import CardsWithTabs from './cards-w-tabs';
+import CardsWithTabsHeadless from './cards-w-tabs';
+import { CardProps, ColProps, HeaderProps, RowProps } from '../card';
+import { TabProps } from '../tabs';
 
-const Layout =
-  <A,>({ cards, title, description, backRedirect }: T.Layout<A>) =>
-  ({ data: dataIn }: { data: A }): JSX.Element => {
-    const [redirect, setRedirect] = React.useState<string | undefined>();
-    const [data, setData] = React.useState<A>(dataIn);
+const Layout = (
+  Card: (p: CardProps) => JSX.Element,
+  Tabs: (p: TabProps) => JSX.Element,
+  Header: (p: HeaderProps) => JSX.Element,
+  Col: (p: ColProps) => JSX.Element,
+  Row: (p: RowProps) => JSX.Element
+) => {
+  const CardsWithTabs = CardsWithTabsHeadless(Card, Tabs, Col, Row);
 
-    if (redirect) {
-      return <Redirect to={redirect} />;
-    }
+  return <A,>({ cards, title, description, backRedirect }: T.Layout<A>) =>
+    ({ data: dataIn }: { data: A }): JSX.Element => {
+      const [redirect, setRedirect] = React.useState<string | undefined>();
+      const [data, setData] = React.useState<A>(dataIn);
 
-    return (
-      <>
-        <h1>{title}</h1>
-        <p>{description}</p>
+      if (redirect) {
+        return <Redirect to={redirect} />;
+      }
 
-        <CardsWithTabs cards={cards} data={data} setData={setData} />
+      return (
+        <>
+          <Header title={title} description={description} />
 
-        {backRedirect && (
-          <div className="float-right">
-            <button
-              onClick={() => setRedirect(backRedirect)}
-              type="button"
-              className=" btn-sm btn btn-secondary"
-            >
-              Back
-            </button>
-          </div>
-        )}
-      </>
-    );
-  };
+          <CardsWithTabs cards={cards} data={data} setData={setData} />
+
+          {backRedirect && (
+            <div className="float-right">
+              <button
+                onClick={() => setRedirect(backRedirect)}
+                type="button"
+                className=" btn-sm btn btn-secondary"
+              >
+                Back
+              </button>
+            </div>
+          )}
+        </>
+      );
+    };
+};
 
 export default Layout;

@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Public from './public';
 import Layout from './layout/index';
 
-import L3 from './components/layout';
+import L3 from './examples/layout';
 
 const Routes = (): JSX.Element => (
   <Layout>

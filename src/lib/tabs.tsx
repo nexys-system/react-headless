@@ -1,5 +1,11 @@
 import React from 'react';
 
+export interface TabProps {
+  tabIndex?: number;
+  tabs: { label: string }[];
+  setTabIndex: (d: number) => void;
+}
+
 const TabsGeneric =
   (
     Ul: ({ children }: { children: JSX.Element[] }) => JSX.Element,
@@ -9,15 +15,7 @@ const TabsGeneric =
       onClick: () => void;
     }) => JSX.Element
   ) =>
-  ({
-    tabs,
-    tabIndex = 0,
-    setTabIndex
-  }: {
-    tabIndex?: number;
-    tabs: { label: string }[];
-    setTabIndex: (d: number) => void;
-  }) =>
+  ({ tabs, tabIndex = 0, setTabIndex }: TabProps) =>
     (
       <Ul>
         {tabs.map((tab, i) => (
