@@ -68,7 +68,6 @@ const ListSuper =
     const [state, dispatch] = useReducer<Reducer<State<A>, Action>>(
       listSuperReducer,
       getInitialState<A>(
-        def,
         props.data,
         config.sortAttribute,
         config.sortDescAsc,
