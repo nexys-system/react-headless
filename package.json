@@ -18,7 +18,8 @@
     "start": "SNOWPACK_PUBLIC_URL= snowpack dev  --polyfill-node",
     "build": "snowpack build  --polyfill-node",
     "buildpackage": "rm -rf ./dist;tsc -p tsconfig.build.json",
-    "test": "jest"
+    "test": "jest",
+    "buildTs": "tsc"
   },
   "main": "dist/index.js",
   "files": [
