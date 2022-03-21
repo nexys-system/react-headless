@@ -3,20 +3,6 @@ import React from 'react';
 import * as UIType from '../../lib/list/ui-type';
 import { paginationBoundaries } from '../../lib/list/utils/pagination-utils';
 
-const Loader = () => <p>Loading...</p>;
-
-const Alert = ({
-  // type = 'success',
-  children
-}: {
-  children: React.ReactNode | JSX.Element;
-  type?: 'error' | 'success' | 'info' | 'warning';
-}): JSX.Element => <div className={'alert'}>{children}</div>;
-
-const GlobalSearch = () => <></>;
-const PopoverFilter = () => <></>;
-const FilterUnit = () => <></>;
-
 import {
   PaginationUnitProps,
   NoRowProps,
@@ -31,6 +17,27 @@ import {
   OrderControllerUpAndDownProps,
   OrderControllerProps
 } from '../../lib/list/ui-type';
+
+const Loader = () => <p>Loading...</p>;
+
+const Alert = ({
+  // type = 'success',
+  children
+}: {
+  children: React.ReactNode | JSX.Element;
+  type?: 'error' | 'success' | 'info' | 'warning';
+}): JSX.Element => <div className={'alert'}>{children}</div>;
+
+const GlobalSearch = (props: UIType.GlobalSearchProps) => (
+  <input
+    type="text"
+    onChange={v =>
+      props.onChange({ name: 'globalSearch', value: v.target.value })
+    }
+  />
+);
+const PopoverFilter = () => <></>;
+const FilterUnit = () => <></>;
 
 export const NoRow = (props: NoRowProps): JSX.Element | null => {
   if (props.n > 0) {

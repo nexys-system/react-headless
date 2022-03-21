@@ -1,4 +1,3 @@
-import React from 'react';
 import SuperList, { InnerProps } from '../lib/list/list-super';
 import {
   GlobalSearch,
