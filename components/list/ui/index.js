@@ -1,12 +1,16 @@
-import React from "../../_snowpack/pkg/react.js";
-import {paginationBoundaries} from "../../lib/list/utils/pagination-utils.js";
+import React from "../../../_snowpack/pkg/react.js";
+import {paginationBoundaries} from "../../../lib/list/utils/pagination-utils.js";
 const Loader = () => /* @__PURE__ */ React.createElement("p", null, "Loading...");
 const Alert = ({
   children
 }) => /* @__PURE__ */ React.createElement("div", {
   className: "alert"
 }, children);
-const GlobalSearch = () => /* @__PURE__ */ React.createElement(React.Fragment, null);
+const GlobalSearch = (props) => /* @__PURE__ */ React.createElement("input", {
+  type: "text",
+  onChange: (v) => props.onChange({name: "globalSearch", value: v.target.value}),
+  placeholder: "start typing ..."
+});
 const PopoverFilter = () => /* @__PURE__ */ React.createElement(React.Fragment, null);
 const FilterUnit = () => /* @__PURE__ */ React.createElement(React.Fragment, null);
 export const NoRow = (props) => {

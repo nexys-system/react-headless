@@ -1,5 +1,5 @@
-import React from "../../_snowpack/pkg/react.js";
-import {getPagination} from "../../lib/list/utils/pagination-utils.js";
+import React from "../../../_snowpack/pkg/react.js";
+import {getPagination} from "../../../lib/list/utils/pagination-utils.js";
 const Pagination = (props) => {
   const {n, nPerPage, idx, onClick} = props;
   if (n === 0) {

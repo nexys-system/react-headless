@@ -1,4 +1,4 @@
-import SuperList from "../lib/list/list-super.js";
+import SuperList from "../../lib/list/list-super.js";
 import {
   GlobalSearch,
   HeaderUnit,
