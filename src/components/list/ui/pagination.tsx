@@ -1,6 +1,6 @@
 import React from 'react';
-import { getPagination } from '../../lib/list/utils/pagination-utils';
-import { PaginationProps } from '../../lib/list/ui-type';
+import { getPagination } from '../../../lib/list/utils/pagination-utils';
+import { PaginationProps } from '../../../lib/list/ui-type';
 
 const Pagination = (props: PaginationProps): JSX.Element | null => {
   const { n, nPerPage, idx, onClick } = props;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as UIType from '../../lib/list/ui-type';
-import { paginationBoundaries } from '../../lib/list/utils/pagination-utils';
+import * as UIType from '../../../lib/list/ui-type';
+import { paginationBoundaries } from '../../../lib/list/utils/pagination-utils';
 
 import {
   PaginationUnitProps,
@@ -16,7 +16,7 @@ import {
   PaginationWrapperProps,
   OrderControllerUpAndDownProps,
   OrderControllerProps
-} from '../../lib/list/ui-type';
+} from '../../../lib/list/ui-type';
 
 const Loader = () => <p>Loading...</p>;
 
@@ -34,6 +34,7 @@ const GlobalSearch = (props: UIType.GlobalSearchProps) => (
     onChange={v =>
       props.onChange({ name: 'globalSearch', value: v.target.value })
     }
+    placeholder={'start typing ...'}
   />
 );
 const PopoverFilter = () => <></>;

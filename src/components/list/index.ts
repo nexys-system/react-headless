@@ -1,4 +1,4 @@
-import SuperList, { InnerProps } from '../lib/list/list-super';
+import SuperList, { InnerProps } from '../../lib/list/list-super';
 import {
   GlobalSearch,
   HeaderUnit,
