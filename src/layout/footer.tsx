@@ -1,12 +1,12 @@
 import React from "react";
-import { github, sha } from "../config";
+import { github, version } from "../config";
 
 export default () => (
   <footer>
     <div className="container">
       <p>
         <small>
-          <a href={github.sha}>{sha.slice(0, 15)}</a>
+          <a href={github.version}>{version}</a>
         </small>
       </p>
     </div>
