@@ -16,7 +16,7 @@ jobs:
       - name: Install Packages
         run: npm install
       - name: Build page
-        run: SNOWPACK_PUBLIC_GIT_SHA=$GITHUB_SHA SNOWPACK_PUBLIC_URL=/core-list yarn build
+        run: SNOWPACK_PUBLIC_GIT_SHA=$GITHUB_SHA SNOWPACK_PUBLIC_URL=/react-headless yarn build
       - name: add 404
         run: cp build/index.html build/404.html
       - name: Deploy to gh-pages
