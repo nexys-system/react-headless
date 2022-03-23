@@ -1,7 +1,5 @@
 # Headless components for React
 
-*ex react-headless*
-
 [![npm version](https://badge.fury.io/js/%40nexys%2Fheadless)](https://www.npmjs.com/package/@nexys/headless)
 [![npm version](https://img.shields.io/npm/v/@nexys/headless)](https://www.npmjs.com/package/@nexys/headless)
 [![Publish](https://github.com/nexys-system/react-headless/actions/workflows/publish.yml/badge.svg)](https://github.com/nexys-system/react-headless/actions/workflows/publish.yml)
