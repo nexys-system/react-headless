@@ -1,12 +1,11 @@
 import React from 'react';
+import Countries from 'countries-list';
 
 import List from '../components/list';
-
-import Countries from 'countries-list';
 import { Definition } from '../lib/types';
 
-const countries = Object.values(Countries.countries).sort((a, b) =>
-  a.name.localeCompare(b.name)
+const countries: Countries.Country[] = Object.values(Countries.countries).sort(
+  (a, b) => a.name.localeCompare(b.name)
 );
 
 const def: Definition<Countries.Country> = [

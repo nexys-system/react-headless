@@ -1,4 +1,4 @@
-export interface Form {
+export interface FormDataShape {
   firstName: string;
   lastName?: string;
 }

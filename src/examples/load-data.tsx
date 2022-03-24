@@ -2,9 +2,7 @@ import React from 'react';
 
 import LoadDataAsync from '../components/load-data-async';
 import View from '../components/view';
-
-const delay = (ms: number = 500) =>
-  new Promise(resolve => setTimeout(resolve, ms));
+import { delay } from './utils';
 
 interface Data {
   firstName: string;
