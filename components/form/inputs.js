@@ -58,3 +58,8 @@ export const SelectEnum = ({
   selected: value === id,
   value: id
 }, name)));
+export const Checkbox = ({value, onChange}) => /* @__PURE__ */ React.createElement("input", {
+  checked: value,
+  type: "checkbox",
+  onChange: (v) => onChange(Boolean(v.target.value))
+});
