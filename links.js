@@ -5,7 +5,8 @@ export const links = {
   card: {name: "Card", link: "/card"},
   form: {name: "Form", link: "/form"},
   loadDataAsync: {name: "Load Data Async", link: "/load-data-async"},
-  notifications: {name: "Notifications", link: "/notifications"}
+  notifications: {name: "Notifications", link: "/notifications"},
+  code: {name: "Code", link: "/code"}
 };
 export const menus = Object.values(links);
 export default links;
