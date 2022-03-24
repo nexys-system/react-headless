@@ -1,4 +1,4 @@
-export const SNOWPACK_PUBLIC_GIT_SHA = "01236e1e927e27010a56b82b6e562e2b26f8cc43";
+export const SNOWPACK_PUBLIC_GIT_SHA = "4d02b3d620b037de22adaa17cd30bb8b24e212f4";
 export const SNOWPACK_PUBLIC_VERSION = "master";
 export const SNOWPACK_PUBLIC_URL = "/react-headless";
 export const MODE = "production";
