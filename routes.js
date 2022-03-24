@@ -5,15 +5,24 @@ import Layout from "./layout/index.js";
 import List from "./examples/list.js";
 import LayoutComponent from "./examples/layout.js";
 import View from "./examples/view.js";
+import Card from "./examples/card.js";
+import Form from "./examples/form/index.js";
+import {links} from "./links.js";
 const Routes = () => /* @__PURE__ */ React.createElement(Layout, null, /* @__PURE__ */ React.createElement(Switch, null, /* @__PURE__ */ React.createElement(Route, {
-  path: "/list",
+  path: links.list.link,
   component: List
 }), /* @__PURE__ */ React.createElement(Route, {
-  path: "/layout",
+  path: links.layout.link,
   component: LayoutComponent
 }), /* @__PURE__ */ React.createElement(Route, {
-  path: "/view",
+  path: links.view.link,
   component: View
+}), /* @__PURE__ */ React.createElement(Route, {
+  path: links.card.link,
+  component: Card
+}), /* @__PURE__ */ React.createElement(Route, {
+  path: links.form.link,
+  component: Form
 }), /* @__PURE__ */ React.createElement(Route, {
   component: Public
 })));
