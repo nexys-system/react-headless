@@ -17,7 +17,11 @@ const FormWrapper =
     FormUI: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
-    onSuccess?: (data: FormShape, out?: Out) => void
+    onSuccess?: (data: FormShape, out?: Out) => void,
+    onErrors?: (
+      err: any,
+      data: FormShape
+    ) => { errors?: T.FormErrorsGeneric<FormShape> }
   ) =>
   ({
     data = { options: {} }
@@ -36,8 +40,6 @@ const FormWrapper =
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      console.log('a');
-
       const validation = Validation.Main.checkObject(form, shape) as FormErrors;
 
       setErrors(validation);
@@ -45,9 +47,20 @@ const FormWrapper =
       if (isA(form, validation)) {
         // here call the backend
         setLoading(true);
-        const out = asyncCall && (await asyncCall(form));
-        setLoading(false);
-        onSuccess && onSuccess(form, out);
+        try {
+          const out = asyncCall && (await asyncCall(form));
+          setLoading(false);
+          onSuccess && onSuccess(form, out);
+        } catch (err) {
+          if (onErrors) {
+            const { errors } = onErrors(err, form);
+
+            if (errors) {
+              setErrors(errors);
+              setLoading(false);
+            }
+          }
+        }
       }
     };
 
