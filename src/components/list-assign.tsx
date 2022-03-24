@@ -11,7 +11,9 @@ const Loader = ({ isLoading }: { isLoading: boolean }): JSX.Element => {
 
   return (
     <p>
-      <i>is being updated</i>
+      <small>
+        <i>is being updated</i>
+      </small>
     </p>
   );
 };
@@ -19,7 +21,7 @@ const Loader = ({ isLoading }: { isLoading: boolean }): JSX.Element => {
 const ListWrapper = ({ children }: ListWrapperProps) => <ul>{children}</ul>;
 
 const ListUnitUI = ({ isChecked, label, isLoading, onChange }: UnitUIProps) => (
-  <li role={undefined}>
+  <li>
     <Checkbox value={isChecked} onChange={onChange} />
     &nbsp;
     {label}
