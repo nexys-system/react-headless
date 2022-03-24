@@ -1,6 +1,6 @@
 import React from "../_snowpack/pkg/react.js";
-import List from "../components/list/index.js";
 import Countries from "../_snowpack/pkg/countries-list.js";
+import List from "../components/list/index.js";
 const countries = Object.values(Countries.countries).sort((a, b) => a.name.localeCompare(b.name));
 const def = [
   {name: "name", label: "Country name"},

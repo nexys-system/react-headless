@@ -1,7 +1,7 @@
 import React from "../_snowpack/pkg/react.js";
 import LoadDataAsync from "../components/load-data-async.js";
 import View from "../components/view.js";
-const delay = (ms = 500) => new Promise((resolve) => setTimeout(resolve, ms));
+import {delay} from "./utils.js";
 const data = {firstName: "John", lastName: "Doe"};
 const getData = async () => {
   await delay();
