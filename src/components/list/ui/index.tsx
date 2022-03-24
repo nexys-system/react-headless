@@ -31,6 +31,7 @@ const Alert = ({
 const GlobalSearch = (props: UIType.GlobalSearchProps) => (
   <input
     type="text"
+    className="form-control"
     onChange={v =>
       props.onChange({ name: 'globalSearch', value: v.target.value })
     }
@@ -46,38 +47,6 @@ export const NoRow = (props: NoRowProps): JSX.Element | null => {
   }
 
   return <Alert type="warning">No rows found</Alert>;
-};
-
-export const PaginationWrapper = (
-  props: PaginationWrapperProps
-): JSX.Element => {
-  return (
-    <nav>
-      <ul className="pagination">{props.children}</ul>
-    </nav>
-  );
-};
-
-export const PaginationUnit = (
-  props: PaginationUnitProps
-): JSX.Element | null => {
-  const { isActive, isDisabled, children, onClick } = props;
-
-  // here we disable the button in case it is not valid
-  if (isDisabled) {
-    return null;
-  }
-
-  const className =
-    'page-item' + (isActive ? ' active' : '') + (isDisabled ? ' disabled' : '');
-
-  return (
-    <li className={className}>
-      <button className="page-link" onClick={onClick}>
-        {children}
-      </button>
-    </li>
-  );
 };
 
 export const ColCell = (props: ColCellProps): JSX.Element => {
@@ -180,6 +149,38 @@ export const RecordInfo = (props: RecordInfoProps): JSX.Element | null => {
       Showing {start + 1} to {Number(start) + Number(nPerPage) > n ? n : end} of{' '}
       {n} entries
     </p>
+  );
+};
+
+export const PaginationWrapper = (
+  props: PaginationWrapperProps
+): JSX.Element => {
+  return (
+    <nav>
+      <ul className="pagination">{props.children}</ul>
+    </nav>
+  );
+};
+
+export const PaginationUnit = (
+  props: PaginationUnitProps
+): JSX.Element | null => {
+  const { isActive, isDisabled, children, onClick } = props;
+
+  // here we disable the button in case it is not valid
+  if (isDisabled) {
+    return null;
+  }
+
+  const className =
+    'page-item' + (isActive ? ' active' : '') + (isDisabled ? ' disabled' : '');
+
+  return (
+    <li className={className}>
+      <button className="page-link" onClick={onClick}>
+        {children}
+      </button>
+    </li>
   );
 };
 

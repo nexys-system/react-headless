@@ -1,19 +1,11 @@
 import React from 'react';
 
-import List from '../components/list';
-
-const data = [
-  { name: 'Doe', firstName: 'John' },
-  { name: 'Doe', firstName: 'Jane' }
-];
+import CountryList from './country';
+import SimpleList from './simple';
 
 export default (): JSX.Element => (
-  <List
-    config={{ search: true }}
-    data={data}
-    def={[
-      { name: 'name', label: 'Name' },
-      { name: 'firstName', label: 'First Name' }
-    ]}
-  />
+  <>
+    <CountryList />
+    <SimpleList />
+  </>
 );
