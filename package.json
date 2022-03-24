@@ -1,6 +1,6 @@
 {
-  "name": "@nexys/core-list",
-  "version": "0.1.0",
+  "name": "@nexys/headless",
+  "version": "0.1.8",
   "license": "MIT",
   "keywords": [
     "typescript",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nexys-system/core-list.git"
+    "url": "https://github.com/nexys-system/react-headless.git"
   },
   "scripts": {
     "start": "SNOWPACK_PUBLIC_URL= snowpack dev  --polyfill-node",
