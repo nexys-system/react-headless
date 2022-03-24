@@ -11,6 +11,7 @@ import View from './examples/view';
 import Card from './examples/card';
 import Form from './examples/form';
 import LoadDataAsync from './examples/load-data';
+import Notifications from './examples/notifications';
 import { links } from './links';
 
 const Routes = (): JSX.Element => (
@@ -22,6 +23,7 @@ const Routes = (): JSX.Element => (
       <Route path={links.card.link} component={Card} />
       <Route path={links.form.link} component={Form} />
       <Route path={links.loadDataAsync.link} component={LoadDataAsync} />
+      <Route path={links.notifications.link} component={Notifications} />
       <Route component={Public} />
     </Switch>
   </Layout>
