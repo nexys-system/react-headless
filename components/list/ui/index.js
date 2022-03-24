@@ -8,6 +8,7 @@ const Alert = ({
 }, children);
 const GlobalSearch = (props) => /* @__PURE__ */ React.createElement("input", {
   type: "text",
+  className: "form-control",
   onChange: (v) => props.onChange({name: "globalSearch", value: v.target.value}),
   placeholder: "start typing ..."
 });
@@ -20,24 +21,6 @@ export const NoRow = (props) => {
   return /* @__PURE__ */ React.createElement(Alert, {
     type: "warning"
   }, "No rows found");
-};
-export const PaginationWrapper = (props) => {
-  return /* @__PURE__ */ React.createElement("nav", null, /* @__PURE__ */ React.createElement("ul", {
-    className: "pagination"
-  }, props.children));
-};
-export const PaginationUnit = (props) => {
-  const {isActive, isDisabled, children, onClick} = props;
-  if (isDisabled) {
-    return null;
-  }
-  const className = "page-item" + (isActive ? " active" : "") + (isDisabled ? " disabled" : "");
-  return /* @__PURE__ */ React.createElement("li", {
-    className
-  }, /* @__PURE__ */ React.createElement("button", {
-    className: "page-link",
-    onClick
-  }, children));
 };
 export const ColCell = (props) => {
   const {children, colSpan, style} = props;
@@ -119,5 +102,23 @@ export const RecordInfo = (props) => {
   return /* @__PURE__ */ React.createElement("p", {
     className: "pull-right"
   }, "Showing ", start + 1, " to ", Number(start) + Number(nPerPage) > n ? n : end, " of", " ", n, " entries");
+};
+export const PaginationWrapper = (props) => {
+  return /* @__PURE__ */ React.createElement("nav", null, /* @__PURE__ */ React.createElement("ul", {
+    className: "pagination"
+  }, props.children));
+};
+export const PaginationUnit = (props) => {
+  const {isActive, isDisabled, children, onClick} = props;
+  if (isDisabled) {
+    return null;
+  }
+  const className = "page-item" + (isActive ? " active" : "") + (isDisabled ? " disabled" : "");
+  return /* @__PURE__ */ React.createElement("li", {
+    className
+  }, /* @__PURE__ */ React.createElement("button", {
+    className: "page-link",
+    onClick
+  }, children));
 };
 export {FilterUnit, GlobalSearch, PopoverFilter, Loader};
