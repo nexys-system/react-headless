@@ -8,6 +8,7 @@ import View from "./examples/view.js";
 import Card from "./examples/card.js";
 import Form from "./examples/form/index.js";
 import LoadDataAsync from "./examples/load-data.js";
+import Notifications from "./examples/notifications.js";
 import {links} from "./links.js";
 const Routes = () => /* @__PURE__ */ React.createElement(Layout, null, /* @__PURE__ */ React.createElement(Switch, null, /* @__PURE__ */ React.createElement(Route, {
   path: links.list.link,
@@ -27,6 +28,9 @@ const Routes = () => /* @__PURE__ */ React.createElement(Layout, null, /* @__PUR
 }), /* @__PURE__ */ React.createElement(Route, {
   path: links.loadDataAsync.link,
   component: LoadDataAsync
+}), /* @__PURE__ */ React.createElement(Route, {
+  path: links.notifications.link,
+  component: Notifications
 }), /* @__PURE__ */ React.createElement(Route, {
   component: Public
 })));

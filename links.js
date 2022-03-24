@@ -4,7 +4,8 @@ export const links = {
   view: {name: "View", link: "/view"},
   card: {name: "Card", link: "/card"},
   form: {name: "Form", link: "/form"},
-  loadDataAsync: {name: "Load Data Async", link: "/load-data-async"}
+  loadDataAsync: {name: "Load Data Async", link: "/load-data-async"},
+  notifications: {name: "Notifications", link: "/notifications"}
 };
 export const menus = Object.values(links);
 export default links;
