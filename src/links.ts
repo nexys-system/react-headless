@@ -6,7 +6,8 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   form: { name: 'Form', link: '/form' },
   loadDataAsync: { name: 'Load Data Async', link: '/load-data-async' },
   notifications: { name: 'Notifications', link: '/notifications' },
-  code: { name: 'Code', link: '/code' }
+  code: { name: 'Code', link: '/code' },
+  listAssign: { name: 'List Assign', link: '/list-assign' }
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);

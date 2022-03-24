@@ -81,3 +81,11 @@ export const SelectEnum = <A extends number | string>({
     ))}
   </select>
 );
+
+export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
+  <input
+    checked={value}
+    type="checkbox"
+    onChange={v => onChange(Boolean(v.target.value))}
+  />
+);

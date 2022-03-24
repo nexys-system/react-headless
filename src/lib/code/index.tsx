@@ -1,4 +1,6 @@
+// see https://github.com/nexys-system/tailwind-react-ui/blob/master/src/lib/business/snippet.tsx
 import React from 'react';
+import { truncateString } from './utils';
 
 export enum CopyState {
   idle = 1,
@@ -13,17 +15,19 @@ export interface CodeBlockProps {
   handleClick: () => void;
 }
 
-export const Block = ({ code }: { code: string }) => <code>{code}</code>;
-
 export const Statement =
   (Block: (p: CodeBlockProps) => JSX.Element) =>
   ({
     code,
-    copyToClipboard = false
+    copyToClipboard = false,
+    truncate
   }: {
     code: string;
     copyToClipboard?: boolean;
+    truncate?: number;
+    toggleView?: boolean;
   }): JSX.Element => {
+    //  const [truncateOverride, setTruncate] = React.useState<boolean>(false);
     const [copyState, setCopyState] = React.useState<CopyState>(CopyState.idle);
 
     const handleClick = async () => {
@@ -32,10 +36,13 @@ export const Statement =
       setCopyState(CopyState.copied);
     };
 
+    const c: string =
+      truncate === undefined ? code : truncateString(code, truncate); //truncateOverride === true ||
+
     return (
       <Block
         handleClick={handleClick}
-        code={code}
+        code={c}
         copyState={copyState}
         copyToClipboard={copyToClipboard}
       />
