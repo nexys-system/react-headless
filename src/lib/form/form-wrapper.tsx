@@ -1,9 +1,9 @@
 // generic wrapper for forms, see args below for details
-import React from "react";
+import React from 'react';
 
-import * as T from "./type";
-import * as Validation from "@nexys/validation";
-import { isA } from "./utils";
+import * as T from './type';
+import * as Validation from '@nexys/validation';
+import { isA } from './utils';
 
 /**
  * @type FormShape: shape of the form
@@ -13,16 +13,16 @@ import { isA } from "./utils";
  * @param onSuccess [optional]: after call to the backend, action
  */
 const FormWrapper =
-  <FormShape, Out>(
+  <FormShape, Out = any>(
     FormUI: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
     onSuccess?: (data: FormShape, out?: Out) => void
   ) =>
   ({
-    data,
+    data = { options: {} }
   }: {
-    data: {
+    data?: {
       options: {
         [k in keyof FormShape]?: { id: number; name: string }[];
       };
@@ -35,6 +35,8 @@ const FormWrapper =
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
+
+      console.log('a');
 
       const validation = Validation.Main.checkObject(form, shape) as FormErrors;
 

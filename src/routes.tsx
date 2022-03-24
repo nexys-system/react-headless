@@ -8,13 +8,18 @@ import Layout from './layout/index';
 import List from './examples/list';
 import LayoutComponent from './examples/layout';
 import View from './examples/view';
+import Card from './examples/card';
+import Form from './examples/form';
+import { links } from './links';
 
 const Routes = (): JSX.Element => (
   <Layout>
     <Switch>
-      <Route path={'/list'} component={List} />
-      <Route path={'/layout'} component={LayoutComponent} />
-      <Route path={'/view'} component={View} />
+      <Route path={links.list.link} component={List} />
+      <Route path={links.layout.link} component={LayoutComponent} />
+      <Route path={links.view.link} component={View} />
+      <Route path={links.card.link} component={Card} />
+      <Route path={links.form.link} component={Form} />
       <Route component={Public} />
     </Switch>
   </Layout>

@@ -19,3 +19,9 @@ export interface InputProps<A> {
 export interface InputOptionsProps<A> extends InputProps<A> {
   options: { id: A; name: string }[];
 }
+
+export interface InputWrapperProps {
+  label?: string;
+  children: JSX.Element;
+  errors?: string[];
+}
