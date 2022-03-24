@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const LoadComponentAsync =
+export const LoadDataAsync =
   (Spinner: () => JSX.Element) =>
   <A,>({
     Component,
