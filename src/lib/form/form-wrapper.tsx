@@ -31,7 +31,7 @@ const FormWrapper =
         [k in keyof FormShape]?: { id: number; name: string }[];
       };
     };
-  }) => {
+  }):JSX.Element => {
     type FormErrors = T.FormErrorsGeneric<FormShape>;
     const [form, setForm] = React.useState<Partial<FormShape>>({});
     const [errors, setErrors] = React.useState<FormErrors>({});
