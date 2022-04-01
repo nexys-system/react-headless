@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormWrapper from '../../lib/form/form-wrapper';
-import { delay } from '../utils';
+import { delay } from '../../lib/utils';
 import { FormDataShape } from './type';
 import FormUI from './ui';
 

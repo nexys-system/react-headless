@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { delay } from './utils';
+import { delay } from '../lib/utils';
 import ListAssign from '../components/list-assign';
 
 const dataIn = [

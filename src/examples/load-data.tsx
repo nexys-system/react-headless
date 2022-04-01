@@ -2,7 +2,7 @@ import React from 'react';
 
 import LoadDataAsync from '../components/load-data-async';
 import View from '../components/view';
-import { delay } from './utils';
+import { delay } from '../lib/utils';
 
 interface Data {
   firstName: string;
