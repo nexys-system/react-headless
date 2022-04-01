@@ -4,9 +4,11 @@
 [![Publish](https://github.com/nexys-system/react-headless/actions/workflows/publish.yml/badge.svg)](https://github.com/nexys-system/react-headless/actions/workflows/publish.yml)
 [![Deployment](https://github.com/nexys-system/react-headless/actions/workflows/deploy.yml/badge.svg)](https://github.com/nexys-system/react-headless/actions/workflows/deploy.yml)
 
-Core list functionalities - building block to build data-tables
+React headless components - Quickly build robust react apps
 
-
+* no UI dependencies
+* Minimal bootstrap implementation
+* Typescript, all props typed
 
 ## Get started
 
