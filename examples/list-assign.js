@@ -1,5 +1,5 @@
 import React from "../_snowpack/pkg/react.js";
-import {delay} from "./utils.js";
+import {delay} from "../lib/utils.js";
 import ListAssign from "../components/list-assign.js";
 const dataIn = [
   {id: 1, assigned: false, name: "Elephant"},

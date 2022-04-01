@@ -1,6 +1,6 @@
 import React from "../../_snowpack/pkg/react.js";
 import FormWrapper from "../../lib/form/form-wrapper.js";
-import {delay} from "../utils.js";
+import {delay} from "../../lib/utils.js";
 import FormUI from "./ui.js";
 const shape = {firstName: {}, lastName: {optional: true}};
 const cartoonCharacters = ["mickey", "minnie", "donald", "popeye"];

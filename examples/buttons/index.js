@@ -1,7 +1,7 @@
 import React from "../../_snowpack/pkg/react.js";
 import BtnWithAction from "../../components/buttons/with-action.js";
 import Spinner from "../../components/spinner.js";
-import {delay} from "../utils.js";
+import {delay} from "../../lib/utils.js";
 const SuccessContent = ({data}) => /* @__PURE__ */ React.createElement("span", null, "Success, ", /* @__PURE__ */ React.createElement("code", null, data.message));
 const FailedContent = () => /* @__PURE__ */ React.createElement("span", null, "Success");
 const LoadingContent = () => /* @__PURE__ */ React.createElement(Spinner, null);

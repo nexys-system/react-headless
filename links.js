@@ -8,7 +8,8 @@ export const links = {
   notifications: {name: "Notifications", link: "/notifications"},
   code: {name: "Code", link: "/code"},
   listAssign: {name: "List Assign", link: "/list-assign"},
-  buttons: {name: "Buttons", link: "/buttons"}
+  buttons: {name: "Buttons", link: "/buttons"},
+  download: {name: "Download", link: "/download"}
 };
 export const menus = Object.values(links);
 export default links;
