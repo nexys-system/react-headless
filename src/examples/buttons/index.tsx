@@ -3,7 +3,7 @@ import React from 'react';
 import BtnWithAction from '../../components/buttons/with-action';
 import Spinner from '../../components/spinner';
 
-import { delay } from '../utils';
+import { delay } from '../../lib/utils';
 
 interface ExpectedResult {
   message: string;
