@@ -24,4 +24,6 @@ see example [here](https://github.com/nexys-system/react-headless/commit/6e7df1e
 ## Old versions
 
 * [Material list](https://nexys-system.github.io/mui-list-ts/)
+* [React Material Components](https://github.com/nexys-system/react-material-component)
 * [React bootstrap](https://github.com/nexys-system/react-bootstrap-components)
+* [Tailwind React UI](https://github.com/nexys-system/tailwind-react-ui)
