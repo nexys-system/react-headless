@@ -2,9 +2,7 @@
 name: Build Package
 
 on:
-  push:
-    branches-ignore: # https://stackoverflow.com/questions/57699839/github-actions-how-to-target-all-branches-except-master
-      - master # excludes master (since it deploys the code already)
+  [push]
 
 jobs:
   test:

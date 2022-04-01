@@ -26,7 +26,7 @@ describe('List Super getInitialState', () => {
 
   describe('data is UNDEFINED', () => {
     it('should initialize state with empty array', () => {
-      const state = getInitialState(def);
+      const state = getInitialState();
 
       expect(state.data).toEqual([]);
       expect(state.numberOfTotalRows).toBe(0);
@@ -45,7 +45,7 @@ describe('List Super getInitialState', () => {
           name: 'Jane'
         }
       ];
-      const state = getInitialState<DummyData>(def, dummyData);
+      const state = getInitialState<DummyData>(dummyData);
 
       expect(state.data.length).toBe(2);
       expect(state.data[0].id).toBe(1);
@@ -66,7 +66,7 @@ describe('List Super getInitialState', () => {
 
   describe('sortAttribute is DEFINED', () => {
     it('should initialize state with right value', () => {
-      const state = getInitialState<DummyData>(def, undefined, 'id');
+      const state = getInitialState<DummyData>(undefined, 'id');
 
       expect(state.sortAttribute).toBe('id');
     });
@@ -82,7 +82,7 @@ describe('List Super getInitialState', () => {
 
   describe('sortDescAsc is DEFINED', () => {
     it('should initialize state with right value', () => {
-      const state = getInitialState(def, undefined, undefined, false);
+      const state = getInitialState(undefined, undefined, false);
 
       expect(state.sortDescAsc).toEqual(false);
     });

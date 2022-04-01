@@ -5,11 +5,9 @@ import { PaginationPropsInner, PaginationProps } from './ui-type';
 
 const Pagination =
   ({ PaginationUnit, PaginationWrapper }: PaginationPropsInner) =>
-  (props: PaginationProps): JSX.Element | null => {
-    const { n, nPerPage, idx, onClick } = props;
-
+  ({ n, nPerPage, idx, onClick }: PaginationProps): JSX.Element => {
     if (n === 0) {
-      return null;
+      return <></>;
     }
 
     const { nPage } = getPagination(n, nPerPage);

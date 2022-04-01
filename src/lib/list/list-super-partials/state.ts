@@ -1,8 +1,7 @@
-import { DefinitionItem, FiltersType } from '../../types';
+import { FiltersType } from '../../types';
 import { State } from './type';
 
 const getInitialState = <A>(
-  def: DefinitionItem<A>[],
   data?: A[],
   sortAttribute?: keyof A,
   sortDescAsc?: boolean,
