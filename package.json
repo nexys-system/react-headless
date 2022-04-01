@@ -1,7 +1,7 @@
 {
   "name": "@nexys/headless",
   "version": "0.1.17",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "keywords": [
     "typescript",
     "datatable",
