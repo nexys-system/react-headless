@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 export enum ActionState {
   idle,
   loading,
   success,
-  failed,
+  failed
 }
 
 export interface BtnProps {
@@ -20,13 +20,13 @@ const ApplyActionButton =
     asyncAction,
     LoadingContent,
     SuccessContent,
-    FailedContent,
+    FailedContent
   }: {
     label: string | JSX.Element;
     asyncAction: () => Promise<A>;
-    LoadingContent?: () => JSX.Element;
-    SuccessContent?: (p: { data?: A }) => JSX.Element;
-    FailedContent?: () => JSX.Element;
+    LoadingContent: () => JSX.Element;
+    SuccessContent: (p: { data?: A }) => JSX.Element;
+    FailedContent: () => JSX.Element;
   }) => {
     const [state, setState] = React.useState<ActionState>(ActionState.idle);
     const [data, setData] = React.useState<A | undefined>(undefined);
