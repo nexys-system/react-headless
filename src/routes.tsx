@@ -14,6 +14,7 @@ import LoadDataAsync from './examples/load-data';
 import Notifications from './examples/notifications';
 import Code from './examples/code';
 import ListAssign from './examples/list-assign';
+import Buttons from './examples/buttons';
 
 import { links } from './links';
 
@@ -29,6 +30,7 @@ const Routes = (): JSX.Element => (
       <Route path={links.notifications.link} component={Notifications} />
       <Route path={links.code.link} component={Code} />
       <Route path={links.listAssign.link} component={ListAssign} />
+      <Route path={links.buttons.link} component={Buttons} />
       <Route component={Public} />
     </Switch>
   </Layout>
