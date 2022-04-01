@@ -5,12 +5,10 @@ const Loader = ({isLoading}) => {
   if (isLoading !== true) {
     return /* @__PURE__ */ React.createElement(React.Fragment, null);
   }
-  return /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("i", null, "is being updated"));
+  return /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("small", null, /* @__PURE__ */ React.createElement("i", null, "is being updated")));
 };
 const ListWrapper = ({children}) => /* @__PURE__ */ React.createElement("ul", null, children);
-const ListUnitUI = ({isChecked, label, isLoading, onChange}) => /* @__PURE__ */ React.createElement("li", {
-  role: void 0
-}, /* @__PURE__ */ React.createElement(Checkbox, {
+const ListUnitUI = ({isChecked, label, isLoading, onChange}) => /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement(Checkbox, {
   value: isChecked,
   onChange
 }), " ", label, /* @__PURE__ */ React.createElement(Loader, {
