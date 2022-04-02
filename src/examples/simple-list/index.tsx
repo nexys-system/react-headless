@@ -1,36 +1,20 @@
 import React from 'react';
 
-import Form, { FormDataShape } from './form';
-import List from './list';
+import ListAdd from './list-add';
+import ListForm from './list-form';
 
-export default () => {
-  const [data, setData] = React.useState<{ id: number; title: string }[]>([
-    { id: 1, title: 'item #1' },
-    { id: 2, title: 'item #2' }
-  ]);
+export default () => (
+  <>
+    <h1>Simple list</h1>
 
-  const handleRemove = (id: number) => {
-    if (confirm('Are you sure you would like to delete that entry?')) {
-      setData(data.filter(x => x.id !== id));
-    }
-  };
-
-  const handleSuccess = (d: FormDataShape, id: number) => {
-    const item = { id, title: d.name };
-    setData([...data, item]);
-  };
-
-  return (
-    <>
-      <h1>Simple list</h1>
-
-      <div className="row">
-        <div className="col-md-6">
-          <List data={data} onRemove={handleRemove} />
-          <br />
-          <Form onSuccess={handleSuccess} />
-        </div>
+    <div className="row">
+      <div className="col-md-6">
+        <ListAdd />
       </div>
-    </>
-  );
-};
+
+      <div className="col-md-6">
+        <ListForm />
+      </div>
+    </div>
+  </>
+);

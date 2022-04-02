@@ -54,8 +54,8 @@ const FormWrapper =
         try {
           const out = asyncCall && (await asyncCall(form));
           setLoading(false);
+          resetAfterSubmit && setForm({}); // this lines comes before onSuccess, else it creates an error/warning
           onSuccess && onSuccess(form, out);
-          resetAfterSubmit && setForm({});
         } catch (err) {
           if (onErrors) {
             const { errors } = onErrors(err, form);

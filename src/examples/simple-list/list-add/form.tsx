@@ -1,9 +1,9 @@
 import React from 'react';
-import { FormUIProps } from '../../lib/form/type';
+import { FormUIProps } from '../../../lib/form/type';
 
-import * as Inputs from '../../components/form/inputs';
-import FormWrapper from '../../lib/form/form-wrapper';
-import Icon from '../../components/icon';
+import * as Inputs from '../../../components/form/inputs';
+import FormWrapper from '../../../lib/form/form-wrapper';
+import Icon from '../../../components/icon';
 
 export interface FormDataShape {
   name: string;

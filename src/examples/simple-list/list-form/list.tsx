@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../../components/icon';
+import Icon from '../../../components/icon';
 
 const ListItem = ({
   title,
@@ -25,7 +25,7 @@ const List = ({
   data,
   onRemove
 }: {
-  data: { id: number; title: string }[];
+  data: { id: number; title: string; subtitle: string }[];
   onRemove: (id: number) => void;
 }) => {
   if (data.length === 0) {
@@ -38,8 +38,9 @@ const List = ({
 
   return (
     <ul className="list-group list-group">
-      {data.map(d => (
+      {data.map((d, i) => (
         <ListItem
+          key={i}
           title={d.title}
           right={
             <span
@@ -50,7 +51,9 @@ const List = ({
               <Icon name="trash" />
             </span>
           }
-        ></ListItem>
+        >
+          <>{d.subtitle}</>
+        </ListItem>
       ))}
     </ul>
   );
