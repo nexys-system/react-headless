@@ -17,23 +17,27 @@ const FormWrapper =
     FormUI: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
-    onSuccess?: (data: FormShape, out?: Out) => void,
-    onErrors?: (
-      err: any,
-      data: FormShape
-    ) => { errors?: T.FormErrorsGeneric<FormShape> }
+    { resetAfterSubmit = true }: { resetAfterSubmit?: boolean } = {}
   ) =>
   ({
-    data = { options: {} }
+    data = { options: {}, dataIn: {} },
+    onSuccess,
+    onErrors
   }: {
     data?: {
-      options: {
+      dataIn: Partial<FormShape>;
+      options?: {
         [k in keyof FormShape]?: { id: number; name: string }[];
       };
     };
-  }):JSX.Element => {
+    onSuccess?: (data: FormShape, out?: Out) => void;
+    onErrors?: (
+      err: any,
+      data: FormShape
+    ) => { errors?: T.FormErrorsGeneric<FormShape> };
+  }): JSX.Element => {
     type FormErrors = T.FormErrorsGeneric<FormShape>;
-    const [form, setForm] = React.useState<Partial<FormShape>>({});
+    const [form, setForm] = React.useState<Partial<FormShape>>(data.dataIn);
     const [errors, setErrors] = React.useState<FormErrors>({});
     const [loading, setLoading] = React.useState<boolean>(false);
 
@@ -51,6 +55,7 @@ const FormWrapper =
           const out = asyncCall && (await asyncCall(form));
           setLoading(false);
           onSuccess && onSuccess(form, out);
+          resetAfterSubmit && setForm({});
         } catch (err) {
           if (onErrors) {
             const { errors } = onErrors(err, form);
@@ -71,7 +76,7 @@ const FormWrapper =
           errors={errors}
           form={form}
           setForm={setForm}
-          options={data.options}
+          options={data.options || {}}
         />
       </form>
     );

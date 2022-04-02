@@ -17,6 +17,7 @@ import {
   OrderControllerUpAndDownProps,
   OrderControllerProps
 } from '../../../lib/list/ui-type';
+import Icon from '../../icon';
 
 const Loader = () => <p>Loading...</p>;
 
@@ -63,8 +64,6 @@ export const HeaderUnit = (props: UIType.HeaderUnitProps): JSX.Element => {
 
   return <th>{children}</th>;
 };
-
-const Icon = ({ name }: { name: string }) => <i className={'fa fa-' + name} />;
 
 export const OrderControllerUpAndDown = (
   props: OrderControllerUpAndDownProps

@@ -28,13 +28,7 @@ const apiCall = async (data: FormDataShape): Promise<Out> => {
 const onSuccess = (a: FormDataShape, b: Out) =>
   alert('form sent successfully' + b.id + ' ' + JSON.stringify(a));
 
-const Form = FormWrapper<FormDataShape, Out>(
-  FormUI,
-  shape,
-  apiCall,
-  onSuccess,
-  errors => ({ errors })
-);
+const Form = FormWrapper<FormDataShape, Out>(FormUI, shape, apiCall);
 
 export default () => (
   <>
@@ -48,6 +42,6 @@ export default () => (
       </small>
     </p>
 
-    <Form />
+    <Form onSuccess={onSuccess} onErrors={errors => ({ errors })} />
   </>
 );
