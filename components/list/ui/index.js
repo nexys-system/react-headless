@@ -1,5 +1,6 @@
 import React from "../../../_snowpack/pkg/react.js";
 import {paginationBoundaries} from "../../../lib/list/utils/pagination-utils.js";
+import Icon from "../../icon.js";
 const Loader = () => /* @__PURE__ */ React.createElement("p", null, "Loading...");
 const Alert = ({
   children
@@ -33,9 +34,6 @@ export const HeaderUnit = (props) => {
   const {children} = props;
   return /* @__PURE__ */ React.createElement("th", null, children);
 };
-const Icon = ({name}) => /* @__PURE__ */ React.createElement("i", {
-  className: "fa fa-" + name
-});
 export const OrderControllerUpAndDown = (props) => {
   return /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement("span", {
     key: "asc",

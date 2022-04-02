@@ -13,11 +13,15 @@ export default () => /* @__PURE__ */ React.createElement("header", null, /* @__P
 }, /* @__PURE__ */ React.createElement("h5", {
   className: "my-0 mr-md-auto font-weight-normal"
 }, /* @__PURE__ */ React.createElement(Link, {
+  className: "nav-link",
   to: "/"
-}, title)), /* @__PURE__ */ React.createElement("nav", {
-  className: "my-2 my-md-0 mr-md-3"
-}, menus.map((menu, i) => /* @__PURE__ */ React.createElement(Link, {
-  className: "p-2 text-dark",
+}, title)), /* @__PURE__ */ React.createElement("ul", {
+  className: "nav justify-content-end"
+}, menus.map((menu, i) => /* @__PURE__ */ React.createElement("li", {
+  className: "nav-item",
+  key: i
+}, /* @__PURE__ */ React.createElement(Link, {
+  className: "nav-link",
   key: i,
   to: menu.link
-}, menu.name)))));
+}, menu.name))))));

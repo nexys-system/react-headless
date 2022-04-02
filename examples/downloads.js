@@ -1,7 +1,7 @@
 import React from "../_snowpack/pkg/react.js";
 import {saveByteArray} from "../lib/utils.js";
 const downloadTxt = () => {
-  saveByteArray("hellow world", "out.txt");
+  saveByteArray("hello world", "out.txt");
 };
 const downloadCsv = () => {
   const csv = [

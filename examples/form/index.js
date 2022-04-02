@@ -14,5 +14,8 @@ const apiCall = async (data) => {
   return {id: 2};
 };
 const onSuccess = (a, b) => alert("form sent successfully" + b.id + " " + JSON.stringify(a));
-const Form = FormWrapper(FormUI, shape, apiCall, onSuccess, (errors) => ({errors}));
-export default () => /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Form"), /* @__PURE__ */ React.createElement("p", null, "Form demo.", " ", /* @__PURE__ */ React.createElement("small", null, "To simulate a form rejection insert one of the following first names:", " ", /* @__PURE__ */ React.createElement("code", null, JSON.stringify(cartoonCharacters)))), /* @__PURE__ */ React.createElement(Form, null));
+const Form = FormWrapper(FormUI, shape, apiCall);
+export default () => /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Form"), /* @__PURE__ */ React.createElement("p", null, "Form demo.", " ", /* @__PURE__ */ React.createElement("small", null, "To simulate a form rejection insert one of the following first names:", " ", /* @__PURE__ */ React.createElement("code", null, JSON.stringify(cartoonCharacters)))), /* @__PURE__ */ React.createElement(Form, {
+  onSuccess,
+  onErrors: (errors) => ({errors})
+}));

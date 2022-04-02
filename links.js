@@ -9,7 +9,8 @@ export const links = {
   code: {name: "Code", link: "/code"},
   listAssign: {name: "List Assign", link: "/list-assign"},
   buttons: {name: "Buttons", link: "/buttons"},
-  download: {name: "Download", link: "/download"}
+  download: {name: "Download", link: "/download"},
+  simpleList: {name: "Simple list", link: "/simple-list"}
 };
 export const menus = Object.values(links);
 export default links;
