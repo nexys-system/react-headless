@@ -2,7 +2,7 @@ import React from 'react';
 import { saveByteArray } from '../lib/utils';
 
 const downloadTxt = () => {
-  saveByteArray('hellow world', 'out.txt');
+  saveByteArray('hello world', 'out.txt');
 };
 
 const downloadCsv = () => {
