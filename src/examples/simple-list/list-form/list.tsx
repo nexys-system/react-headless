@@ -1,32 +1,15 @@
 import React from 'react';
 import Icon from '../../../components/icon';
-
-const ListItem = ({
-  title,
-  children,
-  right
-}: {
-  title: string;
-  children?: JSX.Element;
-  right?: JSX.Element;
-}) => {
-  return (
-    <li className="list-group-item d-flex justify-content-between align-items-start">
-      <div className="ms-2 me-auto">
-        <div className="fw-bold">{title}</div>
-        {children}
-      </div>
-      {right}
-    </li>
-  );
-};
+import ListItem from '../list-item';
 
 const List = ({
   data,
-  onRemove
+  onRemove,
+  onEdit
 }: {
   data: { id: number; title: string; subtitle: string }[];
   onRemove: (id: number) => void;
+  onEdit: (d: { id: number; title: string; subtitle: string }) => void;
 }) => {
   if (data.length === 0) {
     return (
@@ -43,13 +26,23 @@ const List = ({
           key={i}
           title={d.title}
           right={
-            <span
-              onClick={() => onRemove(d.id)}
-              style={{ cursor: 'pointer' }}
-              className="badge bg-danger rounded-pill"
-            >
-              <Icon name="trash" />
-            </span>
+            <>
+              <span
+                onClick={() => onEdit(d)}
+                style={{ cursor: 'pointer' }}
+                className="badge bg-warning rounded-pill"
+              >
+                <Icon name="pen" />
+              </span>
+              &nbsp;
+              <span
+                onClick={() => onRemove(d.id)}
+                style={{ cursor: 'pointer' }}
+                className="badge bg-danger rounded-pill"
+              >
+                <Icon name="trash" />
+              </span>
+            </>
           }
         >
           <>{d.subtitle}</>
