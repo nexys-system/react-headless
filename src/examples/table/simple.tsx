@@ -1,6 +1,6 @@
 import React from 'react';
 
-import List from '../components/list';
+import List from '../../components/table';
 
 const data = [
   { name: 'Doe', firstName: 'John' },

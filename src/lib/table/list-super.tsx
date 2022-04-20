@@ -74,6 +74,9 @@ const ListSuper =
         filtersFromProps
       )
     );
+
+    console.log(props.data);
+
     const {
       filters,
       pageIdx,

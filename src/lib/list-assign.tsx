@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListWrapperProps } from './list/ui-type';
+import { ListWrapperProps } from './table/ui-type';
 
 export interface UnitUIProps {
   isChecked: boolean;

@@ -1,5 +1,5 @@
 export const links: { [menu: string]: { name: string; link: string } } = {
-  list: { name: 'List', link: '/list' },
+  list: { name: 'Table', link: '/table' },
   layout: { name: 'Layout', link: '/layout' },
   view: { name: 'View', link: '/view' },
   card: { name: 'Card', link: '/card' },
