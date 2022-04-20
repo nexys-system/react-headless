@@ -6,8 +6,8 @@ import SimpeListWithOuterFilter from './simple-with-outer-filter';
 
 export default (): JSX.Element => (
   <>
+    <CountryList />
+    <SimpleList />
     <SimpeListWithOuterFilter />
-    {/*  <CountryList />
-    <SimpleList />*/}
   </>
 );
