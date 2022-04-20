@@ -75,8 +75,6 @@ const ListSuper =
       )
     );
 
-    console.log(props.data);
-
     const {
       filters,
       pageIdx,
@@ -130,6 +128,13 @@ const ListSuper =
     useEffect(() => {
       fetchData();
     }, [asyncData, fetchData]);
+
+    useEffect(() => {
+      dispatch({
+        type: ActionType.FETCH_DATA_SUCCESS,
+        payload: { data: props.data, numberOfTotalRows: props.data?.length }
+      });
+    }, [props.data]);
 
     const handleFilterChange = (v: {
       name: keyof A | 'globalSearch' | 'id' | 'uuid';
@@ -239,43 +244,41 @@ const ListSuper =
       });
     };
 
-    const renderBody = (data: A[]): JSX.Element => (
-      <>
-        {data.map((row, i: number) => (
-          <React.Fragment key={i}>
-            {CustomListItem ? (
-              <>
-                {CustomListContainer ? (
-                  CustomListItem(row)
-                ) : (
-                  <Row>
-                    <ColCell
-                      colSpan={def.length}
-                      style={{
-                        paddingLeft: 0,
-                        paddingRight: 0,
-                        borderBottom: 0
-                      }}
-                    >
-                      {CustomListItem(row)}
-                    </ColCell>
-                  </Row>
-                )}
-              </>
-            ) : (
-              <Row>
-                {def.map((h, j) => (
-                  <ColCell key={j}>
-                    {h.render ? h.render(row) : row[h.name as keyof A]}{' '}
-                    {/* // Utils.ds.get(h.name.toString(), row) } */}
+    const renderBody = (data: A[]): JSX.Element[] => {
+      return data.map((row, i: number) => (
+        <React.Fragment key={i}>
+          {CustomListItem ? (
+            <>
+              {CustomListContainer ? (
+                CustomListItem(row)
+              ) : (
+                <Row>
+                  <ColCell
+                    colSpan={def.length}
+                    style={{
+                      paddingLeft: 0,
+                      paddingRight: 0,
+                      borderBottom: 0
+                    }}
+                  >
+                    {CustomListItem(row)}
                   </ColCell>
-                ))}
-              </Row>
-            )}
-          </React.Fragment>
-        ))}
-      </>
-    );
+                </Row>
+              )}
+            </>
+          ) : (
+            <Row>
+              {def.map((h, j) => (
+                <ColCell key={j}>
+                  {h.render ? h.render(row) : row[h.name as keyof A]}{' '}
+                  {/* // Utils.ds.get(h.name.toString(), row) } */}
+                </ColCell>
+              ))}
+            </Row>
+          )}
+        </React.Fragment>
+      ));
+    };
 
     const renderLoader = (): JSX.Element => (
       <Row>

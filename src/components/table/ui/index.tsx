@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as UIType from '../../../lib/list/ui-type';
-import { paginationBoundaries } from '../../../lib/list/utils/pagination-utils';
+import * as UIType from '../../../lib/table/ui-type';
+import { paginationBoundaries } from '../../../lib/table/utils/pagination-utils';
 
 import {
   PaginationUnitProps,
@@ -16,7 +16,7 @@ import {
   PaginationWrapperProps,
   OrderControllerUpAndDownProps,
   OrderControllerProps
-} from '../../../lib/list/ui-type';
+} from '../../../lib/table/ui-type';
 import Icon from '../../icon';
 
 const Loader = () => <p>Loading...</p>;

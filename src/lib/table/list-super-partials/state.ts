@@ -7,7 +7,8 @@ const getInitialState = <A>(
   sortDescAsc: boolean = true,
   filters: FiltersType<A> = {}
 ): State<A> => {
-  const numberOfTotalRows: number = data && data.length ? data.length : 0;
+  // console.log('initial state', data);
+  const numberOfTotalRows: number = data.length;
 
   return {
     data,
