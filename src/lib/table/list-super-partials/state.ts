@@ -7,15 +7,15 @@ const getInitialState = <A>(
   sortDescAsc: boolean = true,
   filters: FiltersType<A> = {}
 ): State<A> => {
-  console.log('data, initial', data);
+  const numberOfTotalRows: number = data && data.length ? data.length : 0;
 
   return {
     data,
     filters,
     sortAttribute,
     sortDescAsc,
+    numberOfTotalRows,
     loading: false,
-    numberOfTotalRows: data && data.length ? data.length : 0,
     pageIdx: 1
   };
 };
