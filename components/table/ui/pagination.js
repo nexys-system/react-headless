@@ -2,7 +2,7 @@ import React from "../../../_snowpack/pkg/react.js";
 import {
   getPagination,
   getPageTiles
-} from "../../../lib/list/utils/pagination-utils.js";
+} from "../../../lib/table/utils/pagination-utils.js";
 const classesCommon = [
   "h-8",
   "w-8",

@@ -36,7 +36,7 @@ const FormUI = ({
 };
 const shape = {name: {}, description: {}};
 const apiCall = async (a) => {
-  console.log("sd");
+  console.log("calling API");
   return Promise.resolve(Math.random() * 100);
 };
 const Form = FormWrapper(FormUI, shape, apiCall);

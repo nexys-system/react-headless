@@ -1,5 +1,5 @@
 import React from "../../../_snowpack/pkg/react.js";
-import {paginationBoundaries} from "../../../lib/list/utils/pagination-utils.js";
+import {paginationBoundaries} from "../../../lib/table/utils/pagination-utils.js";
 import Icon from "../../icon.js";
 const Loader = () => /* @__PURE__ */ React.createElement("p", null, "Loading...");
 const Alert = ({

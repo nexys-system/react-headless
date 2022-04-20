@@ -1,5 +1,5 @@
-import React from "../_snowpack/pkg/react.js";
-import List from "../components/list/index.js";
+import React from "../../_snowpack/pkg/react.js";
+import List from "../../components/table/index.js";
 const data = [
   {name: "Doe", firstName: "John"},
   {name: "Doe", firstName: "Jane"}

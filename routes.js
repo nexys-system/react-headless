@@ -2,7 +2,7 @@ import React from "./_snowpack/pkg/react.js";
 import {Switch, Route} from "./_snowpack/pkg/react-router-dom.js";
 import Public from "./public.js";
 import Layout from "./layout/index.js";
-import List from "./examples/list.js";
+import List from "./examples/table/index.js";
 import LayoutComponent from "./examples/layout.js";
 import View from "./examples/view.js";
 import Card from "./examples/card.js";
