@@ -29,7 +29,7 @@ export default () => {
             className="btn btn-outline-primary btn-sm"
             onClick={downloadTxt}
           >
-            Donwload txt
+            Download txt
           </button>
         </li>
         <li>
@@ -37,7 +37,7 @@ export default () => {
             className="btn btn-outline-primary btn-sm"
             onClick={downloadCsv}
           >
-            Donwload CSV
+            Download CSV
           </button>
         </li>
       </ul>
