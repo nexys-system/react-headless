@@ -5,6 +5,17 @@ import * as T from './type';
 import * as Validation from '@nexys/validation';
 import { isA } from './utils';
 
+export interface FormWrapperProps<A, Out> {
+  data?: {
+    dataIn: Partial<A>;
+    options?: {
+      [k in keyof A]?: { id: number; name: string }[];
+    };
+  };
+  onSuccess?: (data: A, out?: Out) => void;
+  onErrors?: (err: any, data: A) => { errors?: T.FormErrorsGeneric<A> };
+}
+
 /**
  * @type FormShape: shape of the form
  * @param FormUI : UI for the form, must respect FormUIProps
@@ -23,19 +34,7 @@ const FormWrapper =
     data = { options: {}, dataIn: {} },
     onSuccess,
     onErrors
-  }: {
-    data?: {
-      dataIn: Partial<FormShape>;
-      options?: {
-        [k in keyof FormShape]?: { id: number; name: string }[];
-      };
-    };
-    onSuccess?: (data: FormShape, out?: Out) => void;
-    onErrors?: (
-      err: any,
-      data: FormShape
-    ) => { errors?: T.FormErrorsGeneric<FormShape> };
-  }): JSX.Element => {
+  }: FormWrapperProps<FormShape, Out>): JSX.Element => {
     type FormErrors = T.FormErrorsGeneric<FormShape>;
     const [form, setForm] = React.useState<Partial<FormShape>>(data.dataIn);
     const [errors, setErrors] = React.useState<FormErrors>({});

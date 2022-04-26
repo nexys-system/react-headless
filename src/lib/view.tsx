@@ -23,10 +23,12 @@ export interface RowProps {
   value: string | JSX.Element;
 }
 
+const LayoutMinimal = (p: LayoutProps) => <>{p.children}</>;
+
 const View =
   (
-    Layout: (p: LayoutProps) => JSX.Element,
-    Row: (p: RowProps) => JSX.Element
+    Row: (p: RowProps) => JSX.Element,
+    Layout: (p: LayoutProps) => JSX.Element = LayoutMinimal
   ) =>
   <A,>({ data, structure, title, description }: ViewProps<A>) =>
     (

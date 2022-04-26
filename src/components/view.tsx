@@ -1,10 +1,6 @@
 import React from 'react';
 
-import ViewGeneric, {
-  LayoutProps,
-  RowProps,
-  ViewStructureUnit
-} from '../lib/view';
+import ViewGeneric, { LayoutProps, RowProps } from '../lib/view';
 import Card from '../components/card';
 
 const Layout = ({ children }: LayoutProps) => (
@@ -19,6 +15,6 @@ const Row = (p: RowProps) => (
   </li>
 );
 
-const View = ViewGeneric(Layout, Row);
+const View = ViewGeneric(Row, Layout);
 
 export default View;

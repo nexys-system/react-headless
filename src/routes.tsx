@@ -17,6 +17,7 @@ import ListAssign from './examples/list-assign';
 import Buttons from './examples/buttons';
 import Download from './examples/downloads';
 import SimpleList from './examples/simple-list';
+import Toggle from './examples/toggle';
 
 import { links } from './links';
 
@@ -35,6 +36,7 @@ const Routes = (): JSX.Element => (
       <Route path={links.buttons.link} component={Buttons} />
       <Route path={links.download.link} component={Download} />
       <Route path={links.simpleList.link} component={SimpleList} />
+      <Route path={links.toggle.link} component={Toggle} />
       <Route component={Public} />
     </Switch>
   </Layout>
