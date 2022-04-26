@@ -4,16 +4,11 @@ import FormWrapper from '../../lib/form/form-wrapper';
 
 import { FormDataShape, Out } from './type';
 import FormUI from './ui';
-import FormUIGenerated from './generated';
+import FormGenerated from './generated';
+
 import { apiCall, onSuccess, cartoonCharacters, shape } from './utils';
 
 const Form = FormWrapper<FormDataShape, Out>(FormUI, shape, apiCall);
-
-const FormWithUIGenerated = FormWrapper<FormDataShape, Out>(
-  FormUIGenerated,
-  shape,
-  apiCall
-);
 
 export default () => (
   <>
@@ -33,9 +28,6 @@ export default () => (
 
     <h3>Form Generated</h3>
 
-    <FormWithUIGenerated
-      onSuccess={onSuccess}
-      onErrors={errors => ({ errors })}
-    />
+    <FormGenerated onSuccess={onSuccess} onErrors={errors => ({ errors })} />
   </>
 );

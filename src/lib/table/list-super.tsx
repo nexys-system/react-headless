@@ -130,9 +130,14 @@ const ListSuper =
     }, [asyncData, fetchData]);
 
     useEffect(() => {
+      const data = props.data;
+      const numberOfTotalRows: number = data ? data.length : 0;
       dispatch({
         type: ActionType.FETCH_DATA_SUCCESS,
-        payload: { data: props.data, numberOfTotalRows: props.data?.length }
+        payload: {
+          data,
+          numberOfTotalRows
+        }
       });
     }, [props.data]);
 
