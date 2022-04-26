@@ -3241,8 +3241,9 @@ function isSVGTitleElement(node) {
 function queryIdRefs(node, attributeName) {
   if (isElement$1(node) && node.hasAttribute(attributeName)) {
     var ids = node.getAttribute(attributeName).split(" ");
+    var root = node.getRootNode ? node.getRootNode() : node.ownerDocument;
     return ids.map(function(id) {
-      return node.ownerDocument.getElementById(id);
+      return root.getElementById(id);
     }).filter(function(element) {
       return element !== null;
     });

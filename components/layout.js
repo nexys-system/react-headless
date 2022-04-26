@@ -9,5 +9,12 @@ const Row = ({children}) => /* @__PURE__ */ React.createElement("div", {
 const Col = ({children, width}) => /* @__PURE__ */ React.createElement("div", {
   className: "col-md-" + width
 }, children);
-export const Layout = LayoutHeadless(Card, Tabs, Header, Col, Row);
+const BackBtn = ({onClick}) => /* @__PURE__ */ React.createElement("div", {
+  className: "float-right"
+}, /* @__PURE__ */ React.createElement("button", {
+  onClick,
+  type: "button",
+  className: " btn-sm btn btn-secondary"
+}, "Back"));
+export const Layout = LayoutHeadless(Card, Tabs, Header, Col, Row, BackBtn);
 export default Layout;
