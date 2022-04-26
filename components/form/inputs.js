@@ -1,4 +1,5 @@
 import React from "../../_snowpack/pkg/react.js";
+import * as T from "../../lib/form/type.js";
 export const getClassName = (errors) => {
   const isInvalid = !!errors;
   const classes = ["form-control"];
@@ -63,3 +64,13 @@ export const Checkbox = ({value, onChange}) => /* @__PURE__ */ React.createEleme
   type: "checkbox",
   onChange: (v) => onChange(Boolean(v.target.value))
 });
+export const InputGeneric = (uiType) => {
+  switch (uiType) {
+    case T.FormUIType.Switch:
+      return Checkbox;
+    case T.FormUIType.Textarea:
+      return Textarea;
+    default:
+      return Input;
+  }
+};
