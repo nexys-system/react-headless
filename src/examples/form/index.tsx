@@ -1,41 +1,26 @@
 import React from 'react';
 
 import FormWrapper from '../../lib/form/form-wrapper';
-import { delay } from '../../lib/utils';
-import { FormDataShape } from './type';
+
+import { FormDataShape, Out } from './type';
 import FormUI from './ui';
-
-// form shape - should match the type
-const shape = { firstName: {}, lastName: { optional: true } };
-
-interface Out {
-  id: number;
-}
-
-const cartoonCharacters = ['mickey', 'minnie', 'donald', 'popeye'];
-
-const apiCall = async (data: FormDataShape): Promise<Out> => {
-  await delay();
-
-  if (cartoonCharacters.includes(data.firstName.toLowerCase())) {
-    return Promise.reject({
-      firstName: ['Cartoon character names are not allowed']
-    });
-  }
-
-  return { id: 2 };
-};
-const onSuccess = (a: FormDataShape, b: Out) =>
-  alert('form sent successfully' + b.id + ' ' + JSON.stringify(a));
+import FormUIGenerated from './generated';
+import { apiCall, onSuccess, cartoonCharacters, shape } from './utils';
 
 const Form = FormWrapper<FormDataShape, Out>(FormUI, shape, apiCall);
+
+const FormWithUIGenerated = FormWrapper<FormDataShape, Out>(
+  FormUIGenerated,
+  shape,
+  apiCall
+);
 
 export default () => (
   <>
     <h1>Form</h1>
 
     <p>
-      Form demo.{' '}
+      Form demo.&nbsp;
       <small>
         To simulate a form rejection insert one of the following first names:{' '}
         <code>{JSON.stringify(cartoonCharacters)}</code>
@@ -43,5 +28,14 @@ export default () => (
     </p>
 
     <Form onSuccess={onSuccess} onErrors={errors => ({ errors })} />
+
+    <hr />
+
+    <h3>Form Generated</h3>
+
+    <FormWithUIGenerated
+      onSuccess={onSuccess}
+      onErrors={errors => ({ errors })}
+    />
   </>
 );

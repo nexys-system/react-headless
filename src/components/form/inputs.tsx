@@ -1,4 +1,5 @@
 import React from 'react';
+
 import * as T from '../../lib/form/type';
 
 export const getClassName = (errors?: string[]): string => {
@@ -89,3 +90,14 @@ export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
     onChange={v => onChange(Boolean(v.target.value))}
   />
 );
+
+export const InputGeneric = (uiType: T.FormUIType) => {
+  switch (uiType) {
+    case T.FormUIType.Switch:
+      return Checkbox;
+    case T.FormUIType.Textarea:
+      return Textarea;
+    default:
+      return Input;
+  }
+};
