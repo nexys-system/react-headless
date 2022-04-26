@@ -16,3 +16,7 @@ export interface Layout<A> {
   cards: Card<A>[] | CardsWithTab<A>;
   backRedirect?: string;
 }
+
+export interface ButtonProps {
+  onClick: () => void;
+}

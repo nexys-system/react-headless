@@ -11,7 +11,8 @@ const Layout = (
   Tabs: (p: TabProps) => JSX.Element,
   Header: (p: HeaderProps) => JSX.Element,
   Col: (p: ColProps) => JSX.Element,
-  Row: (p: RowProps) => JSX.Element
+  Row: (p: RowProps) => JSX.Element,
+  BackBtn: (p: T.ButtonProps) => JSX.Element
 ) => {
   const CardsWithTabs = CardsWithTabsHeadless(Card, Tabs, Col, Row);
 
@@ -31,15 +32,7 @@ const Layout = (
           <CardsWithTabs cards={cards} data={data} setData={setData} />
 
           {backRedirect && (
-            <div className="float-right">
-              <button
-                onClick={() => setRedirect(backRedirect)}
-                type="button"
-                className=" btn-sm btn btn-secondary"
-              >
-                Back
-              </button>
-            </div>
+            <BackBtn onClick={() => setRedirect(backRedirect)} />
           )}
         </>
       );
