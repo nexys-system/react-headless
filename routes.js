@@ -14,6 +14,7 @@ import ListAssign from "./examples/list-assign.js";
 import Buttons from "./examples/buttons/index.js";
 import Download from "./examples/downloads.js";
 import SimpleList from "./examples/simple-list/index.js";
+import Toggle from "./examples/toggle/index.js";
 import {links} from "./links.js";
 const Routes = () => /* @__PURE__ */ React.createElement(Layout, null, /* @__PURE__ */ React.createElement(Switch, null, /* @__PURE__ */ React.createElement(Route, {
   path: links.list.link,
@@ -51,6 +52,9 @@ const Routes = () => /* @__PURE__ */ React.createElement(Layout, null, /* @__PUR
 }), /* @__PURE__ */ React.createElement(Route, {
   path: links.simpleList.link,
   component: SimpleList
+}), /* @__PURE__ */ React.createElement(Route, {
+  path: links.toggle.link,
+  component: Toggle
 }), /* @__PURE__ */ React.createElement(Route, {
   component: Public
 })));
