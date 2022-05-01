@@ -5,6 +5,8 @@ import { delay } from '../lib/utils';
 
 const onSuccess = async (f: File) => {
   await delay(500);
+  const t = await f.text();
+  console.log(t);
   return Promise.resolve();
 };
 
