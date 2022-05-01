@@ -1,2 +1,2 @@
-export const toPath = (tabName: string, pathPrefix: string = '') =>
-  pathPrefix + '/' + encodeURIComponent(tabName);
+export const toPath = (tabName: string) =>
+  '/' + tabName.replace(/[ \/]/g, '-').toLocaleLowerCase();

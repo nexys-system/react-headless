@@ -15,6 +15,7 @@ export interface Layout<A> {
   description?: string | JSX.Element;
   cards: Card<A>[] | CardsWithTab<A>;
   backRedirect?: string;
+  pathPrefix?: string;
 }
 
 export interface ButtonProps {

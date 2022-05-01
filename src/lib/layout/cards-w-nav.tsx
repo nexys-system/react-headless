@@ -11,7 +11,8 @@ const CardsWithNav = (
   Card: (p: CardProps) => JSX.Element,
   Tabs: (p: NavigationProps) => JSX.Element,
   Col: (p: ColProps) => JSX.Element,
-  Row: (p: RowProps) => JSX.Element
+  Row: (p: RowProps) => JSX.Element,
+  pathPrefix?: string
 ) => {
   const Cards = CardsHeadless(Card, Col, Row);
 
@@ -36,7 +37,7 @@ const CardsWithNav = (
       };
     });
 
-    return <Tabs tabs={tabsNav} />;
+    return <Tabs tabs={tabsNav} pathPrefix={pathPrefix} />;
   };
 };
 

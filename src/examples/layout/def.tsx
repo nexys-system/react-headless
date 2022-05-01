@@ -1,16 +1,18 @@
 import React from 'react';
 
-import * as T from '../lib/layout/type';
-import PreLayout from '../components/layout';
+import * as T from '../../lib/layout/type';
 
-interface Data {
+import links from '../../links';
+
+export interface Data {
   firstName: string;
 }
 
 const layout: T.Layout<Data> = {
-  title: 'my layout',
-  description: 'a description here',
+  title: 'My Layout',
+  description: 'A description here',
   backRedirect: '/',
+  pathPrefix: links.layout.link + '/with-router',
   cards: {
     tab1: [
       { title: 'first', Component: () => <p>Hello</p> },
@@ -54,10 +56,4 @@ const layout: T.Layout<Data> = {
   }
 };
 
-const Layout = PreLayout(layout);
-
-export default () => {
-  const data: Data = { firstName: 'Maria' };
-
-  return <Layout data={data} />;
-};
+export default layout;

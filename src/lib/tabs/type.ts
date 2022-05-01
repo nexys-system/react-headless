@@ -1,3 +1,18 @@
+export interface UlProps {
+  children: JSX.Element[];
+}
+export interface LiProps {
+  label: string;
+  isSelected: boolean;
+  onClick: () => void;
+}
+
+export interface LiNavigation {
+  label: string;
+  path: string;
+  isSelected: boolean;
+}
+
 export interface TabProps {
   tabIndex?: number;
   tabs: { label: string }[];
@@ -10,22 +25,7 @@ export interface TabNavigationProps {
   Component: () => JSX.Element;
 }
 
-export interface UlProps {
-  children: JSX.Element[];
-}
-export interface LiProps {
-  label: string;
-  isSelected: boolean;
-  onClick: () => void;
-}
-
 export interface NavigationProps {
   tabs: TabNavigationProps[];
   pathPrefix?: string;
-}
-
-export interface LiNavigation {
-  label: string;
-  path: string;
-  isSelected: boolean;
 }
