@@ -7,6 +7,11 @@ import links from '../../links';
 
 const tabsInside: TabNavigation[] = [
   {
+    label: 'Default nested',
+
+    Component: () => <p>Default</p>
+  },
+  {
     label: 'One One',
     path: '/one',
     Component: () => (
@@ -25,6 +30,10 @@ const tabsInside: TabNavigation[] = [
 const { link: tabUrlPrefix } = links.tabs;
 
 const tabs: TabNavigation[] = [
+  {
+    label: 'Default',
+    Component: () => <p>Default</p>
+  },
   {
     label: 'One',
     path: '/one',

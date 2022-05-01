@@ -5,6 +5,20 @@ import * as T from '../../lib/tabs/type';
 
 const isSelected = (path: string, pathname: string) => pathname.includes(path);
 
+const isSelectedFromArray = (
+  pathname: string,
+  paths: T.TabNavigation[],
+  tabPrefix: string
+): string => {
+  const f = paths.filter(x => isSelected(tabPrefix + (x.path || ''), pathname));
+
+  if (f.length) {
+    return f[0].path || '';
+  }
+
+  return '';
+};
+
 const Navigation =
   (
     Ul: ({ children }: T.UlProps) => JSX.Element,
@@ -19,31 +33,39 @@ const Navigation =
     pathPrefix?: string;
     //pathname?: string;
   }) => {
-    const getPath = (path?: string) => pathPrefix + (path || '');
+    const getPath = (path: string) => pathPrefix + path;
     const { pathname } = window.location;
+
+    // sorting tabs so that nesting tabs work
+    const sortedTabs = [...tabs].sort(
+      (a, b) => (b.path || '').length - (a.path || '').length
+    );
+
+    // returns selecred path
+    const selectedPath = isSelectedFromArray(pathname, sortedTabs, pathPrefix);
 
     return (
       <>
         <Ul>
-          {tabs.map((tab, i) => {
-            const path = getPath(tab.path);
+          {tabs.map(({ label, path = '' }, i) => {
+            const pathComplete = getPath(path);
 
             return (
               <Li
                 key={i}
-                path={path}
-                isSelected={isSelected(path, pathname)}
-                label={tab.label}
+                path={pathComplete}
+                isSelected={path === selectedPath}
+                label={label}
               />
             );
           })}
         </Ul>
 
         <Switch>
-          {tabs.map((tab, i) => {
-            const path = getPath(tab.path);
+          {sortedTabs.map(({ path = '', Component }, i) => {
+            const pathComplete = getPath(path);
 
-            return <Route key={i} path={path} component={tab.Component} />;
+            return <Route key={i} path={pathComplete} component={Component} />;
           })}
         </Switch>
       </>
