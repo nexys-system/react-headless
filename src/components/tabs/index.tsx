@@ -1,8 +1,8 @@
 import React from 'react';
 
-import TabsGeneric from '../lib/tabs';
+import TabsGeneric from '../../lib/tabs';
 
-const getClassName = (isSelected: boolean) => {
+export const getClassName = (isSelected: boolean) => {
   const classNames = ['nav-link'];
 
   if (isSelected) {
@@ -31,6 +31,7 @@ const Li = ({
     </a>
   </li>
 );
+
 const Ul = ({ children }: { children: JSX.Element[] }) => (
   <ul className="nav nav-pills">{children}</ul>
 );

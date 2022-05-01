@@ -18,6 +18,7 @@ import Buttons from './examples/buttons';
 import Download from './examples/downloads';
 import SimpleList from './examples/simple-list';
 import Toggle from './examples/toggle';
+import Tabs from './examples/tabs';
 
 import { links } from './links';
 
@@ -37,6 +38,7 @@ const Routes = (): JSX.Element => (
       <Route path={links.download.link} component={Download} />
       <Route path={links.simpleList.link} component={SimpleList} />
       <Route path={links.toggle.link} component={Toggle} />
+      <Route path={links.tabs.link} component={Tabs} />
       <Route component={Public} />
     </Switch>
   </Layout>

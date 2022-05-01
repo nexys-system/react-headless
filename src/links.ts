@@ -11,7 +11,8 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   buttons: { name: 'Buttons', link: '/buttons' },
   download: { name: 'Download', link: '/download' },
   simpleList: { name: 'Simple list', link: '/simple-list' },
-  toggle: { name: 'Toggle', link: '/toggle' }
+  toggle: { name: 'Toggle', link: '/toggle' },
+  tabs: { name: 'Tabs', link: '/tabs' }
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);
