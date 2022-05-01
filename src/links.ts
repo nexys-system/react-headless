@@ -13,7 +13,8 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   simpleList: { name: 'Simple list', link: '/simple-list' },
   toggle: { name: 'Toggle', link: '/toggle' },
   tabs: { name: 'Tabs', link: '/tabs' },
-  fileUpload: { name: 'File Upload', link: '/file-upload' }
+  fileUpload: { name: 'File Upload', link: '/file-upload' },
+  detail: { name: 'Detail', link: '/detail' }
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);
