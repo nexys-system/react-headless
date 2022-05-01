@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { CardProps, ColProps, RowProps } from '../card';
-import { TabProps } from '../tabs';
+import { TabProps } from '../tabs/type';
 
 import CardsHeadless from './cards';
 import * as T from './type';

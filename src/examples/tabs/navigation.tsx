@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Nav, { TabNavigation } from '../../components/tabs/nav';
+import Nav from '../../components/tabs/nav';
+import { TabNavigation } from '../../lib/tabs/type';
 
 import links from '../../links';
 

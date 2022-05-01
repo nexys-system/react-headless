@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import * as T from './type';
 import CardsWithTabsHeadless from './cards-w-tabs';
 import { CardProps, ColProps, HeaderProps, RowProps } from '../card';
-import { TabProps } from '../tabs';
+import { TabProps } from '../tabs/type';
 
 const Layout = (
   Card: (p: CardProps) => JSX.Element,
