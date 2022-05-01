@@ -20,3 +20,15 @@ export interface Layout<A> {
 export interface ButtonProps {
   onClick: () => void;
 }
+
+export interface CardsWithTabProps<A> {
+  cards: Card<A>[] | CardsWithTab<A>;
+  data: A;
+  setData: (a: A) => void;
+}
+
+export interface CardsWithNavProps<A> {
+  cards: CardsWithTab<A>;
+  data: A;
+  setData: (a: A) => void;
+}

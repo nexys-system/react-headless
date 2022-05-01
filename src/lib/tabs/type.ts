@@ -4,7 +4,7 @@ export interface TabProps {
   setTabIndex: (d: number) => void;
 }
 
-export interface TabNavigation {
+export interface TabNavigationProps {
   label: string;
   path?: string;
   Component: () => JSX.Element;
@@ -17,6 +17,11 @@ export interface LiProps {
   label: string;
   isSelected: boolean;
   onClick: () => void;
+}
+
+export interface NavigationProps {
+  tabs: TabNavigationProps[];
+  pathPrefix?: string;
 }
 
 export interface LiNavigation {

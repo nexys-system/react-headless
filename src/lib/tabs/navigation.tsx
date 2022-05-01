@@ -7,7 +7,7 @@ const isSelected = (path: string, pathname: string) => pathname.includes(path);
 
 const isSelectedFromArray = (
   pathname: string,
-  paths: T.TabNavigation[],
+  paths: T.TabNavigationProps[],
   tabPrefix: string
 ): string => {
   const f = paths.filter(x => isSelected(tabPrefix + (x.path || ''), pathname));
@@ -24,15 +24,7 @@ const Navigation =
     Ul: ({ children }: T.UlProps) => JSX.Element,
     Li: (p: T.LiNavigation) => JSX.Element
   ) =>
-  ({
-    tabs,
-    pathPrefix = ''
-  }: // pathname = window.location.pathname
-  {
-    tabs: T.TabNavigation[];
-    pathPrefix?: string;
-    //pathname?: string;
-  }) => {
+  ({ tabs, pathPrefix = '' }: T.NavigationProps) => {
     const getPath = (path: string) => pathPrefix + path;
     const { pathname } = window.location;
 

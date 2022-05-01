@@ -18,11 +18,7 @@ const CardsWithTabs = (
     cards,
     data,
     setData
-  }: {
-    cards: T.Card<A>[] | T.CardsWithTab<A>;
-    data: A;
-    setData: (a: A) => void;
-  }): JSX.Element => {
+  }: T.CardsWithTabProps<A>): JSX.Element => {
     if (Array.isArray(cards)) {
       return <Cards cards={cards} data={data} setData={setData} />;
     }
