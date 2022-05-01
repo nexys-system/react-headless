@@ -1,19 +1,17 @@
 import React from 'react';
 
-import { CardProps, ColProps, RowProps } from '../card';
-import { NavigationProps, TabNavigationProps } from '../tabs/type';
-
 import * as T from './type';
 import CardsHeadless from './cards';
 import { toPath } from './utils';
+import { TabNavigationProps } from '../tabs/type';
 
-const CardsWithNav = (
-  Card: (p: CardProps) => JSX.Element,
-  Tabs: (p: NavigationProps) => JSX.Element,
-  Col: (p: ColProps) => JSX.Element,
-  Row: (p: RowProps) => JSX.Element,
-  pathPrefix?: string
-) => {
+const CardsWithNav = ({
+  Card,
+  Navs,
+  Col,
+  Row,
+  pathPrefix
+}: T.CardsWithNavOuterProps) => {
   const Cards = CardsHeadless(Card, Col, Row);
 
   return <A,>({
@@ -22,13 +20,14 @@ const CardsWithNav = (
     setData
   }: T.CardsWithNavProps<A>): JSX.Element => {
     const arr: [string, T.Card<A>[]][] = Object.entries(cards);
-    const tabsNav: TabNavigationProps[] = arr.map(([tabName, card]) => {
+    const tabsNav: TabNavigationProps[] = arr.map(([tabName, card], i) => {
       const Component = () => (
         <Cards cards={card} data={data} setData={setData} />
       );
 
       const label = tabName;
-      const path = toPath(tabName);
+      // special in case the tab is in first position (idx == 0), set the path to '' so it is selected by default
+      const path = i == 0 ? '' : toPath(tabName);
 
       return {
         label,
@@ -37,7 +36,7 @@ const CardsWithNav = (
       };
     });
 
-    return <Tabs tabs={tabsNav} pathPrefix={pathPrefix} />;
+    return <Navs tabs={tabsNav} pathPrefix={pathPrefix} />;
   };
 };
 

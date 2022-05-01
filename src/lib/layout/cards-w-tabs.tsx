@@ -1,17 +1,9 @@
 import React from 'react';
 
-import { CardProps, ColProps, RowProps } from '../card';
-import { TabProps } from '../tabs/type';
-
 import CardsHeadless from './cards';
 import * as T from './type';
 
-const CardsWithTabs = (
-  Card: (p: CardProps) => JSX.Element,
-  Tabs: (p: TabProps) => JSX.Element,
-  Col: (p: ColProps) => JSX.Element,
-  Row: (p: RowProps) => JSX.Element
-) => {
+const CardsWithTabs = ({ Card, Tabs, Col, Row }: T.CardsWithTabsOuterProps) => {
   const Cards = CardsHeadless(Card, Col, Row);
 
   return <A,>({

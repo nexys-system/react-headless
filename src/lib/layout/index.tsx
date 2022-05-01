@@ -34,9 +34,9 @@ const Layout = ({
     ({ data: dataIn }: { data: A }): JSX.Element => {
       // picks either nav or tabs. At least one of the two must be chosen
       const CardsWithTabs = Navs
-        ? CardsWithNavsHeadless(Card, Navs, Col, Row, pathPrefix)
+        ? CardsWithNavsHeadless({ Card, Navs, Col, Row, pathPrefix })
         : Tabs
-        ? CardsWithTabsHeadless(Card, Tabs, Col, Row)
+        ? CardsWithTabsHeadless({ Card, Tabs, Col, Row })
         : null;
 
       if (CardsWithTabs === null) {
