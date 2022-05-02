@@ -1,5 +1,5 @@
-import { CardProps, ColProps, RowProps } from '../card';
-import { NavigationProps, TabNavigationProps, TabProps } from '../tabs/type';
+import { CardProps, ColProps, RowProps, HeaderProps } from '../card';
+import { NavigationProps, TabProps } from '../tabs/type';
 
 export interface Card<A> {
   title?: string;
@@ -51,4 +51,17 @@ export interface CardsWithTabsOuterProps extends CardsOuterProps {
 export interface CardsWithNavOuterProps extends CardsOuterProps {
   Navs: (p: NavigationProps) => JSX.Element;
   pathPrefix?: string;
+}
+
+export interface LayoutOuterProps extends BodyOuterProps {
+  Header: (p: HeaderProps) => JSX.Element;
+  BackBtn: (p: ButtonProps) => JSX.Element;
+}
+
+export interface BodyOuterProps {
+  Card: (p: CardProps) => JSX.Element;
+  Col: (p: ColProps) => JSX.Element;
+  Row: (p: RowProps) => JSX.Element;
+  Tabs?: (p: TabProps) => JSX.Element;
+  Navs?: (p: NavigationProps) => JSX.Element;
 }
