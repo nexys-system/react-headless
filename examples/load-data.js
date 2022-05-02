@@ -18,5 +18,9 @@ export default () => {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Load Data async"), /* @__PURE__ */ React.createElement(LoadDataAsync, {
     getData,
     Component: UI
+  }), /* @__PURE__ */ React.createElement("h3", null, "Data Load fails"), /* @__PURE__ */ React.createElement(LoadDataAsync, {
+    getData: () => Promise.reject("my error"),
+    Component: UI,
+    ComponentOnFail: ({error}) => /* @__PURE__ */ React.createElement("p", null, /* @__PURE__ */ React.createElement("i", null, error))
   }));
 };
