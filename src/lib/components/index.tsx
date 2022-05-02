@@ -20,6 +20,8 @@ export const LoadDataAsync =
       if (ComponentOnFail) {
         return <ComponentOnFail error={error} />;
       }
+
+      throw Error(error);
     }
 
     if (data === undefined) {
