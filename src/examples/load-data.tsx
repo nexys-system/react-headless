@@ -31,6 +31,18 @@ export default () => {
       <h1>Load Data async</h1>
 
       <LoadDataAsync getData={getData} Component={UI} />
+
+      <h3>Data Load fails</h3>
+
+      <LoadDataAsync
+        getData={() => Promise.reject('my error')}
+        Component={UI}
+        ComponentOnFail={({ error }) => (
+          <p>
+            <i>{error}</i>
+          </p>
+        )}
+      />
     </>
   );
 };
