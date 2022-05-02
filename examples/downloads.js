@@ -17,8 +17,8 @@ export default () => {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("h1", null, "Download"), /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("button", {
     className: "btn btn-outline-primary btn-sm",
     onClick: downloadTxt
-  }, "Donwload txt")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("button", {
+  }, "Download txt")), /* @__PURE__ */ React.createElement("li", null, /* @__PURE__ */ React.createElement("button", {
     className: "btn btn-outline-primary btn-sm",
     onClick: downloadCsv
-  }, "Donwload CSV"))));
+  }, "Download CSV"))));
 };

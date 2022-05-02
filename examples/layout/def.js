@@ -1,9 +1,10 @@
-import React from "../_snowpack/pkg/react.js";
-import PreLayout from "../components/layout.js";
+import React from "../../_snowpack/pkg/react.js";
+import links from "../../links.js";
 const layout = {
-  title: "my layout",
-  description: "a description here",
+  title: "My Layout",
+  description: "A description here",
   backRedirect: "/",
+  pathPrefix: links.layout.link + "/with-router",
   cards: {
     tab1: [
       {title: "first", Component: () => /* @__PURE__ */ React.createElement("p", null, "Hello")},
@@ -32,10 +33,4 @@ const layout = {
     ]
   }
 };
-const Layout = PreLayout(layout);
-export default () => {
-  const data = {firstName: "Maria"};
-  return /* @__PURE__ */ React.createElement(Layout, {
-    data
-  });
-};
+export default layout;

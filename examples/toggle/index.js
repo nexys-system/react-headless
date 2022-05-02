@@ -1,18 +1,26 @@
 import React from "../../_snowpack/pkg/react.js";
-import FormWrapper from "../../lib/form/form-wrapper.js";
 import {delay} from "../../lib/utils.js";
-import FormUI from "../form/ui.js";
-import PreToggle from "../../components/toggle.js";
-const structure = [
-  {label: "First Name", value: "firstName"},
-  {label: "Last Name", value: "lastName"}
-];
+import {ToggleFromDef} from "../../components/toggle.js";
+import {FormUIType} from "../../lib/form/type.js";
 const apiCall = async () => {
   await delay();
   return {id: 2};
 };
-const shape = {firstName: {}, lastName: {optional: true}};
-const Toggle = PreToggle(structure, FormWrapper(FormUI, shape, apiCall));
+const def = [
+  {
+    label: "First Name",
+    name: "firstName",
+    uiType: FormUIType.Text,
+    optional: false
+  },
+  {
+    label: "Last Name",
+    name: "lastName",
+    uiType: FormUIType.Text,
+    optional: true
+  }
+];
+const Toggle = ToggleFromDef(def, apiCall);
 const data = {
   firstName: "John",
   lastName: "Doe"
