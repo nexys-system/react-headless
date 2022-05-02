@@ -1,8 +1,10 @@
 import React from 'react';
 
+export type Render<A> = (a: A) => string | JSX.Element;
+
 export interface ViewStructureUnit<A> {
   label?: string;
-  value: ((a: A) => string | JSX.Element) | keyof A;
+  value: Render<A> | keyof A;
 }
 
 export interface ViewProps<A> {

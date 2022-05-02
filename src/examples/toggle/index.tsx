@@ -1,10 +1,9 @@
 import React from 'react';
 
-import FormWrapper from '../../lib/form/form-wrapper';
 import { delay } from '../../lib/utils';
-import FormUI from '../form/ui';
-import { ViewStructureUnit } from '../../lib/view';
-import PreToggle from '../../components/toggle';
+
+import { ToggleFromDef } from '../../components/toggle';
+import { FormUIType, FormViewDef } from '../../lib/form/type';
 
 interface Data {
   firstName: string;
@@ -15,24 +14,28 @@ interface Out {
   id: number;
 }
 
-const structure: ViewStructureUnit<Data>[] = [
-  { label: 'First Name', value: 'firstName' },
-  { label: 'Last Name', value: 'lastName' }
-];
-
 const apiCall = async (): Promise<Out> => {
   await delay();
 
   return { id: 2 };
 };
 
-// form shape - should match the type
-const shape = { firstName: {}, lastName: { optional: true } };
+const def: FormViewDef<Data>[] = [
+  {
+    label: 'First Name',
+    name: 'firstName',
+    uiType: FormUIType.Text,
+    optional: false
+  },
+  {
+    label: 'Last Name',
+    name: 'lastName',
+    uiType: FormUIType.Text,
+    optional: true
+  }
+];
 
-const Toggle = PreToggle(
-  structure,
-  FormWrapper<Data, Out>(FormUI, shape, apiCall)
-);
+const Toggle = ToggleFromDef(def, apiCall);
 
 const data: Data = {
   firstName: 'John',

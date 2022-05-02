@@ -1,3 +1,5 @@
+import { Render } from '../view';
+
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
 export type FormErrorsGeneric<A> = { [k in keyof A]?: string[] };
 
@@ -47,4 +49,8 @@ export interface FormDef<A> extends StructureUnitCore<A> {
   uiType: FormUIType;
   optional: boolean;
   disabled?: boolean;
+}
+
+export interface FormViewDef<A> extends FormDef<A> {
+  render?: Render<A>;
 }
