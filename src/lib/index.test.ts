@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest';
 import * as Index from './index';
 
 test('imports', () => {

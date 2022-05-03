@@ -9,7 +9,7 @@ export const delay = (ms: number = 500) =>
  * @param type
  */
 export const saveByteArray = (
-  content: Buffer | string,
+  content: any | string, // Buffer
   filename: string = 'out',
   type: string = 'application/text'
 ) => {

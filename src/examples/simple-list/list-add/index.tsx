@@ -15,7 +15,10 @@ export default () => {
     }
   };
 
-  const handleSuccess = (d: FormDataShape, id: number) => {
+  const handleSuccess = (d: FormDataShape, id?: number) => {
+    if (!id) {
+      throw Error('id must be defined');
+    }
     const item = { id, title: d.name };
     setData([...data, item]);
   };

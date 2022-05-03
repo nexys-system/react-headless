@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Nav from '../../components/tabs/nav';
-import { TabNavigation } from '../../lib/tabs/type';
+import { TabNavigationProps } from '../../lib/tabs/type';
 
 import links from '../../links';
 
-const tabs: TabNavigation[] = [
+const tabs: TabNavigationProps[] = [
   //{ label: 'Default', Component: () => <p>Default</p> },
   {
     label: 'One',

@@ -18,5 +18,5 @@ export const apiCall = async (data: FormDataShape): Promise<Out> => {
   return { id: 2 };
 };
 
-export const onSuccess = (a: FormDataShape, b: Out) =>
-  alert('form sent successfully' + b.id + ' ' + JSON.stringify(a));
+export const onSuccess = (a: FormDataShape, b?: Out) =>
+  alert('form sent successfully' + b?.id + ' ' + JSON.stringify(a));

@@ -275,8 +275,7 @@ const ListSuper =
             <Row>
               {def.map((h, j) => (
                 <ColCell key={j}>
-                  {h.render ? h.render(row) : row[h.name as keyof A]}{' '}
-                  {/* // Utils.ds.get(h.name.toString(), row) } */}
+                  {h.render ? h.render(row) : <>row[h.name as keyof A]</>}
                 </ColCell>
               ))}
             </Row>

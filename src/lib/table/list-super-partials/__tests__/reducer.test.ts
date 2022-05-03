@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import getInitialState from '../state';
 import { ActionType } from '../type';
 import reducer from '../reducer';

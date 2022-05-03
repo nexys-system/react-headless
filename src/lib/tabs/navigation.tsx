@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import * as T from '../../lib/tabs/type';
 
@@ -53,13 +53,11 @@ const Navigation =
           })}
         </Ul>
 
-        <Switch>
-          {sortedTabs.map(({ path = '', Component }, i) => {
-            const pathComplete = getPath(path);
+        {sortedTabs.map(({ path = '', Component }, i) => {
+          const pathComplete = getPath(path);
 
-            return <Route key={i} path={pathComplete} component={Component} />;
-          })}
-        </Switch>
+          return <Route key={i} path={pathComplete} element={<Component />} />;
+        })}
       </>
     );
   };
