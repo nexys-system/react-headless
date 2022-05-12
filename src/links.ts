@@ -15,6 +15,7 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   tabs: { name: "Tabs", link: "/tabs" },
   fileUpload: { name: "File Upload", link: "/file-upload" },
   detail: { name: "Detail", link: "/detail" },
+  statusChange: { name: "Status Change", link: "/status-change" },
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);

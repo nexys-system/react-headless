@@ -18,7 +18,7 @@ import SimpleList from "./examples/simple-list";
 import Toggle from "./examples/toggle";
 import Tabs from "./examples/tabs";
 import FileUpload from "./examples/file-upload";
-
+import StatusChange from "./examples/status-change";
 import Detail from "./examples/detail";
 
 import { links } from "./links";
@@ -56,6 +56,7 @@ export default () => (
         <Route path={links.tabs.link} element={<Tabs />} />
         <Route path={links.fileUpload.link} element={<FileUpload />} />
         <Route path={links.detail.link} element={<Detail />} />
+        <Route path={links.statusChange.link} element={<StatusChange />} />
         <Route element={<Public />} />
       </Routes>
     </Layout>
