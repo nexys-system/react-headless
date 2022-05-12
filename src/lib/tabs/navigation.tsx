@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import * as T from "../../lib/tabs/type";
@@ -9,6 +10,7 @@ const isSelectedFromArray = (
   paths: T.TabNavigationProps[],
   tabPrefix: string
 ): string => {
+  console.log({ paths, pathname, tabPrefix });
   const f = paths.filter((x) =>
     isSelected(tabPrefix + (x.path || ""), pathname)
   );
@@ -34,7 +36,11 @@ const Navigation =
       (a, b) => (b.path || "").length - (a.path || "").length
     );
 
-    // returns selecred path
+    React.useEffect(() => {
+      console.log("s");
+    }, [window.location.pathname]);
+
+    // returns selected path
     const selectedPath = isSelectedFromArray(pathname, sortedTabs, pathPrefix);
 
     return (
@@ -43,10 +49,12 @@ const Navigation =
           {tabs.map(({ label, path = "" }, i) => {
             const pathComplete = getPath(path);
 
+            //  console.log({ pathComplete, path, selectedPath });
+
             return (
               <Li
                 key={i}
-                path={"/" + pathComplete}
+                path={pathComplete}
                 isSelected={path === selectedPath}
                 label={label}
               />
@@ -54,13 +62,9 @@ const Navigation =
           })}
         </Ul>
         <Routes>
-          {sortedTabs.map(({ path = "", Component }, i) => {
-            const pathComplete = getPath(path);
-
-            return (
-              <Route key={i} path={"with-router"} element={<Component />} />
-            );
-          })}
+          {sortedTabs.map(({ path, Component }, i) => (
+            <Route key={i} path={path || ""} element={<Component />} />
+          ))}
         </Routes>
       </>
     );

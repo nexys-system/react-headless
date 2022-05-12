@@ -39,7 +39,6 @@ export default () => (
     <Layout>
       <Routes>
         <Route path={links.detail.link} element={<Detail />} />
-
         <Route path={links.list.link} element={<List />} />
         <Route path={links.layout.link} element={<LayoutComponent />} />
         <Route path={links.view.link} element={<View />} />
@@ -53,11 +52,12 @@ export default () => (
         <Route path={links.download.link} element={<Download />} />
         <Route path={links.simpleList.link} element={<SimpleList />} />
         <Route path={links.toggle.link} element={<Toggle />} />
-        <Route path={links.tabs.link} element={<Tabs />} />
+        <Route path={links.tabs.link + "/*"} element={<Tabs />} />
         <Route path={links.fileUpload.link} element={<FileUpload />} />
         <Route path={links.detail.link} element={<Detail />} />
         <Route path={links.statusChange.link} element={<StatusChange />} />
-        <Route element={<Public />} />
+        <Route path={"/"} element={<Public />} />
+        <Route path={"/:any"} element={<NotFound />} />
       </Routes>
     </Layout>
   </BrowserRouter>
