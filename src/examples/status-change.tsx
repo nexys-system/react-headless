@@ -1,5 +1,3 @@
-import React from "react";
-
 import StatusChange from "../components/status-change";
 import { delay } from "../lib/utils";
 
