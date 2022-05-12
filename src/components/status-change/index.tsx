@@ -7,7 +7,13 @@ const Layout = ({ children }: LayoutProps) => (
   <div className="btn-group">{children}</div>
 );
 
-const Button = ({ selected, id, label, handleChange }: ButtonProps) => {
+const Button = ({
+  selected,
+  id,
+  label,
+  handleChange,
+  disabled,
+}: ButtonProps) => {
   const classes = ["btn"];
 
   if (selected === id) {
@@ -20,6 +26,7 @@ const Button = ({ selected, id, label, handleChange }: ButtonProps) => {
 
   return (
     <button
+      disabled={disabled}
       onClick={() => handleChange(id)}
       type="button"
       className={className}

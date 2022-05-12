@@ -1,6 +1,7 @@
 import React from "react";
 
 import StatusChange from "../components/status-change";
+import { delay } from "../lib/utils";
 
 const status = [
   { id: 1, label: "active" },
@@ -12,10 +13,21 @@ export default () => {
   return (
     <>
       <h3>Status Change</h3>
-      <StatusChange status={status} onChange={(s) => alert(`chosen ${s}`)} />
+      <h4>Simple</h4>
+      <StatusChange
+        status={status}
+        onChange={(s) => Promise.resolve(alert(`chosen ${s}`))}
+      />
       <br />
       <br />
-      <StatusChange status={status} selected={3} onChange={() => {}} />
+      <h4>With loading state</h4>
+      <StatusChange
+        status={status}
+        selected={3}
+        onChange={async () => {
+          await delay(1000);
+        }}
+      />
     </>
   );
 };

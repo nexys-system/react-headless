@@ -5,15 +5,16 @@ export interface LayoutProps {
 }
 
 export interface ButtonProps {
+  disabled?: boolean;
   selected?: number;
   id: number;
   label: string;
-  handleChange: (s: number) => void;
+  handleChange: (s: number) => Promise<void>;
 }
 
 export interface StatusChangeProps {
   selected?: number;
-  onChange: (s: number) => void;
+  onChange: (s: number) => Promise<void>;
   status: { id: number; label: string }[];
 }
 
@@ -27,15 +28,20 @@ const StatusChange =
       selectedIn
     );
 
-    const handleChange = (id: number) => {
-      onChange(id);
+    const [loading, setLoading] = React.useState<boolean>(false);
+
+    const handleChange = async (id: number) => {
+      setLoading(true);
+      await onChange(id);
       setSelected(id);
+      setLoading(false);
     };
 
     return (
       <Layout>
         {status.map(({ id, label }, i) => (
           <Button
+            disabled={loading}
             key={i}
             handleChange={handleChange}
             selected={selected}
