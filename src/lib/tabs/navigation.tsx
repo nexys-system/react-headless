@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import * as T from "../../lib/tabs/type";
 
@@ -10,7 +10,7 @@ const isSelectedFromArray = (
   paths: T.TabNavigationProps[],
   tabPrefix: string
 ): string => {
-  console.log({ paths, pathname, tabPrefix });
+  // console.log({ paths, pathname, tabPrefix });
   const f = paths.filter((x) =>
     isSelected(tabPrefix + (x.path || ""), pathname)
   );
@@ -27,9 +27,9 @@ const Navigation =
     Ul: ({ children }: T.UlProps) => JSX.Element,
     Li: (p: T.LiNavigation) => JSX.Element
   ) =>
-  ({ tabs, pathPrefix = "" }: T.NavigationProps) => {
+  ({ tabs, allowsNested = true, pathPrefix = "" }: T.NavigationProps) => {
+    const location = useLocation();
     const getPath = (path: string) => pathPrefix + path;
-    const { pathname } = window.location;
 
     // sorting tabs so that nesting tabs work
     const sortedTabs = [...tabs].sort(
@@ -37,11 +37,16 @@ const Navigation =
     );
 
     React.useEffect(() => {
-      console.log("s");
-    }, [window.location.pathname]);
+      // path changed
+      // console.log("s", location.pathname);
+    }, [location]);
 
     // returns selected path
-    const selectedPath = isSelectedFromArray(pathname, sortedTabs, pathPrefix);
+    const selectedPath = isSelectedFromArray(
+      location.pathname,
+      sortedTabs,
+      pathPrefix
+    );
 
     return (
       <>
@@ -63,7 +68,11 @@ const Navigation =
         </Ul>
         <Routes>
           {sortedTabs.map(({ path, Component }, i) => (
-            <Route key={i} path={path || ""} element={<Component />} />
+            <Route
+              key={i}
+              path={path + (allowsNested ? "/*" : "")}
+              element={<Component />}
+            />
           ))}
         </Routes>
       </>

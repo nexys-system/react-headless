@@ -1,5 +1,4 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
 
 import Tabs from "../../components/tabs/index";
 import TabsWithContent from "../../components/tabs/w-content";
@@ -16,7 +15,7 @@ export default () => {
     <>
       <h1>Tabs</h1>
 
-      {/*()}   <h2>Simple Tabs</h2>
+      <h2>Simple Tabs</h2>
       <Tabs tabs={tabs} setTabIndex={setTabIndex} tabIndex={tabIndex} />
 
       <h2>Tabs With Content</h2>
@@ -26,15 +25,15 @@ export default () => {
           { label: "one", Content: () => <p>One</p> },
           { label: "two", Content: () => <p>Two</p> },
         ]}
-      />*/}
+      />
 
       <h2>Navigation</h2>
 
       <Nav />
 
-      {/*  <h2>Nested Navigation</h2>
+      <h2>Nested Navigation</h2>
 
-      <NestedNavigation />*/}
+      <NestedNavigation />
     </>
   );
 };

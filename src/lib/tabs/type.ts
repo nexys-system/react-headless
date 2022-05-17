@@ -28,4 +28,5 @@ export interface TabNavigationProps {
 export interface NavigationProps {
   tabs: TabNavigationProps[];
   pathPrefix?: string;
+  allowsNested?: boolean;
 }
