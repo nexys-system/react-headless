@@ -236,13 +236,13 @@ describe("updateFilters", () => {
           console.log(newFilters);
 
           expect(newFilters.name).toMatchInlineSnapshot(`
-          {
-            "func": [Function],
-            "value": {
-              "func": [Function],
-              "value": "John",
-            },
-          }`);
+  {
+  "func": [Function],
+  "value": {
+    "func": [Function],
+    "value": "John",
+  },
+}`);
         });
       });
     });
