@@ -233,8 +233,6 @@ describe("updateFilters", () => {
             },
           });
 
-          console.log(newFilters);
-
           expect(newFilters.name).toMatchInlineSnapshot(`
   {
   "func": [Function],
