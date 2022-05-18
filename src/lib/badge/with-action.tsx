@@ -34,4 +34,4 @@ const BadgeActionHeadless =
     );
   };
 
- export default BadgeActionHeadless;
+export default BadgeActionHeadless;

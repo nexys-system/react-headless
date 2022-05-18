@@ -1,3 +1,4 @@
+import { test, expect } from 'vitest';
 import { FormDef, FormUIType } from './type';
 import * as U from './utils';
 

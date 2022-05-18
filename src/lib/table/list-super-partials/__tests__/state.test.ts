@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { DefinitionItem } from '../../../types';
 import getInitialState from '../state';
 

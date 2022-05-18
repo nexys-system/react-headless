@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useReducer, Reducer } from 'react';
+import React, { useCallback, useEffect, useReducer, Reducer } from "react";
 
 import {
   Config,
@@ -6,24 +6,24 @@ import {
   DefinitionItem,
   AsyncDataConfig,
   AsyncDataReturn,
-  FiltersType
-} from '../types';
-import { OuterProps } from './ui-type';
+  FiltersType,
+} from "../types";
+import { OuterProps } from "./ui-type";
 
-import { order, getSort } from './utils/order-utils';
+import { order, getSort } from "./utils/order-utils";
 import {
   applyFilter,
   updateFilters,
-  transformFilterPropToStateFilter
-} from './utils/filter-utils';
-import { withPagination } from './utils/pagination-utils';
+  transformFilterPropToStateFilter,
+} from "./utils/filter-utils";
+import { withPagination } from "./utils/pagination-utils";
 import {
   listSuperReducer,
   getInitialState,
   Action,
   ActionType,
-  State
-} from './list-super-partials';
+  State,
+} from "./list-super-partials";
 
 export interface InnerProps<A> {
   def: Definition<A>;
@@ -50,7 +50,7 @@ const ListSuper =
     ListBody,
     RecordInfo,
     Pagination,
-    Loader
+    Loader,
   }: OuterProps<A>) =>
   (props: InnerProps<A>): JSX.Element => {
     const {
@@ -58,7 +58,7 @@ const ListSuper =
       config = {},
       asyncData,
       CustomListContainer,
-      CustomListItem
+      CustomListItem,
     } = props;
 
     const filtersFromProps = config.filters
@@ -82,12 +82,12 @@ const ListSuper =
       sortDescAsc,
       data,
       numberOfTotalRows,
-      loading
+      loading,
     } = state;
     const nPerPage = config.nPerPage || props.nPerPage || 25;
     if (props.nPerPage) {
       console.warn(
-        'The use of nPerPage in props is deprecated. Add nPerPage to the config object prop.'
+        "The use of nPerPage in props is deprecated. Add nPerPage to the config object prop."
       );
     }
 
@@ -110,14 +110,14 @@ const ListSuper =
                   ? config.sortAttribute
                   : sortAttribute,
               descAsc:
-                config && typeof config.sortDescAsc !== 'undefined'
+                config && typeof config.sortDescAsc !== "undefined"
                   ? config.sortDescAsc
-                  : sortDescAsc
-            }
-          }).then(res => {
+                  : sortDescAsc,
+            },
+          }).then((res) => {
             dispatch({
               type: ActionType.FETCH_DATA_SUCCESS,
-              payload: { data: res.data, numberOfTotalRows: res.meta.n }
+              payload: { data: res.data, numberOfTotalRows: res.meta.n },
             });
           });
         }
@@ -136,13 +136,13 @@ const ListSuper =
         type: ActionType.FETCH_DATA_SUCCESS,
         payload: {
           data,
-          numberOfTotalRows
-        }
+          numberOfTotalRows,
+        },
       });
     }, [props.data]);
 
     const handleFilterChange = (v: {
-      name: keyof A | 'globalSearch' | 'id' | 'uuid';
+      name: keyof A | "globalSearch" | "id" | "uuid";
       value: any;
       type?: string;
     }): void => {
@@ -153,18 +153,18 @@ const ListSuper =
 
       const config = {
         filters: newFilters,
-        pageIdx
+        pageIdx,
       };
 
       dispatch({
         type: ActionType.FILTER_CHANGE,
-        payload: config
+        payload: config,
       });
 
       fetchData(config);
     };
 
-    const handleFilterReset = (name: keyof A | 'id' | 'uuid'): void => {
+    const handleFilterReset = (name: keyof A | "id" | "uuid"): void => {
       const newFilters = Object.assign({}, filters);
       delete newFilters[name as keyof A];
 
@@ -173,7 +173,7 @@ const ListSuper =
 
       const config = {
         filters: newFilters,
-        pageIdx
+        pageIdx,
       };
 
       dispatch({ type: ActionType.FILTER_CHANGE, payload: config });
@@ -189,7 +189,7 @@ const ListSuper =
      * todo: allow custom ordering
      */
     const setOrder = (
-      name: keyof A | 'id' | 'uuid',
+      name: keyof A | "id" | "uuid",
       descAsc: boolean | null = null
     ): void => {
       if (descAsc === null) {
@@ -200,7 +200,7 @@ const ListSuper =
 
       dispatch({
         type: ActionType.ORDER_CHANGE,
-        payload: config
+        payload: config,
       });
     };
 
@@ -215,8 +215,8 @@ const ListSuper =
 
     const isSort = (h: DefinitionItem<A>): boolean => {
       return (
-        (typeof h.sort === 'boolean' && h.sort === true) ||
-        typeof h.sort === 'object'
+        (typeof h.sort === "boolean" && h.sort === true) ||
+        typeof h.sort === "object"
       );
     };
 
@@ -243,7 +243,7 @@ const ListSuper =
 
         return (
           <HeaderUnit key={i}>
-            {h.label || ''} {order} {filter}
+            {h.label || ""} {order} {filter}
           </HeaderUnit>
         );
       });
@@ -263,7 +263,7 @@ const ListSuper =
                     style={{
                       paddingLeft: 0,
                       paddingRight: 0,
-                      borderBottom: 0
+                      borderBottom: 0,
                     }}
                   >
                     {CustomListItem(row)}
@@ -275,8 +275,7 @@ const ListSuper =
             <Row>
               {def.map((h, j) => (
                 <ColCell key={j}>
-                  {h.render ? h.render(row) : row[h.name as keyof A]}{' '}
-                  {/* // Utils.ds.get(h.name.toString(), row) } */}
+                  {h.render ? h.render(row) : <>{row[h.name as keyof A]}</>}
                 </ColCell>
               ))}
             </Row>
@@ -313,10 +312,10 @@ const ListSuper =
     }
 
     const showPagination: boolean =
-      typeof config.pagination !== 'undefined' ? config.pagination : true;
+      typeof config.pagination !== "undefined" ? config.pagination : true;
 
     const showRecordInfo: boolean =
-      typeof config.recordInfo !== 'undefined' ? config.recordInfo : true;
+      typeof config.recordInfo !== "undefined" ? config.recordInfo : true;
 
     return (
       <ListWrapper>

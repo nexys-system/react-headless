@@ -1,6 +1,6 @@
 {
   "name": "@nexys/headless",
-  "version": "0.6.3",
+  "version": "1.0.3",
   "license": "AGPL-3.0",
   "keywords": [
     "typescript",
@@ -15,51 +15,31 @@
     "url": "https://github.com/nexys-system/react-headless.git"
   },
   "scripts": {
-    "start": "SNOWPACK_PUBLIC_URL= snowpack dev  --polyfill-node",
-    "build": "snowpack build  --polyfill-node",
+    "start": "vite",
+    "build": "tsc && vite build",
     "buildpackage": "rm -rf ./dist;tsc -p tsconfig.build.json",
-    "test": "jest",
-    "buildTs": "tsc"
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "main": "dist/index.js",
   "files": [
     "dist/*"
   ],
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^26.0.20",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router-dom": "^5.1.3",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
     "countries-list": "^2.6.1",
-    "jest": "^26.6.3",
-    "jest-environment-jsdom": "^26.6.2",
-    "prettier": "^2.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "snowpack": "^3.0.13",
-    "ts-jest": "^26.5.4",
-    "typescript": "~3.9.7"
+    "typescript": "^4.6.3",
+    "vite": "^2.9.7",
+    "vitest": "^0.12.2"
   },
   "dependencies": {
-    "@nexys/validation": "^2.1.3"
+    "@nexys/validation": "^2.1.3",
+    "@types/react-router-dom": "^5.3.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
   }
 }
