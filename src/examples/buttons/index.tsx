@@ -11,7 +11,7 @@ interface ExpectedResult {
 
 const SuccessContent = ({ data }: { data?: ExpectedResult }) => (
   <span>
-    Success, <code>{data.message}</code>
+    Success, <code>{data?.message}</code>
   </span>
 );
 const FailedContent = () => <span>Success</span>;

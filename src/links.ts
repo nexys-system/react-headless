@@ -9,6 +9,7 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   code: { name: 'Code', link: '/code' },
   listAssign: { name: 'List Assign', link: '/list-assign' },
   buttons: { name: 'Buttons', link: '/buttons' },
+  badge: { name: 'Badge', link: '/badge' },
   download: { name: 'Download', link: '/download' },
   simpleList: { name: 'Simple list', link: '/simple-list' },
   toggle: { name: 'Toggle', link: '/toggle' },
