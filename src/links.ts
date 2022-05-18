@@ -1,6 +1,6 @@
 export const links: { [menu: string]: { name: string; link: string } } = {
   list: { name: "Table", link: "/table" },
-  layout: { name: "Layout", link: "layout" },
+  layout: { name: "Layout", link: "/layout" },
   view: { name: "View", link: "/view" },
   card: { name: "Card", link: "/card" },
   form: { name: "Form", link: "/form" },
