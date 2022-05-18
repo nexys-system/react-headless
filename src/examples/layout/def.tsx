@@ -25,7 +25,7 @@ const layout: T.Layout<Data> = {
               {data.firstName} here{' '}
               <button
                 className="btn btn-sm btn-primary"
-                onClick={() => setData({ firstName: 'Michael' })}
+                onClick={() => setData && setData({ firstName: 'Michael' })}
               >
                 Change
               </button>
@@ -44,7 +44,7 @@ const layout: T.Layout<Data> = {
               {data.firstName} here2{' '}
               <button
                 className="btn btn-sm btn-primary"
-                onClick={() => setData({ firstName: 'John' })}
+                onClick={() => setData && setData({ firstName: 'John' })}
               >
                 Change
               </button>

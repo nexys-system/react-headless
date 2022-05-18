@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import * as T from './type';
 import BodyHeadless from './body';
@@ -29,7 +29,7 @@ const Layout = ({
       const [data, setData] = React.useState<A>(dataIn);
 
       if (redirect) {
-        return <Redirect to={redirect} />;
+        return <Navigate to={redirect} />;
       }
 
       return (

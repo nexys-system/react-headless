@@ -1,46 +1,42 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
 
-import * as T from '../../lib/tabs/type';
-
-const isSelected = (path: string, pathname: string) => pathname.includes(path);
-
-const isSelectedFromArray = (
-  pathname: string,
-  paths: T.TabNavigationProps[],
-  tabPrefix: string
-): string => {
-  const f = paths.filter(x => isSelected(tabPrefix + (x.path || ''), pathname));
-
-  if (f.length) {
-    return f[0].path || '';
-  }
-
-  return '';
-};
+import * as T from "../tabs/type";
+import { isSelectedFromArray } from "./utils";
 
 const Navigation =
   (
     Ul: ({ children }: T.UlProps) => JSX.Element,
     Li: (p: T.LiNavigation) => JSX.Element
   ) =>
-  ({ tabs, pathPrefix = '' }: T.NavigationProps) => {
+  ({ tabs, allowsNested = true, pathPrefix = "" }: T.NavigationProps) => {
+    const location = useLocation();
     const getPath = (path: string) => pathPrefix + path;
-    const { pathname } = window.location;
 
     // sorting tabs so that nesting tabs work
     const sortedTabs = [...tabs].sort(
-      (a, b) => (b.path || '').length - (a.path || '').length
+      (a, b) => (b.path || "").length - (a.path || "").length
     );
 
-    // returns selecred path
-    const selectedPath = isSelectedFromArray(pathname, sortedTabs, pathPrefix);
+    React.useEffect(() => {
+      // path changed
+      // console.log("s", location.pathname);
+    }, [location]);
+
+    // returns selected path
+    const selectedPath = isSelectedFromArray(
+      location.pathname,
+      sortedTabs,
+      pathPrefix
+    );
 
     return (
       <>
         <Ul>
-          {tabs.map(({ label, path = '' }, i) => {
+          {tabs.map(({ label, path = "" }, i) => {
             const pathComplete = getPath(path);
+
+            //  console.log({ pathComplete, path, selectedPath });
 
             return (
               <Li
@@ -52,14 +48,15 @@ const Navigation =
             );
           })}
         </Ul>
-
-        <Switch>
-          {sortedTabs.map(({ path = '', Component }, i) => {
-            const pathComplete = getPath(path);
-
-            return <Route key={i} path={pathComplete} component={Component} />;
-          })}
-        </Switch>
+        <Routes>
+          {sortedTabs.map(({ path, Component }, i) => (
+            <Route
+              key={i}
+              path={path + (allowsNested ? "/*" : "")}
+              element={<Component />}
+            />
+          ))}
+        </Routes>
       </>
     );
   };

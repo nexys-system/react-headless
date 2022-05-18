@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import Tabs from '../../components/tabs/index';
-import TabsWithContent from '../../components/tabs/w-content';
+import Tabs from "../../components/tabs/index";
+import TabsWithContent from "../../components/tabs/w-content";
 
-import Nav from './navigation';
-import NestedNavigation from './nested-navigation';
+import Nav from "./navigation";
+import NestedNavigation from "./nested-navigation";
 
-const tabs = [{ label: 'one' }, { label: 'two' }];
+const tabs = [{ label: "one" }, { label: "two" }];
 
 export default () => {
   const [tabIndex, setTabIndex] = React.useState<number>(0);
@@ -22,8 +22,8 @@ export default () => {
 
       <TabsWithContent
         tabs={[
-          { label: 'one', Content: () => <p>One</p> },
-          { label: 'two', Content: () => <p>Two</p> }
+          { label: "one", Content: () => <p>One</p> },
+          { label: "two", Content: () => <p>Two</p> },
         ]}
       />
 

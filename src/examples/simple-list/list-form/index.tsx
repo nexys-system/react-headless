@@ -13,8 +13,9 @@ export default () => {
   ]);
 
   const [isInsert, setIsInsert] = React.useState<boolean>(false);
-  const [edit, setEdit] =
-    React.useState<{ data: FormDataShape; id: number } | undefined>(undefined);
+  const [edit, setEdit] = React.useState<
+    { data: FormDataShape; id: number } | undefined
+  >(undefined);
 
   const handleRemove = (id: number) => {
     if (confirm('Are you sure you would like to delete that entry?')) {
@@ -22,7 +23,10 @@ export default () => {
     }
   };
 
-  const handleSuccess = (d: FormDataShape, id: number) => {
+  const handleSuccess = (d: FormDataShape, id?: number) => {
+    if (!id) {
+      throw Error("can't be edited");
+    }
     const item = { id, title: d.name, subtitle: d.description };
     setData([...data, item]);
     setIsInsert(false);
@@ -34,9 +38,17 @@ export default () => {
   };
 
   const handleSuccessEdit = (d: FormDataShape) => {
+    if (!edit) {
+      throw Error("can't be edited");
+    }
+    const { id } = edit;
+    if (!id) {
+      throw Error("can't be edited");
+    }
+
     const newData = data.map(x => {
-      if (x.id === edit.id) {
-        return { title: d.name, subtitle: d.description, id: edit.id };
+      if (x.id === id) {
+        return { title: d.name, subtitle: d.description, id };
       }
 
       return x;
