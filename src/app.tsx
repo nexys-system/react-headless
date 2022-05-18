@@ -20,6 +20,7 @@ import Tabs from "./examples/tabs";
 import FileUpload from "./examples/file-upload";
 import StatusChange from "./examples/status-change";
 import Detail from "./examples/detail";
+import Badge from "./examples/badge";
 
 import { links } from "./links";
 
@@ -40,7 +41,7 @@ export default () => (
       <Routes>
         <Route path={links.detail.link} element={<Detail />} />
         <Route path={links.list.link} element={<List />} />
-        <Route path={links.layout.link} element={<LayoutComponent />} />
+        <Route path={links.layout.link + "/*"} element={<LayoutComponent />} />
         <Route path={links.view.link} element={<View />} />
         <Route path={links.card.link} element={<Card />} />
         <Route path={links.form.link} element={<Form />} />
@@ -49,6 +50,7 @@ export default () => (
         <Route path={links.code.link} element={<Code />} />
         <Route path={links.listAssign.link} element={<ListAssign />} />
         <Route path={links.buttons.link} element={<Buttons />} />
+        <Route path={links.badge.link} element={<Badge />} />
         <Route path={links.download.link} element={<Download />} />
         <Route path={links.simpleList.link} element={<SimpleList />} />
         <Route path={links.toggle.link} element={<Toggle />} />
