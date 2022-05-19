@@ -5,6 +5,7 @@ import TabsWithContent from "../../components/tabs/w-content";
 
 import Nav from "./navigation";
 import NestedNavigation from "./nested-navigation";
+import AsyncNavigation from "./async-navigation";
 
 const tabs = [{ label: "one" }, { label: "two" }];
 
@@ -34,6 +35,10 @@ export default () => {
       <h2>Nested Navigation</h2>
 
       <NestedNavigation />
+
+      <h2>Async Navigation</h2>
+
+      <AsyncNavigation />
     </>
   );
 };
