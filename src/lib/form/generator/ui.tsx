@@ -1,5 +1,5 @@
-import React from 'react';
-import * as T from '../type';
+import React from "react";
+import * as T from "../type";
 
 export interface FormUIGeneratorProps {
   InputWrapper: (p: T.InputWrapperProps) => JSX.Element;
@@ -13,14 +13,14 @@ const FormUIGenerator =
   ({ form, setForm, loading, errors }: T.FormUIProps<A>): JSX.Element => {
     return (
       <>
-        {def.map(item => {
+        {def.map((item, i) => {
           const Input = InputGeneric(item.uiType);
 
           return (
-            <InputWrapper errors={errors[item.name]}>
+            <InputWrapper errors={errors[item.name]} key={i}>
               <Input
                 value={form[item.name]}
-                onChange={val => setForm({ ...form, [item.name]: val })}
+                onChange={(val) => setForm({ ...form, [item.name]: val })}
                 disabled={loading}
                 placeholder={item.label}
                 errors={errors[item.name]}

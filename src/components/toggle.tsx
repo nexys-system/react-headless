@@ -1,11 +1,9 @@
-import React from 'react';
-
-import { FormWrapperProps } from '../lib/form/form-wrapper';
-import { ViewStructureUnit } from '../lib/view';
-import ViewGeneric, { RowProps } from '../lib/view';
-import ToggleHeadless, { LayoutProps } from '../lib/toggle';
-import { FormViewDef } from '../lib/form/type';
-import PreForm from './form/generator';
+import { FormWrapperProps } from "../lib/form/form-wrapper";
+import { ViewStructureUnit } from "../lib/view";
+import ViewGeneric, { RowProps } from "../lib/view";
+import ToggleHeadless, { LayoutProps } from "../lib/toggle";
+import { FormViewDef } from "../lib/form/type";
+import PreForm from "./form/generator";
 
 const Row = (p: RowProps) => (
   <li>
@@ -45,9 +43,9 @@ const PreToggle = <A, Out>(
 ) => ToggleHeadless(structure, Form, View, LayoutView, LayoutForm);
 
 const toViewStructure = <A,>(def: FormViewDef<A>[]): ViewStructureUnit<A>[] =>
-  def.map(x => ({
+  def.map((x) => ({
     label: x.label,
-    value: x.render || x.name
+    value: x.render || x.name,
   }));
 
 export const ToggleFromDef = <A, Out>(

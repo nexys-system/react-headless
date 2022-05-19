@@ -21,6 +21,7 @@ import FileUpload from "./examples/file-upload";
 import StatusChange from "./examples/status-change";
 import Detail from "./examples/detail";
 import Badge from "./examples/badge";
+import Superadmin from "./examples/superadmin";
 
 import { links } from "./links";
 
@@ -58,6 +59,7 @@ export default () => (
         <Route path={links.fileUpload.link} element={<FileUpload />} />
         <Route path={links.detail.link} element={<Detail />} />
         <Route path={links.statusChange.link} element={<StatusChange />} />
+        <Route path={links.superadmin.link + "/*"} element={<Superadmin />} />
         <Route path={"/"} element={<Public />} />
         <Route path={"/:any"} element={<NotFound />} />
       </Routes>
