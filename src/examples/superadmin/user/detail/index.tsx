@@ -6,6 +6,9 @@ import links from "../../../../links";
 import { User } from "../type";
 
 import Detail from "./detail";
+import StatusChange from "./status";
+import Permissions from "./permissions";
+import AccessToken from "./access-token";
 
 const getInstance = (uuid: string): Promise<User> =>
   Promise.resolve({ uuid, firstName: "my fn " + uuid, lastName: "my ln " });
@@ -20,7 +23,20 @@ export default ({ instance }: { instance: { uuid: string } }) => {
   const baseUrl = links.superadmin.link + `/${instance.uuid}/detail/user`;
 
   const L = Layout<User>({
-    cards: [{ Component: ({ data }) => <Detail data={data} /> }],
+    cards: {
+      User: [
+        { Component: ({ data }) => <Detail data={data} /> },
+        {
+          Component: ({ data }) => (
+            <StatusChange statusId={1} uuid={data.uuid} />
+          ),
+        },
+      ],
+      Permissions: [
+        { Component: ({ data }) => <Permissions uuid={data.uuid} /> },
+        { Component: ({ data }) => <AccessToken user={{ uuid: data.uuid }} /> },
+      ],
+    },
     title: "User" + uuid,
     backRedirect: baseUrl,
     pathPrefix: baseUrl + `/${uuid}/detail`,

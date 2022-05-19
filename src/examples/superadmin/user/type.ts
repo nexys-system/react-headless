@@ -3,3 +3,9 @@ export interface User {
   firstName: string;
   lastName: string;
 }
+
+export interface AccessToken {
+  uuid: string;
+  token: string;
+  date: string;
+}

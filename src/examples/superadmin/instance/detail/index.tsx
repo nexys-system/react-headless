@@ -8,9 +8,7 @@ import Permissions from "../../permissions";
 import User from "../../user";
 
 import Detail from "./detail";
-
-const getInstance = (uuid: string): Promise<Instance> =>
-  Promise.resolve({ uuid, name: "my instance " + uuid });
+import { InstanceData } from "../../data";
 
 export default () => {
   const { uuid } = useParams<{ uuid?: string }>();
@@ -34,5 +32,7 @@ export default () => {
     pathPrefix: links.superadmin.link + `/${uuid}/detail`,
   });
 
-  return <LoadDataAsync Component={L} getData={() => getInstance(uuid)} />;
+  return (
+    <LoadDataAsync Component={L} getData={() => InstanceData.getDetail(uuid)} />
+  );
 };

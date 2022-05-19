@@ -3,15 +3,8 @@ import LoadDataAsync from "../../../components/load-data-async";
 import List from "../../../components/table";
 import { Definition } from "../../../lib/types";
 import links from "../../../links";
+import { InstanceData } from "../data";
 import { Instance } from "./type";
-
-const getList = () => {
-  const d: Instance[] = [
-    { uuid: "u1", name: "Instance #1" },
-    { uuid: "u2", name: "Instance #2" },
-  ];
-  return Promise.resolve(d);
-};
 
 const def: Definition<Instance> = [
   { name: "name", label: "Country name" },
@@ -38,6 +31,6 @@ const Layout = ({ children }: { children: JSX.Element }) => (
 
 export default () => (
   <Layout>
-    <LoadDataAsync Component={InstanceList} getData={getList} />
+    <LoadDataAsync Component={InstanceList} getData={InstanceData.getList} />
   </Layout>
 );

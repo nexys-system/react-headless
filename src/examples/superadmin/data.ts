@@ -1,4 +1,5 @@
 import { delay } from "../../lib/utils";
+import { Instance } from "./instance/type";
 
 export const getPermissions = (uuid: string) => {
   const dataIn = [
@@ -13,4 +14,16 @@ export const getPermissions = (uuid: string) => {
 export const updatePermission = async (id: number) => {
   await delay(1000);
   return { uuid: id };
+};
+
+export const InstanceData = {
+  getDetail: (uuid: string): Promise<Instance> =>
+    Promise.resolve({ uuid, name: "my instance " + uuid }),
+  getList: () => {
+    const d: Instance[] = [
+      { uuid: "u1", name: "Instance #1" },
+      { uuid: "u2", name: "Instance #2" },
+    ];
+    return Promise.resolve(d);
+  },
 };
