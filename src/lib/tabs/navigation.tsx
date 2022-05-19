@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import * as T from "../tabs/type";
-import { isSelectedFromArray } from "./utils";
+import { getRoutePath, isSelectedFromArray } from "./utils";
 
 const Navigation =
   (
@@ -36,8 +36,6 @@ const Navigation =
           {tabs.map(({ label, path = "" }, i) => {
             const pathComplete = getPath(path);
 
-            //  console.log({ pathComplete, path, selectedPath });
-
             return (
               <Li
                 key={i}
@@ -49,13 +47,11 @@ const Navigation =
           })}
         </Ul>
         <Routes>
-          {sortedTabs.map(({ path, Component }, i) => (
-            <Route
-              key={i}
-              path={path + (allowsNested ? "/*" : "")}
-              element={<Component />}
-            />
-          ))}
+          {sortedTabs.map(({ path, Component }, i) => {
+            const pathFinal = getRoutePath(path, allowsNested);
+
+            return <Route key={i} path={pathFinal} element={<Component />} />;
+          })}
         </Routes>
       </>
     );

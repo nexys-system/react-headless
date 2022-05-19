@@ -3,19 +3,44 @@ import { TabNavigationProps } from "../../lib/tabs/type";
 
 import links from "../../links";
 
-const tabsInside: TabNavigationProps[] = [
+const tabsInside2: TabNavigationProps[] = [
   {
-    label: "Default nested",
-
-    Component: () => <p>Default</p>,
+    label: "Default nested 2",
+    Component: () => <p>Default nested</p>,
   },
   {
-    label: "One One",
+    label: "One One One",
     path: "/one",
     Component: () => (
       <p>
         One One <code>{window.location.pathname}</code>
       </p>
+    ),
+  },
+  {
+    label: "One Two",
+    path: "/two",
+    Component: () => <p>One Two {window.location.pathname}</p>,
+  },
+];
+
+const tabsInside: TabNavigationProps[] = [
+  {
+    label: "Default nested",
+    Component: () => <p>Default nested</p>,
+  },
+  {
+    label: "One One",
+    path: "/one",
+    Component: () => (
+      /*<p>
+        One One <code>{window.location.pathname}</code>
+      </p>*/
+      <Nav
+        tabs={tabsInside2}
+        pathPrefix={tabUrlPrefix + "/one/one"}
+        // pathname={window.location.pathname}
+      />
     ),
   },
   {

@@ -18,3 +18,10 @@ export const isSelectedFromArray = (
 
   return "";
 };
+
+export const getRoutePath = (
+  path: string = "",
+  allowsNested: boolean = true
+) => {
+  return path + "/" + (allowsNested ? "*" : "");
+};
