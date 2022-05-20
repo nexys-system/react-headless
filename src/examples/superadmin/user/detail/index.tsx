@@ -10,9 +10,7 @@ import StatusChange from "./status";
 import Permissions from "./permissions";
 import AccessToken from "./access-token";
 import Authentication from "../authentication";
-
-const getInstance = (uuid: string): Promise<User> =>
-  Promise.resolve({ uuid, firstName: "my fn " + uuid, lastName: "my ln " });
+import { UserData } from "../../data";
 
 export default ({ instance }: { instance: { uuid: string } }) => {
   const { uuid } = useParams<{ uuid?: string }>();
@@ -44,5 +42,7 @@ export default ({ instance }: { instance: { uuid: string } }) => {
     pathPrefix: baseUrl + `/${uuid}/detail`,
   });
 
-  return <LoadDataAsync Component={L} getData={() => getInstance(uuid)} />;
+  return (
+    <LoadDataAsync Component={L} getData={() => UserData.getDetail(uuid)} />
+  );
 };

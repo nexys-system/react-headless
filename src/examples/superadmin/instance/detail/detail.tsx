@@ -1,14 +1,7 @@
 import { ToggleFromDef } from "../../../../components/toggle";
 import { FormUIType, FormViewDef } from "../../../../lib/form/type";
+import { InstanceData } from "../../data";
 import { Instance } from "../type";
-
-interface Out {
-  id: number;
-}
-
-const apiCall = async (): Promise<Out> => {
-  return { id: 2 };
-};
 
 const def: FormViewDef<Instance>[] = [
   {
@@ -19,4 +12,4 @@ const def: FormViewDef<Instance>[] = [
   },
 ];
 
-export default ToggleFromDef(def, apiCall);
+export default ToggleFromDef(def, InstanceData.update);

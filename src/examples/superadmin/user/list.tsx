@@ -3,15 +3,8 @@ import LoadDataAsync from "../../../components/load-data-async";
 import List from "../../../components/table";
 import { Definition } from "../../../lib/types";
 import links from "../../../links";
+import { UserData } from "../data";
 import { User } from "./type";
-
-const getList = () => {
-  const d: User[] = [
-    { uuid: "u1", firstName: "John", lastName: "Doe" },
-    { uuid: "u2", firstName: "Jane", lastName: "Doe" },
-  ];
-  return Promise.resolve(d);
-};
 
 const def = (instance: { uuid: string }): Definition<User> => [
   { name: "firstName", label: "First Name" },
@@ -54,7 +47,7 @@ export default ({ instance }: { instance: { uuid: string } }) => (
   <Layout>
     <LoadDataAsync
       Component={({ data }) => <UserList instance={instance} data={data} />}
-      getData={getList}
+      getData={UserData.getList}
     />
   </Layout>
 );
