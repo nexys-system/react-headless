@@ -1,5 +1,5 @@
 export const delay = (ms: number = 500) =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
  * puts content into a file that is being downloaded
@@ -10,13 +10,32 @@ export const delay = (ms: number = 500) =>
  */
 export const saveByteArray = (
   content: any | string, // Buffer
-  filename: string = 'out',
-  type: string = 'application/text'
+  filename: string = "out",
+  type: string = "application/text"
 ) => {
   const blob = new Blob([content], { type });
-  const link = document.createElement('a');
+  const link = document.createElement("a");
   link.href = window.URL.createObjectURL(blob);
 
-  link.setAttribute('download', filename);
+  link.setAttribute("download", filename);
   link.click();
+};
+
+export const yesOrNo = (
+  d?: boolean,
+  labels: { yes: string; no: string; notBoolean: string } = {
+    yes: "yes",
+    no: "no",
+    notBoolean: "-",
+  }
+): string => {
+  if (typeof d !== "boolean") {
+    return labels.notBoolean;
+  }
+
+  if (d === true) {
+    return labels.yes;
+  }
+
+  return labels.no;
 };

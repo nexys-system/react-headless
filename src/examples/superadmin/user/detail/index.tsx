@@ -9,6 +9,7 @@ import Detail from "./detail";
 import StatusChange from "./status";
 import Permissions from "./permissions";
 import AccessToken from "./access-token";
+import Authentication from "../authentication";
 
 const getInstance = (uuid: string): Promise<User> =>
   Promise.resolve({ uuid, firstName: "my fn " + uuid, lastName: "my ln " });
@@ -31,6 +32,7 @@ export default ({ instance }: { instance: { uuid: string } }) => {
             <StatusChange statusId={1} uuid={data.uuid} />
           ),
         },
+        { Component: ({ data }) => <Authentication uuid={data.uuid} /> },
       ],
       Permissions: [
         { Component: ({ data }) => <Permissions uuid={data.uuid} /> },
