@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import * as Credentials from "./credentials";
 import * as Store from "../store";
@@ -8,12 +8,8 @@ import { REDIRECT_URI } from "./conf";
 
 import * as Logout from "./logout";
 
-const idleTimer = useIdleTimer({
-  crossTab: true,
-});
-
 const optionsDefault = {
-  timeout: 60,
+  timeout: 60000, // 60 s
   redirectUrl: "/login",
   unauthorizedRedirectUrl: "/unauthorized",
   logoutUrl: "/logout",
@@ -38,14 +34,10 @@ const Wrapper =
     options?: Options;
   }) =>
   (): JSX.Element => {
-    const [redirect, setRedirect] = React.useState<string | undefined>();
+    const navigate = useNavigate();
     const permissions = Credentials.getPermissions();
     const { pathname } = window.location;
     const { redirectUrl, unauthorizedRedirectUrl } = options;
-
-    if (redirect) {
-      return <Navigate to={redirect} />;
-    }
 
     // user not authenticated
     if (!permissions) {
@@ -67,6 +59,8 @@ const Wrapper =
     }
 
     useIdleTimer({
+      timeout: options.timeout,
+      crossTab: true,
       onIdle: () => {
         // logs user out
         Logout.user();
@@ -75,7 +69,9 @@ const Wrapper =
         // run custom function, if defined
         options.onLogout && options.onLogout();
         // redirects to different page
-        setRedirect(redirectUrl);
+        //setRedirect(redirectUrl);
+
+        navigate(redirectUrl);
       },
     });
 

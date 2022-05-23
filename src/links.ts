@@ -17,6 +17,7 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   tabs: { name: "Tabs", link: "/tabs" },
   fileUpload: { name: "File Upload", link: "/file-upload" },
   detail: { name: "Detail", link: "/detail" },
+  auth: { name: "Auth", link: "/auth" },
   superadmin: { name: "Superadmin", link: "/superadmin" },
 };
 
