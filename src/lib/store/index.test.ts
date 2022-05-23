@@ -3,7 +3,7 @@ import * as Store from "./index";
 
 import LocalStorageMock from "./local-storage-mock";
 
-global.localStorage = new LocalStorageMock();
+globalThis.localStorage = new LocalStorageMock();
 
 // init
 const key = "my-key";

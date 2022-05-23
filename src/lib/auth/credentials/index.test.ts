@@ -4,7 +4,7 @@ import { PROFILE, PERMISSIONS, LOCALE, LANGUAGE_DEFAULT } from "../conf";
 
 import LocalStorageMock from "../../store/local-storage-mock";
 
-global.localStorage = new LocalStorageMock();
+globalThis.localStorage = new LocalStorageMock();
 
 type Locale = string;
 
