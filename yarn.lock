@@ -742,6 +742,11 @@ react-dom@^18.0.0:
     loose-envify "^1.1.0"
     scheduler "^0.22.0"
 
+react-idle-timer@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/react-idle-timer/-/react-idle-timer-5.2.0.tgz#04874499cc7a07a4d3e27c9ed31dcfb4c6e7ba50"
+  integrity sha512-Q8UQ9n8jGhgtB3xN6U212nmkaqZP6FToWsUT1g1HIl/TqJQP1AnW44+tblu4BEhTukI3fGhrhXjtexz9I6pSpg==
+
 react-refresh@^0.13.0:
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.13.0.tgz#cbd01a4482a177a5da8d44c9755ebb1f26d5a1c1"
