@@ -1,5 +1,5 @@
-import { CardProps, ColProps, RowProps, HeaderProps } from '../card';
-import { NavigationProps, TabProps } from '../tabs/type';
+import { CardProps, ColProps, RowProps, HeaderProps } from "../card";
+import { NavigationProps, TabProps } from "../tabs/type";
 
 export interface Card<A> {
   title?: string;

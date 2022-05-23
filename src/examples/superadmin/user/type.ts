@@ -1,0 +1,11 @@
+export interface User {
+  uuid: string;
+  firstName: string;
+  lastName: string;
+}
+
+export interface AccessToken {
+  uuid: string;
+  token: string;
+  date: string;
+}
