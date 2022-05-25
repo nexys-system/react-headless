@@ -19,6 +19,7 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   detail: { name: "Detail", link: "/detail" },
   auth: { name: "Auth", link: "/auth" },
   superadmin: { name: "Superadmin", link: "/superadmin" },
+  dateRange: { name: "Date Range", link: "/date-range" },
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);

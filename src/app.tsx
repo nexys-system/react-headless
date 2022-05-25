@@ -22,6 +22,7 @@ import StatusChange from "./examples/status-change";
 import Detail from "./examples/detail";
 import Badge from "./examples/badge";
 import Auth from "./examples/auth";
+import DateRange from "./examples/date-range";
 import Superadmin from "./examples/superadmin";
 
 import { links } from "./links";
@@ -62,6 +63,7 @@ export default () => (
         <Route path={links.statusChange.link} element={<StatusChange />} />
         <Route path={links.superadmin.link + "/*"} element={<Superadmin />} />
         <Route path={links.auth.link + "/*"} element={<Auth />} />
+        <Route path={links.dateRange.link} element={<DateRange />} />
         <Route path={"/"} element={<Public />} />
         <Route path={"/:any"} element={<NotFound />} />
       </Routes>
