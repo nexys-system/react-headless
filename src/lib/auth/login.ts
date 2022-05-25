@@ -1,23 +1,25 @@
-import { useNavigate } from 'react-router-dom';
-import * as Credentials from './credentials';
-import { REDIRECT_URI, urlDefault } from './conf';
-import * as Store from '../store';
+import { useNavigate } from "react-router-dom";
+import * as Credentials from "./credentials";
+import { REDIRECT_URI } from "./conf";
+import * as Store from "../store";
+
+const defaultAppUrl = "/app";
 
 /**
  * after call to backend, login user on the client side
  */
-export const onSuccess = <Profile,>({
+export const onSuccess = <Profile>({
   profile,
   permissions,
   locale,
-  redirectUrl
+  redirectUrl,
 }: {
   profile: Profile;
   permissions: string[];
   locale: string;
   redirectUrl?: string;
 }): void => {
-  console.info('User logged in [client]');
+  console.info("User logged in [client]");
   Credentials.set(profile, permissions, locale);
 
   // if locale different from currently loaded locale, get new one
@@ -25,8 +27,8 @@ export const onSuccess = <Profile,>({
 
   // get redirect url
   const redirectUrlFinal: string =
-    redirectUrl || Store.get(REDIRECT_URI) || urlDefault.app;
+    redirectUrl || Store.get(REDIRECT_URI) || defaultAppUrl;
 
   const navigate = useNavigate();
-  navigate.push(redirectUrlFinal);
+  navigate(redirectUrlFinal);
 };
