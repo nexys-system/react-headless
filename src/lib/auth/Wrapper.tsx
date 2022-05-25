@@ -63,7 +63,7 @@ const Wrapper =
       crossTab: true,
       onIdle: () => {
         // logs user out
-        Logout.user();
+        Logout.user(options.logoutUrl);
         Store.set(REDIRECT_URI, pathname);
 
         // run custom function, if defined
