@@ -8,13 +8,6 @@ import { REDIRECT_URI } from "./conf";
 
 import * as Logout from "./logout";
 
-const optionsDefault = {
-  timeout: 60000, // 60 s
-  redirectUrl: "/login",
-  unauthorizedRedirectUrl: "/unauthorized",
-  logoutUrl: "/logout",
-};
-
 export interface Options {
   timeout: number;
   redirectUrl: string;
@@ -22,6 +15,13 @@ export interface Options {
   logoutUrl: string;
   onLogout?: () => void;
 }
+
+const optionsDefault: Options = {
+  timeout: 60000, // 60 s
+  redirectUrl: "/login", // page to which the user is redirected to if they need to login (react router)
+  unauthorizedRedirectUrl: "/unauthorized", // page to which the user is redirected to in case he is unauthorized (react router)
+  logoutUrl: "/api/logout", // api call to logout the user
+};
 
 const Wrapper =
   ({
