@@ -1,59 +1,57 @@
-import React from 'react';
+import * as T from "../../lib/layout/type";
 
-import * as T from '../../lib/layout/type';
-
-import links from '../../links';
+import links from "../../links";
 
 export interface Data {
   firstName: string;
 }
 
 const layout: T.Layout<Data> = {
-  title: 'My Layout',
-  description: 'A description here',
-  backRedirect: '/',
-  pathPrefix: links.layout.link + '/with-router',
+  title: "My Layout",
+  description: "A description here",
+  backRedirect: "/",
+  pathPrefix: links.layout.link + "/with-router",
   cards: {
     tab1: [
-      { title: 'first', Component: () => <p>Hello</p> },
-      { title: 'second', Component: ({ data }) => <p>{data.firstName}</p> },
+      { title: "first", Component: () => <p>Hello</p> },
+      { title: "second", Component: ({ data }) => <p>{data.firstName}</p> },
       {
-        title: 'third',
+        title: "third",
         Component: ({ data, setData }) => {
           return (
             <p>
-              {data.firstName} here{' '}
+              {data.firstName} here{" "}
               <button
                 className="btn btn-sm btn-primary"
-                onClick={() => setData && setData({ firstName: 'Michael' })}
+                onClick={() => setData && setData({ firstName: "Michael" })}
               >
                 Change
               </button>
             </p>
           );
-        }
-      }
+        },
+      },
     ],
-    'Tab with space': [
-      { title: 'fourth', Component: () => <p>Hello</p> },
+    "Tab with space": [
+      { title: "fourth", Component: () => <p>Hello</p> },
       {
-        title: 'third',
+        title: "third",
         Component: ({ data, setData }) => {
           return (
             <p>
-              {data.firstName} here2{' '}
+              {data.firstName} here2{" "}
               <button
                 className="btn btn-sm btn-primary"
-                onClick={() => setData && setData({ firstName: 'John' })}
+                onClick={() => setData && setData({ firstName: "John" })}
               >
                 Change
               </button>
             </p>
           );
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 };
 
 export default layout;
