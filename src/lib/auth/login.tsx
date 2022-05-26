@@ -1,3 +1,4 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
 import * as Credentials from "./credentials";
 import { REDIRECT_URI } from "./conf";
