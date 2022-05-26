@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import * as Credentials from "./credentials";
 import { REDIRECT_URI } from "./conf";
 import * as Store from "../store";
-import LoadDataAsync from "../../components/load-data-async";
+import { LoadDataAsync as PreLoadDataAsync } from "../components";
 
 const defaultAppUrl = "/app";
 
@@ -36,15 +36,21 @@ export const RedirectSuccess = <Profile,>({
   return <Navigate to={redirectUrlFinal} />;
 };
 
-export const Login = <Profile, LoginPayload = any>({
-  loginPayload,
-  apiCall,
-}: {
-  loginPayload: LoginPayload;
-  apiCall: (payload: LoginPayload) => Promise<OnSuccessProps<Profile>>;
-}) => (
-  <LoadDataAsync
-    getData={() => apiCall(loginPayload)}
-    Component={({ data }) => <RedirectSuccess {...data} />}
-  />
-);
+export const Login =
+  (Spinner: () => JSX.Element) =>
+  <Profile, LoginPayload = any>({
+    loginPayload,
+    apiCall,
+  }: {
+    loginPayload: LoginPayload;
+    apiCall: (payload: LoginPayload) => Promise<OnSuccessProps<Profile>>;
+  }) => {
+    const LoadDataAsync = PreLoadDataAsync(Spinner);
+
+    return (
+      <LoadDataAsync
+        getData={() => apiCall(loginPayload)}
+        Component={({ data }) => <RedirectSuccess {...data} />}
+      />
+    );
+  };
