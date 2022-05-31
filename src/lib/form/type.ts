@@ -1,4 +1,4 @@
-import { Render } from '../view';
+import { Render } from "../view";
 
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
 export type FormErrorsGeneric<A> = { [k in keyof A]?: string[] };
@@ -7,7 +7,7 @@ export interface FormUIProps<FormShape> {
   loading: boolean;
   form: Partial<FormShape>;
   errors: FormErrorsGeneric<FormShape>;
-  options: { [k in keyof FormShape]?: { id: number; name: string }[] };
+  options: { [k in keyof FormShape]?: { id: number | string; name: string }[] };
   setForm: (f: Partial<FormShape>) => void;
 }
 
@@ -37,7 +37,7 @@ export enum FormUIType {
   Textarea,
   Select,
   SelectObject,
-  Switch
+  Switch,
 }
 
 export interface StructureUnitCore<A> {
