@@ -9,7 +9,7 @@ export interface FormWrapperProps<A, Out> {
   data?: {
     dataIn: Partial<A>;
     options?: {
-      [k in keyof A]?: { id: number; name: string }[];
+      [k in keyof A]?: { id: number | string; name: string }[];
     };
   };
   onSuccess?: (data: A, out?: Out) => void;
