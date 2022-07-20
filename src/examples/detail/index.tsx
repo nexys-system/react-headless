@@ -2,7 +2,9 @@ import { FormUIType, FormViewDef } from "../../lib/form/type";
 import * as T from "../../lib/layout/type";
 import { delay } from "../../lib/utils";
 
-import Detail from "../../components/detail";
+// no frame
+//import { DetailNoFrame as Detail } from "../../components/detail";
+import { Detail } from "../../components/detail";
 
 //import links from "../../links";
 

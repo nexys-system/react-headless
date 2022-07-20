@@ -20,7 +20,7 @@ const LayoutView = ({ setIsForm, children }: LayoutProps) => (
       className="btn btn-sm btn-secondary"
       onClick={() => setIsForm(true)}
     >
-      edit
+      Edit
     </button>
   </>
 );
@@ -32,7 +32,7 @@ const LayoutForm = ({ setIsForm, children }: LayoutProps) => (
       className="btn btn-sm btn-secondary"
       onClick={() => setIsForm(false)}
     >
-      back
+      Back
     </button>
   </>
 );

@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { CardProps } from '../lib/card';
+import { CardProps } from "../../lib/card";
 
 const Card = ({ title, subtitle, children }: CardProps) => (
   <div className="card">

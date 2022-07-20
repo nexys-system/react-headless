@@ -1,9 +1,10 @@
-import LayoutHeadless from '../../lib/layout';
+import LayoutHeadless from "../../lib/layout";
 
-import Card from '../card';
-import Navs from '../tabs/nav';
+import Card from "../card";
+import CardNoFrame from "../card/no-frame";
+import Navs from "../tabs/nav";
 
-import { Header, Col, Row, BackBtn } from './utils-ui';
+import { Header, Col, Row, BackBtn } from "./utils-ui";
 
 export const Layout = LayoutHeadless({
   Card,
@@ -11,7 +12,16 @@ export const Layout = LayoutHeadless({
   Header,
   Col,
   Row,
-  BackBtn
+  BackBtn,
+});
+
+export const LayoutNoFrame = LayoutHeadless({
+  Card: CardNoFrame,
+  Navs,
+  Header,
+  Col,
+  Row,
+  BackBtn,
 });
 
 export default Layout;
