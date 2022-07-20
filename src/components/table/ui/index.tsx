@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import * as UIType from '../../../lib/table/ui-type';
-import { paginationBoundaries } from '../../../lib/table/utils/pagination-utils';
+import * as UIType from "../../../lib/table/ui-type";
+import { paginationBoundaries } from "../../../lib/table/utils/pagination-utils";
 
 import {
   PaginationUnitProps,
@@ -15,30 +15,38 @@ import {
   ColCellProps,
   PaginationWrapperProps,
   OrderControllerUpAndDownProps,
-  OrderControllerProps
-} from '../../../lib/table/ui-type';
-import Icon from '../../icon';
+  OrderControllerProps,
+} from "../../../lib/table/ui-type";
+import Icon from "../../icon";
 
 const Loader = () => <p>Loading...</p>;
 
 const Alert = ({
   // type = 'success',
-  children
+  children,
 }: {
   children: React.ReactNode | JSX.Element;
-  type?: 'error' | 'success' | 'info' | 'warning';
-}): JSX.Element => <div className={'alert'}>{children}</div>;
+  type?: "error" | "success" | "info" | "warning";
+}): JSX.Element => <div className={"alert"}>{children}</div>;
 
-const GlobalSearch = (props: UIType.GlobalSearchProps) => (
-  <input
-    type="text"
-    className="form-control"
-    onChange={v =>
-      props.onChange({ name: 'globalSearch', value: v.target.value })
-    }
-    placeholder={'start typing ...'}
-  />
-);
+const GlobalSearch = (props: UIType.GlobalSearchProps) => {
+  if (!props.search) {
+    return <></>;
+  }
+
+  return (
+    <div className="mb-3 col-sm-3">
+      <input
+        type="text"
+        className="form-control"
+        onChange={(v) =>
+          props.onChange({ name: "globalSearch", value: v.target.value })
+        }
+        placeholder={"start typing ..."}
+      />
+    </div>
+  );
+};
 const PopoverFilter = () => <></>;
 const FilterUnit = () => <></>;
 
@@ -70,10 +78,10 @@ export const OrderControllerUpAndDown = (
 ): JSX.Element => {
   return (
     <span>
-      <span key={'asc'} onClick={(): void => props.onClick(true)}>
+      <span key={"asc"} onClick={(): void => props.onClick(true)}>
         <ChevronUp />
       </span>
-      <span key={'desc'} onClick={(): void => props.onClick(false)}>
+      <span key={"desc"} onClick={(): void => props.onClick(false)}>
         <ChevronDown />
       </span>
     </span>
@@ -95,9 +103,9 @@ export const OrderController = (props: OrderControllerProps): JSX.Element => {
   return (
     <div
       style={{
-        cursor: 'pointer',
-        display: 'inline-block',
-        color: descAsc === null ? '#ccc' : '#000'
+        cursor: "pointer",
+        display: "inline-block",
+        color: descAsc === null ? "#ccc" : "#000",
       }}
       onClick={(): void => onClick(null)}
     >
@@ -114,8 +122,8 @@ export const ListWrapper = (props: ListWrapperProps): JSX.Element => {
 export const ListContainer = (props: ListContainerProps): JSX.Element => {
   const { children, maxHeight, stickyHeader = false } = props;
   return (
-    <div className={'container'} style={maxHeight ? { maxHeight } : undefined}>
-      <table className={'table table-striped'}>{children}</table>
+    <div className={"container"} style={maxHeight ? { maxHeight } : undefined}>
+      <table className={"table table-striped"}>{children}</table>
     </div>
   );
 };
@@ -145,7 +153,7 @@ export const RecordInfo = (props: RecordInfoProps): JSX.Element | null => {
 
   return (
     <p className="pull-right">
-      Showing {start + 1} to {Number(start) + Number(nPerPage) > n ? n : end} of{' '}
+      Showing {start + 1} to {Number(start) + Number(nPerPage) > n ? n : end} of{" "}
       {n} entries
     </p>
   );
@@ -172,7 +180,7 @@ export const PaginationUnit = (
   }
 
   const className =
-    'page-item' + (isActive ? ' active' : '') + (isDisabled ? ' disabled' : '');
+    "page-item" + (isActive ? " active" : "") + (isDisabled ? " disabled" : "");
 
   return (
     <li className={className}>

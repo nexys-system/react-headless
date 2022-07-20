@@ -1,4 +1,3 @@
-import React from 'react';
 import { LoadDataAsyncProps } from "../components";
 import { DetailProps } from "../detail/type";
 import { FormViewDef } from "../form/type";

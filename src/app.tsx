@@ -24,6 +24,7 @@ import Badge from "./examples/badge";
 import Auth from "./examples/auth";
 import DateRange from "./examples/date-range";
 import Superadmin from "./examples/superadmin";
+import CrudBrowser from "./examples/crud-browser";
 
 import { links } from "./links";
 
@@ -62,6 +63,7 @@ export default () => (
         <Route path={links.detail.link} element={<Detail />} />
         <Route path={links.statusChange.link} element={<StatusChange />} />
         <Route path={links.superadmin.link + "/*"} element={<Superadmin />} />
+        <Route path={links.crudBrowser.link + "/*"} element={<CrudBrowser />} />
         <Route path={links.auth.link + "/*"} element={<Auth />} />
         <Route path={links.dateRange.link} element={<DateRange />} />
         <Route path={"/"} element={<Public />} />
