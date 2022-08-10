@@ -1,6 +1,6 @@
 import { FormWrapperProps } from "../lib/form/form-wrapper";
 import { ViewStructureUnit } from "../lib/view";
-import ViewGeneric, { RowProps } from "../lib/view";
+import ViewGeneric, { RowProps, toViewStructure } from "../lib/view";
 import ToggleHeadless, { LayoutProps } from "../lib/toggle";
 import { FormViewDef } from "../lib/form/type";
 import PreForm from "./form/generator";
@@ -41,12 +41,6 @@ const PreToggle = <A, Out>(
   structure: ViewStructureUnit<A>[],
   Form: (p: FormWrapperProps<A, Out>) => JSX.Element
 ) => ToggleHeadless(structure, Form, View, LayoutView, LayoutForm);
-
-const toViewStructure = <A,>(def: FormViewDef<A>[]): ViewStructureUnit<A>[] =>
-  def.map((x) => ({
-    label: x.label,
-    value: x.render || x.name,
-  }));
 
 export const ToggleFromDef = <A, Out>(
   def: FormViewDef<A>[],

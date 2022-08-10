@@ -20,12 +20,6 @@ export interface InputProps<A> {
   options?: { id: A; name: string }[];
 }
 
-// to rework
-// id: A is wrong
-export interface InputOptionsProps<A> extends InputProps<A> {
-  options: { id: A; name: string }[];
-}
-
 export interface InputWrapperProps {
   label?: string;
   children: JSX.Element;

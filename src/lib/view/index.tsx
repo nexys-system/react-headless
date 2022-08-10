@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { FormViewDef } from "../form/type";
 
 export type Render<A> = (a: A) => string | JSX.Element;
 
@@ -25,6 +26,14 @@ export interface RowProps {
   value: string | JSX.Element;
 }
 
+export const toViewStructure = <A,>(
+  def: FormViewDef<A>[]
+): ViewStructureUnit<A>[] =>
+  def.map((x) => ({
+    label: x.label,
+    value: x.render || x.name,
+  }));
+
 const LayoutMinimal = (p: LayoutProps) => <>{p.children}</>;
 
 const View =
@@ -37,7 +46,7 @@ const View =
       <Layout title={title} description={description}>
         {structure.map((s, i) => {
           const value =
-            typeof s.value === 'function'
+            typeof s.value === "function"
               ? s.value(data)
               : String(data[s.value]);
 
