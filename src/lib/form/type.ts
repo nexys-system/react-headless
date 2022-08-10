@@ -39,6 +39,7 @@ export enum FormUIType {
   Select,
   SelectNumber,
   SelectObject,
+  SelectObjectNumber,
   Switch,
 }
 

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import { FormWrapperProps } from '../form/form-wrapper';
+import { FormWrapperProps } from "../form/form-wrapper";
 
-import { ViewProps, ViewStructureUnit } from '../view';
+import { ViewProps, ViewStructureUnit } from "../view";
 
 export interface LayoutProps {
   isForm?: boolean;
@@ -18,7 +18,18 @@ const ToggleHeadless =
     LayoutView: (p: LayoutProps) => JSX.Element,
     LayoutForm: (p: LayoutProps) => JSX.Element
   ) =>
-  ({ data: dataIn }: { data: A }) => {
+  ({
+    data: dataIn,
+    options,
+  }: {
+    data: A;
+    options?: {
+      [k in keyof A]?: {
+        id: string | number;
+        name: string;
+      }[];
+    };
+  }) => {
     const [data, setData] = React.useState<A>(dataIn);
     const [isForm, setIsForm] = React.useState<boolean>(false);
 
@@ -26,8 +37,8 @@ const ToggleHeadless =
       return (
         <LayoutForm setIsForm={setIsForm}>
           <Form
-            data={{ dataIn: data }}
-            onSuccess={d => {
+            data={{ dataIn: data, options }}
+            onSuccess={(d) => {
               setData(d);
               setIsForm(false);
             }}

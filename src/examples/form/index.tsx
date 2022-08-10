@@ -8,7 +8,7 @@ import FormGenerated from "./generated";
 
 import { apiCall, onSuccess, cartoonCharacters, shape } from "./utils";
 
-const continents = [
+export const continents = [
   { id: 1, name: "Asia" },
   { id: 2, name: "Africa" },
   { id: 3, name: "Europe" },

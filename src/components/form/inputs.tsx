@@ -78,7 +78,8 @@ export const Select = <A extends number | string>({
       const { value } = v.target;
 
       if (!value) {
-        onChange(undefined);
+        onChange(undefined as any);
+        return;
       }
 
       onChange(Number(value) as any as A);
@@ -98,6 +99,23 @@ export const Select = <A extends number | string>({
 
 export const SelectEnum = Select;
 
+export const SelectObject = <A extends number | string>(
+  props: Omit<T.InputProps<A>, "value" | "onChange"> &
+    Pick<T.InputProps<{ id: A; name: string }>, "value" | "onChange">
+) => {
+  const onChange = (id: A) => {
+    const option = props.options?.find((x) => x.id === id);
+
+    if (option) {
+      props.onChange(option);
+    }
+  };
+
+  const value: A | undefined = props.value?.id;
+
+  return Select<A>({ ...props, onChange, value });
+};
+
 export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
   <input
     checked={value}
@@ -112,10 +130,12 @@ export const InputGeneric = (uiType: T.FormUIType) => {
       return Checkbox;
     case T.FormUIType.Textarea:
       return Textarea;
-    case T.FormUIType.SelectObject:
     case T.FormUIType.Select:
     case T.FormUIType.SelectNumber:
-      return Select;
+      return SelectObject;
+    case T.FormUIType.SelectObject:
+    case T.FormUIType.SelectObjectNumber:
+      return SelectObject;
     default:
       return Input;
   }
