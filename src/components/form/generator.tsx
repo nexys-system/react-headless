@@ -3,7 +3,7 @@ import React from "react";
 import FormGenerated from "../../lib/form/generator/form";
 import { FormUIGeneratorProps } from "../../lib/form/generator/ui";
 
-import * as UI from "../../components/form/inputs";
+import * as UI from "./inputs";
 
 const p: FormUIGeneratorProps = {
   InputWrapper: UI.InputWrapper,
