@@ -23,7 +23,7 @@ const def: FormDef<FormDataShape>[] = [
     label: "Continent",
     placeholder: "Continent",
     name: "continent",
-    uiType: FormUIType.SelectNumber,
+    uiType: FormUIType.SelectObjectNumber,
     optional: false,
   },
 ];
