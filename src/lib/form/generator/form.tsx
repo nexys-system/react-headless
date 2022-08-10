@@ -1,8 +1,8 @@
-import * as T from '../type';
+import * as T from "../type";
 
-import { defToShape } from '../utils';
-import FormUIGenerator, { FormUIGeneratorProps } from './ui';
-import FormWrapper from '../form-wrapper';
+import { defToShape } from "../utils";
+import FormUIGenerator, { FormUIGeneratorProps } from "./ui";
+import FormWrapper from "../form-wrapper";
 
 const FormGenerator =
   (p: FormUIGeneratorProps) =>

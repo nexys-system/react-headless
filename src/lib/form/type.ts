@@ -17,6 +17,7 @@ export interface InputProps<A> {
   errors?: string[];
   disabled?: boolean;
   placeholder?: string;
+  options?: { id: A; name: string }[];
 }
 
 // to rework
@@ -36,6 +37,7 @@ export enum FormUIType {
   Text,
   Textarea,
   Select,
+  SelectNumber,
   SelectObject,
   Switch,
 }

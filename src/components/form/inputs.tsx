@@ -2,10 +2,13 @@ import React from "react";
 
 import * as T from "../../lib/form/type";
 
-export const getClassName = (errors?: string[]): string => {
+export const getClassName = (
+  errors?: string[],
+  mainClass = "form-control"
+): string => {
   const isInvalid: boolean = !!errors;
 
-  const classes = ["form-control"]; //
+  const classes = [mainClass]; //
 
   if (isInvalid) {
     classes.push("is-invalid");
@@ -61,28 +64,31 @@ export const Textarea = ({
   />
 );
 
-export const SelectEnum = <A extends number | string>({
+export const Select = <A extends number | string>({
   onChange,
   options,
   value,
   errors,
   disabled,
-}: T.InputOptionsProps<A>) => (
+}: T.InputProps<A>) => (
   <select
-    className={getClassName(errors)}
+    className={getClassName(errors, "form-select")}
     // handle select null again
     onChange={(v) => onChange(Number(v.target.value) as any as A)}
     disabled={disabled}
     defaultValue={value}
   >
     <option></option>
-    {options.map(({ id, name }, i) => (
-      <option key={i} value={id}>
-        {name}
-      </option>
-    ))}
+    {options &&
+      options.map(({ id, name }, i) => (
+        <option key={i} value={id}>
+          {name}
+        </option>
+      ))}
   </select>
 );
+
+export const SelectEnum = Select;
 
 export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
   <input
@@ -98,6 +104,10 @@ export const InputGeneric = (uiType: T.FormUIType) => {
       return Checkbox;
     case T.FormUIType.Textarea:
       return Textarea;
+    case T.FormUIType.SelectObject:
+    case T.FormUIType.Select:
+    case T.FormUIType.SelectNumber:
+      return Select;
     default:
       return Input;
   }

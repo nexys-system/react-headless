@@ -1,16 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import FormGenerated from '../../lib/form/generator/form';
-import * as UI from '../../components/form/inputs';
+import FormGenerated from "../../lib/form/generator/form";
+import { FormUIGeneratorProps } from "../../lib/form/generator/ui";
 
-const p = {
+import * as UI from "../../components/form/inputs";
+
+const p: FormUIGeneratorProps = {
   InputWrapper: UI.InputWrapper,
   InputGeneric: UI.InputGeneric,
   Button: () => (
     <button className="btn btn-primary" type="submit">
       Send
     </button>
-  )
+  ),
 };
 
 export default FormGenerated(p);

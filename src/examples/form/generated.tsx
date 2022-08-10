@@ -19,6 +19,13 @@ const def: FormDef<FormDataShape>[] = [
     uiType: FormUIType.Text,
     optional: true,
   },
+  {
+    label: "Continent",
+    placeholder: "Continent",
+    name: "continent",
+    uiType: FormUIType.SelectNumber,
+    optional: false,
+  },
 ];
 
 export default PreForm(def, apiCall);

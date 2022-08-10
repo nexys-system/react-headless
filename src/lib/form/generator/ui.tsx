@@ -10,7 +10,13 @@ export interface FormUIGeneratorProps {
 const FormUIGenerator =
   ({ InputGeneric, InputWrapper, Button }: FormUIGeneratorProps) =>
   <A,>(def: T.FormDef<A>[]) =>
-  ({ form, setForm, loading, errors }: T.FormUIProps<A>): JSX.Element => {
+  ({
+    form,
+    setForm,
+    loading,
+    errors,
+    options,
+  }: T.FormUIProps<A>): JSX.Element => {
     return (
       <>
         {def.map((item, i) => {
@@ -24,6 +30,7 @@ const FormUIGenerator =
                 disabled={loading}
                 placeholder={item.placeholder}
                 errors={errors[item.name]}
+                options={options[item.name]}
               />
             </InputWrapper>
           );
