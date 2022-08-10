@@ -74,7 +74,15 @@ export const Select = <A extends number | string>({
   <select
     className={getClassName(errors, "form-select")}
     // handle select null again
-    onChange={(v) => onChange(Number(v.target.value) as any as A)}
+    onChange={(v) => {
+      const { value } = v.target;
+
+      if (!value) {
+        onChange(undefined);
+      }
+
+      onChange(Number(value) as any as A);
+    }}
     disabled={disabled}
     defaultValue={value}
   >
