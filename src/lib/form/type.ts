@@ -49,6 +49,7 @@ export interface FormDef<A> extends StructureUnitCore<A> {
   uiType: FormUIType;
   optional: boolean;
   disabled?: boolean;
+  placeholder?: string;
 }
 
 export interface FormViewDef<A> extends FormDef<A> {

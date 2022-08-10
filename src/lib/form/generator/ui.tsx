@@ -17,12 +17,12 @@ const FormUIGenerator =
           const Input = InputGeneric(item.uiType);
 
           return (
-            <InputWrapper errors={errors[item.name]} key={i}>
+            <InputWrapper label={item.label} errors={errors[item.name]} key={i}>
               <Input
                 value={form[item.name]}
                 onChange={(val) => setForm({ ...form, [item.name]: val })}
                 disabled={loading}
-                placeholder={item.label}
+                placeholder={item.placeholder}
                 errors={errors[item.name]}
               />
             </InputWrapper>
