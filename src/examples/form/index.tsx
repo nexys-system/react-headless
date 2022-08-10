@@ -18,6 +18,18 @@ export const continents = [
   { id: 7, name: "Antarctica" },
 ];
 
+const ages = [
+  { id: 1, name: "<20" },
+  { id: 2, name: "20-40" },
+  { id: 3, name: "40-60" },
+  { id: 4, name: "60+" },
+];
+
+const methods = [
+  { id: "GET", name: "GET" },
+  { id: "POST", name: "POST" },
+];
+
 const Form = FormWrapper<FormDataShape, Out>(FormUI, shape, apiCall);
 
 export default () => (
@@ -43,12 +55,8 @@ export default () => (
         dataIn: {},
         options: {
           continent: continents,
-          age: [
-            { id: 1, name: "<20" },
-            { id: 2, name: "20-40" },
-            { id: 3, name: "40-60" },
-            { id: 4, name: "60+" },
-          ],
+          age: ages,
+          method: methods,
         },
       }}
       onSuccess={onSuccess}

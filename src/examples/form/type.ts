@@ -3,6 +3,7 @@ export interface FormDataShape {
   lastName?: string;
   continent: { id: number; name: string };
   age: number;
+  method: "GET" | "POST";
 }
 
 export interface Out {
