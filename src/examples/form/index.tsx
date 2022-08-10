@@ -43,6 +43,12 @@ export default () => (
         dataIn: {},
         options: {
           continent: continents,
+          age: [
+            { id: 1, name: "<20" },
+            { id: 2, name: "20-40" },
+            { id: 3, name: "40-60" },
+            { id: 4, name: "60+" },
+          ],
         },
       }}
       onSuccess={onSuccess}

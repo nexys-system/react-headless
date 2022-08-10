@@ -22,10 +22,12 @@ const FormUIGenerator =
         {def.map((item, i) => {
           const Input = InputGeneric(item.uiType);
 
+          const value = form[item.name];
+
           return (
             <InputWrapper label={item.label} errors={errors[item.name]} key={i}>
               <Input
-                value={form[item.name]}
+                value={value}
                 onChange={(val) => setForm({ ...form, [item.name]: val })}
                 disabled={loading}
                 placeholder={item.placeholder}

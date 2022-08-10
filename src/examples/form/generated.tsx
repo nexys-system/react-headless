@@ -26,6 +26,12 @@ const def: FormDef<FormDataShape>[] = [
     uiType: FormUIType.SelectObjectNumber,
     optional: false,
   },
+  {
+    label: "Age",
+    name: "age",
+    uiType: FormUIType.SelectNumber,
+    optional: false,
+  },
 ];
 
 export default PreForm(def, apiCall);

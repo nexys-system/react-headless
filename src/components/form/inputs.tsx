@@ -82,7 +82,14 @@ export const Select = <A extends number | string>({
         return;
       }
 
-      onChange(Number(value) as any as A);
+      const valueInt = Number(value);
+
+      if (!isNaN(valueInt)) {
+        onChange(valueInt as any as A);
+        return;
+      }
+
+      onChange(value as any as A);
     }}
     disabled={disabled}
     defaultValue={value}
@@ -132,7 +139,7 @@ export const InputGeneric = (uiType: T.FormUIType) => {
       return Textarea;
     case T.FormUIType.Select:
     case T.FormUIType.SelectNumber:
-      return SelectObject;
+      return Select;
     case T.FormUIType.SelectObject:
     case T.FormUIType.SelectObjectNumber:
       return SelectObject;
