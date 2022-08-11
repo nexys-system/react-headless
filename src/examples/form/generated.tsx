@@ -50,6 +50,12 @@ const def: FormDef<FormDataShape>[] = [
     uiType: FormUIType.DateTime,
     optional: true,
   },
+  {
+    label: "Lunch Time",
+    name: "lunchTime",
+    uiType: FormUIType.Time,
+    optional: true,
+  },
 ];
 
 export default PreForm(def, apiCall);

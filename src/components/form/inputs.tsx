@@ -33,7 +33,8 @@ export const InputWrapper = ({
   </div>
 );
 
-type HtmlInputType = "text" | "date" | "datetime-local";
+// see https://www.w3schools.com/html/html_form_input_types.asp
+type HtmlInputType = "text" | "date" | "time" | "datetime-local";
 
 const InputTextGeneric =
   (type: HtmlInputType = "text") =>
@@ -54,6 +55,8 @@ export const Input = InputTextGeneric("text");
 export const Datepicker = InputTextGeneric("date");
 
 export const DateTimepicker = InputTextGeneric("datetime-local");
+
+export const Timepicker = InputTextGeneric("time");
 
 export const Textarea = ({
   onChange,
@@ -152,6 +155,8 @@ export const InputGeneric = (uiType: T.FormUIType) => {
       return Datepicker;
     case T.FormUIType.DateTime:
       return DateTimepicker;
+    case T.FormUIType.Time:
+      return Timepicker;
     default:
       return Input;
   }

@@ -36,6 +36,7 @@ export enum FormUIType {
   SelectObjectNumber,
   Switch,
   Date,
+  Time,
   DateTime,
 }
 
