@@ -5,6 +5,7 @@ export interface FormDataShape {
   age: number;
   method: "GET" | "POST";
   birthdate: string;
+  appointment: string;
 }
 
 export interface Out {

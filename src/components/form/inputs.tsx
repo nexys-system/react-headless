@@ -33,8 +33,10 @@ export const InputWrapper = ({
   </div>
 );
 
+type HtmlInputType = "text" | "date" | "datetime-local";
+
 const InputTextGeneric =
-  (type: "text" | "date" = "text") =>
+  (type: HtmlInputType = "text") =>
   ({ onChange, errors, disabled, value, placeholder }: T.InputProps<string>) =>
     (
       <input
@@ -50,6 +52,8 @@ const InputTextGeneric =
 export const Input = InputTextGeneric("text");
 
 export const Datepicker = InputTextGeneric("date");
+
+export const DateTimepicker = InputTextGeneric("datetime-local");
 
 export const Textarea = ({
   onChange,
@@ -146,6 +150,8 @@ export const InputGeneric = (uiType: T.FormUIType) => {
       return SelectObject;
     case T.FormUIType.Date:
       return Datepicker;
+    case T.FormUIType.DateTime:
+      return DateTimepicker;
     default:
       return Input;
   }
