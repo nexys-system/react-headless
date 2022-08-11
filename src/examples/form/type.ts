@@ -4,6 +4,7 @@ export interface FormDataShape {
   continent: { id: number; name: string };
   age: number;
   method: "GET" | "POST";
+  birthdate: string;
 }
 
 export interface Out {

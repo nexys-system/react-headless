@@ -33,22 +33,23 @@ export const InputWrapper = ({
   </div>
 );
 
-export const Input = ({
-  onChange,
-  errors,
-  disabled,
-  value,
-  placeholder,
-}: T.InputProps<string>) => (
-  <input
-    className={getClassName(errors)}
-    type={"text"}
-    value={value || ""}
-    onChange={(v) => onChange(v.target.value)}
-    disabled={disabled}
-    placeholder={placeholder}
-  />
-);
+const InputTextGeneric =
+  (type: "text" | "date" = "text") =>
+  ({ onChange, errors, disabled, value, placeholder }: T.InputProps<string>) =>
+    (
+      <input
+        className={getClassName(errors)}
+        type={type}
+        value={value || ""}
+        onChange={(v) => onChange(v.target.value)}
+        disabled={disabled}
+        placeholder={placeholder}
+      />
+    );
+
+export const Input = InputTextGeneric("text");
+
+export const Datepicker = InputTextGeneric("date");
 
 export const Textarea = ({
   onChange,
@@ -143,6 +144,8 @@ export const InputGeneric = (uiType: T.FormUIType) => {
     case T.FormUIType.SelectObject:
     case T.FormUIType.SelectObjectNumber:
       return SelectObject;
+    case T.FormUIType.Date:
+      return Datepicker;
     default:
       return Input;
   }
