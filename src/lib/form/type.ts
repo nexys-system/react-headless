@@ -38,6 +38,7 @@ export enum FormUIType {
   Date,
   Time,
   DateTime,
+  RichText,
 }
 
 export interface StructureUnitCore<A> {
