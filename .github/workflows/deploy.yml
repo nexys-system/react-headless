@@ -9,16 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: env var
-        run: |
-          echo "GITHUB_SHA: $GITHUB_SHA"
-          echo "GITHUB_SHA_SHORT: $GITHUB_SHA_SHORT"
-          echo "VERSION: ${GITHUB_REF##*/}"
-      - name: Install Packages
-        run: npm install
-      - name: Build page
-        run: VITE_GIT_SHA=$GITHUB_SHA VITE_VERSION=${GITHUB_REF##*/} VITE_BASE=/react-headless yarn build --mode ghpages
+      - uses: nexys-system/gh-actions-spa-test@v1.0.2
+        with:
+          build-command VITE_GIT_SHA=$GITHUB_SHA VITE_VERSION=${GITHUB_REF##*/} VITE_BASE=/react-headless yarn build --mode ghpages
       - name: add 404
         run: cp dist/index.html dist/404.html
       - name: Deploy to gh-pages
