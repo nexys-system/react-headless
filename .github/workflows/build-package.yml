@@ -1,5 +1,4 @@
-# https://medium.com/@cmichel/how-to-deploy-a-create-react-app-with-github-actions-5e01f7a7b6b
-name: Build Package
+name: Test
 
 on: [push]
 
@@ -7,12 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Install Packages
-        run: yarn
-      - name: test package
-        run: yarn test
+      - uses: nexys-system/gh-actions-spa-test@v1
       - name: Build package
         run: yarn buildpackage
-      - name: Build
-        run: yarn build
