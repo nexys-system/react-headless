@@ -39,3 +39,22 @@ export const yesOrNo = (
 
   return labels.no;
 };
+
+/**
+ * parse JWT
+ * @param token
+ * @see https://stackoverflow.com/questions/38552003/how-to-decode-jwt-token-in-javascript-without-using-a-library
+ * @returns
+ */
+export const parseJwt = <A = any>(token: string): A => {
+  const base64Url: string = token.split(".")[1];
+  const base64: string = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  const jsonPayload: string = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map((c) => "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2))
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+};
