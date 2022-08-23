@@ -14,7 +14,7 @@ export const isA = <A>(
 ): a is A => Object.keys(formErrors).length === 0;
 
 const getType = (uiType: FormUIType) => {
-  if ([FormUIType.SelectNumber].includes(uiType)) {
+  if ([FormUIType.SelectNumber, FormUIType.Number].includes(uiType)) {
     return "number";
   }
 
