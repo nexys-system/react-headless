@@ -13,7 +13,7 @@ export interface FormUIProps<FormShape> {
 
 export interface InputProps<A> {
   value?: A;
-  onChange: (a: A) => void;
+  onChange: (a?: A) => void;
   errors?: string[];
   disabled?: boolean;
   placeholder?: string;
