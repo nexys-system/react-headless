@@ -118,7 +118,7 @@ export const SelectObject = <A extends number | string>(
   props: Omit<T.InputProps<A>, "value" | "onChange"> &
     Pick<T.InputProps<{ id: A; name: string }>, "value" | "onChange">
 ) => {
-  const onChange = (id: A) => {
+  const onChange = (id?: A) => {
     const option = props.options?.find((x) => x.id === id);
 
     if (option) {
