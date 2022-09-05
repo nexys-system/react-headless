@@ -36,7 +36,7 @@ const Wrapper =
   (): JSX.Element => {
     const navigate = useNavigate();
     const permissions = Credentials.getPermissions();
-    const { pathname } = window.location;
+    const { pathname, search } = window.location;
     const { redirectUrl, unauthorizedRedirectUrl } = options;
 
     // user not authenticated
@@ -47,7 +47,8 @@ const Wrapper =
 
     // user unauthorized
     if (permission && !permissions.includes(permission)) {
-      Store.set(REDIRECT_URI, pathname);
+      const url = pathname + (search || "");
+      Store.set(REDIRECT_URI, url);
       return <Navigate to={unauthorizedRedirectUrl} />;
     }
 
