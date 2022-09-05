@@ -39,16 +39,17 @@ const Wrapper =
     const { pathname, search } = window.location;
     const { redirectUrl, unauthorizedRedirectUrl } = options;
 
+    const currentUrl = pathname + (search || "");
+
     // user not authenticated
     if (!permissions) {
-      Store.set(REDIRECT_URI, pathname);
+      Store.set(REDIRECT_URI, currentUrl);
       return <Navigate to={redirectUrl} />;
     }
 
     // user unauthorized
     if (permission && !permissions.includes(permission)) {
-      const url = pathname + (search || "");
-      Store.set(REDIRECT_URI, url);
+      Store.set(REDIRECT_URI, currentUrl);
       return <Navigate to={unauthorizedRedirectUrl} />;
     }
 
