@@ -25,6 +25,8 @@ import Auth from "./examples/auth";
 import DateRange from "./examples/date-range";
 import Superadmin from "./examples/superadmin";
 import CrudBrowser from "./examples/crud-browser";
+import FormBuilder from "./builder/form";
+import TableBuilder from "./builder/table";
 
 import { links } from "./links";
 
@@ -66,6 +68,8 @@ export default () => (
         <Route path={links.crudBrowser.link + "/*"} element={<CrudBrowser />} />
         <Route path={links.auth.link + "/*"} element={<Auth />} />
         <Route path={links.dateRange.link} element={<DateRange />} />
+        <Route path={"/builder/form"} element={<FormBuilder />} />
+        <Route path={"/builder/table"} element={<TableBuilder />} />
         <Route path={"/"} element={<Public />} />
         <Route path={"/:any"} element={<NotFound />} />
       </Routes>
