@@ -66,7 +66,7 @@ const Wrapper =
       onIdle: () => {
         // logs user out
         Logout.user(options.logoutUrl);
-        Store.set(REDIRECT_URI, pathname);
+        Store.set(REDIRECT_URI, currentUrl);
 
         // run custom function, if defined
         options.onLogout && options.onLogout();
