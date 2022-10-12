@@ -26,7 +26,7 @@ see example [here](https://github.com/nexys-system/react-headless/commit/6e7df1e
 
 Create a request function that extends https://github.com/nexys-system/react-headless/blob/master/src/lib/request/fetch.ts#L4
 
-implementation example
+below an untested implementation example:
 
 ```
 const request = <A, B = any>(
