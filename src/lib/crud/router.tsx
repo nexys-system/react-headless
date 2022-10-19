@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 
-import { LoadDataAsyncProps } from "../../components/index";
+import { LoadDataAsyncProps } from "../components/index";
 
 export interface ListProps<A, Id> {
   data: A[];
