@@ -24,6 +24,7 @@ export interface InputWrapperProps {
   label?: string;
   children: JSX.Element;
   errors?: string[];
+  info?: string;
 }
 
 export enum FormUIType {
