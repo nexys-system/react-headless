@@ -2,7 +2,7 @@
 // see https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
 export type Method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
-export const fetchJSON = async <A, B = any>(
+export const fetchJSON = async <A = any, B = any>(
   url: string,
   { method = "GET", data }: { method: Method; data?: B }
 ): Promise<A> => {
