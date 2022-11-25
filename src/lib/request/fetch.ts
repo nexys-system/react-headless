@@ -1,5 +1,6 @@
 // this is a wrapper around fetch to get JSONs
-type Method = "GET" | "POST" | "PUT" | "DELETE";
+// see https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+export type Method = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
 
 export const fetchJSON = async <A, B = any>(
   url: string,
