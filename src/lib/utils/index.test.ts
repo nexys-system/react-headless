@@ -26,3 +26,37 @@ test("parse JWT", () => {
     iat: 1516239022,
   });
 });
+
+
+
+describe('getAnalyticsReadyPath', () => {
+  test('without uuid', () => {
+    expect(U.getAnalyticsReadyPath('https://dev.mydomain.com/app')).toBe('/app');
+    expect(U.getAnalyticsReadyPath('https://test.mydomain.com/app')).toBe(
+      '/app'
+    );
+    expect(U.getAnalyticsReadyPath('https://app.mydomain.com/app')).toBe('/app');
+  });
+
+  test('with uuid', () => {
+    expect(
+      U.getAnalyticsReadyPath(
+        'https://dev.mydomain.com/app/9f9cbfb5-47b9-40e0-8q2d-0d3528a0d9ff/list'
+      )
+    ).toBe('/app/:uuid/list');
+  });
+
+  test('with uuid (2x)', () => {
+    expect(
+      U.getAnalyticsReadyPath(
+        'https://dev.mydomain.com/app/9r9cbfb5-47a9-40e0-8e2d-6d3528a0d9ff/list/5d3f6d6a-f1ed-454d-8504-4yd4cf59c2a4/detail'
+      )
+    ).toBe('/app/:uuid/list/:uuid/detail');
+  });
+
+  test('wuth id', () => {
+    expect(
+      U.getAnalyticsReadyPath('https://dev.mydomain.com/app/543/detail')
+    ).toBe('/app/:id/detail');
+  });
+});
