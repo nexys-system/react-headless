@@ -30,21 +30,24 @@ test("parse JWT", () => {
 
 
 describe('getAnalyticsReadyPath', () => {
-  const prefixRegExp = new RegExp('^https://[a-z]+.mydomain.com')
-  
   test('without uuid', () => {
-    expect(U.getAnalyticsReadyPath('https://dev.mydomain.com/app', prefixRegExp)).toBe('/app');
-    expect(U.getAnalyticsReadyPath('https://test.mydomain.com/app', prefixRegExp)).toBe(
+    expect(U.getAnalyticsReadyPath('https://mydomain.com/app')).toBe('/app');
+    expect(U.getAnalyticsReadyPath('https://dev.mydomain.com/app')).toBe('/app');
+    expect(U.getAnalyticsReadyPath('https://test.mydomain.com/app')).toBe(
       '/app'
     );
-    expect(U.getAnalyticsReadyPath('https://app.mydomain.com/app', prefixRegExp)).toBe('/app');
+    expect(U.getAnalyticsReadyPath('https://app.mydomain.com/app')).toBe('/app');
   });
 
   test('with uuid', () => {
     expect(
       U.getAnalyticsReadyPath(
-        'https://dev.mydomain.com/app/9f9cbfb5-47b9-40e0-8a2d-0d3528a0d9ff/list',
-        prefixRegExp
+        'https://mydomain.com/app/9f9cbfb5-47b9-40e0-8a2d-0d3528a0d9ff/list'
+      )
+    ).toBe('/app/:uuid/list');
+    expect(
+      U.getAnalyticsReadyPath(
+        'https://dev.mydomain.com/app/9f9cbfb5-47b9-40e0-8a2d-0d3528a0d9ff/list'
       )
     ).toBe('/app/:uuid/list');
   });
@@ -52,8 +55,7 @@ describe('getAnalyticsReadyPath', () => {
   test('with uuid (2x)', () => {
     expect(
       U.getAnalyticsReadyPath(
-        'https://dev.mydomain.com/app/9e9cbfb5-47a9-40e0-8e2d-6d3528a0d9ff/list/5d3f6d6a-f1ed-454d-8504-4dd4cf59c2a4/detail',
-        prefixRegExp 
+        'https://dev.mydomain.com/app/9e9cbfb5-47a9-40e0-8e2d-6d3528a0d9ff/list/5d3f6d6a-f1ed-454d-8504-4dd4cf59c2a4/detail' 
       )
     ).toBe('/app/:uuid/list/:uuid/detail');
   });
@@ -61,8 +63,7 @@ describe('getAnalyticsReadyPath', () => {
   test('wuth id', () => {
     expect(
       U.getAnalyticsReadyPath(
-        'https://dev.mydomain.com/app/543/detail',
-        prefixRegExp)
+        'https://dev.mydomain.com/app/543/detail')
     ).toBe('/app/:id/detail');
   });
 });

@@ -63,7 +63,7 @@ export const parseJwt = <A = any>(token: string): A => {
 
 export const getAnalyticsReadyPath = (
   href: string,
-  prefix: string | RegExp
+  prefix: string | RegExp =  new RegExp('^http[s]{0,1}://[a-z]+[\\.]{0,1}[a-zA-Z]+\\.[a-zA-Z]+')
 ) => {
   //const { href } = window.location;
 
