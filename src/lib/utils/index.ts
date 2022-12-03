@@ -58,3 +58,23 @@ export const parseJwt = <A = any>(token: string): A => {
 
   return JSON.parse(jsonPayload);
 };
+
+
+
+export const getAnalyticsReadyPath = (
+  href: string,
+  prefix: string | RegExp
+) => {
+  const t = href.match(
+    /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g
+  );
+
+  if (t && Array.isArray(t)) {
+    t.forEach((uuid) => {
+      href = href.replace(uuid, ':uuid');
+    });
+  }
+
+  return href.replace(prefix, '');
+};
+
