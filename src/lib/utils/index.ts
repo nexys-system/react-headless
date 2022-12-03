@@ -1,3 +1,5 @@
+import * as RegExpUtils from './regexp';
+
 export const delay = (ms: number = 500) =>
   new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -59,22 +61,31 @@ export const parseJwt = <A = any>(token: string): A => {
   return JSON.parse(jsonPayload);
 };
 
-
-
 export const getAnalyticsReadyPath = (
   href: string,
   prefix: string | RegExp
 ) => {
-  const t = href.match(
-    /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g
-  );
+  //const { href } = window.location;
 
-  if (t && Array.isArray(t)) {
-    t.forEach((uuid) => {
-      href = href.replace(uuid, ':uuid');
+  // remove prefix
+  href = href.replace(prefix, '');
+
+  const foundUuids = href.match(new RegExp('/' + RegExpUtils.matchUuid + '/', 'g'));
+
+  if (foundUuids && Array.isArray(foundUuids)) {
+    foundUuids.forEach((uuid) => {
+      href = href.replace(uuid, '/:uuid/');
     });
   }
 
-  return href.replace(prefix, '');
+  const foundIds = href.match(/\/\d+\//);
+
+  if (foundIds && Array.isArray(foundIds)) {
+    foundIds.forEach((id) => {
+      href = href.replace(id, '/:id/');
+    });
+  }
+
+  return href;
 };
 
