@@ -109,6 +109,7 @@ export interface ColCellProps {
   children: React.ReactNode | JSX.Element;
   colSpan?: number;
   style?: React.CSSProperties;
+  classAppend?: string;
 }
 
 export interface PaginationWrapperProps {
