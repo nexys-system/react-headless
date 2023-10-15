@@ -58,14 +58,15 @@ export const NoRow = (props: NoRowProps): JSX.Element | null => {
   return <Alert type="warning">No rows found</Alert>;
 };
 
-export const ColCell = (props: ColCellProps): JSX.Element => {
-  const { children, colSpan, style } = props;
-  return (
-    <td colSpan={colSpan} style={style}>
-      {children}
-    </td>
-  );
-};
+export const ColCell = ({
+  children,
+  colSpan,
+  style,
+}: ColCellProps): JSX.Element => (
+  <td colSpan={colSpan} style={style}>
+    {children}
+  </td>
+);
 
 export const HeaderUnit = (props: UIType.HeaderUnitProps): JSX.Element => {
   const { children } = props;

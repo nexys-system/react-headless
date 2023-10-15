@@ -274,7 +274,7 @@ const ListSuper =
           ) : (
             <Row>
               {def.map((h, j) => (
-                <ColCell key={j}>
+                <ColCell classAppend={h.classAppend} key={j}>
                   {h.render ? h.render(row) : <>{row[h.name as keyof A]}</>}
                 </ColCell>
               ))}
