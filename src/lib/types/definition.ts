@@ -15,6 +15,7 @@ export interface DefinitionItem<T> {
     | { enabled: true; ascOrDesc: boolean }
     | { getAttribute: keyof T | ((input: T) => SortAttribute) }; // function to get a property from nested object for the sort comparison
   render?: (x: T) => string | React.ReactNode | JSX.Element;
+  classAppend?: string; // appends extra class attributes
 }
 
 export type Definition<T> = DefinitionItem<T>[];
