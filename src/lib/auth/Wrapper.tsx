@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import * as Credentials from "./credentials";
 import * as Store from "../store";
@@ -35,8 +35,11 @@ const Wrapper =
   }) =>
   (): JSX.Element => {
     const navigate = useNavigate();
+    const { pathname, search } = useLocation(); // here use hook instead of window.location: if the app is not deployed  at the root of the domain, this variable accounts for this and remves a bug when redirecting to the right page
+    // const { pathname, search } = window.location;
+
     const permissions = Credentials.getPermissions();
-    const { pathname, search } = window.location;
+
     const { redirectUrl, unauthorizedRedirectUrl } = options;
 
     const currentUrl = pathname + (search || "");
@@ -53,7 +56,7 @@ const Wrapper =
       return <Navigate to={unauthorizedRedirectUrl} />;
     }
 
-    // user authorized and REDIRCT_URI flag set => user is redirected
+    // user authorized and REDIRECT_URI flag set => user is redirected
     const redirectUri = Store.get(REDIRECT_URI);
     if (redirectUri) {
       Store.remove(REDIRECT_URI);
