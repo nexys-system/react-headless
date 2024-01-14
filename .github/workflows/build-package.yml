@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: nexys-system/gh-actions-spa-test@v1
       - name: Build package
-        run: yarn buildpackage
+        run: yarn buildPackage
