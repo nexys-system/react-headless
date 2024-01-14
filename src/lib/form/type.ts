@@ -1,20 +1,26 @@
 import { Render } from "../view";
 
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
-export type FormErrorsGeneric<A> = { [k in keyof A]?: string[] };
+export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
+
+export type FormOptionSets<A> = {
+  [k in keyof A]?: { id: number | string; name: string }[];
+};
 
 export interface FormUIProps<FormShape> {
   loading: boolean;
   form: Partial<FormShape>;
   errors: FormErrorsGeneric<FormShape>;
-  options: { [k in keyof FormShape]?: { id: number | string; name: string }[] };
+  options?: {
+    [k in keyof FormShape]?: { id: number | string; name: string }[];
+  };
   setForm: (f: Partial<FormShape>) => void;
 }
 
 export interface InputProps<A> {
   value?: A;
   onChange: (a?: A) => void;
-  errors?: string[];
+  errors?: string;
   disabled?: boolean;
   placeholder?: string;
   options?: { id: A; name: string }[];
@@ -23,7 +29,7 @@ export interface InputProps<A> {
 export interface InputWrapperProps {
   label?: string;
   children: JSX.Element;
-  errors?: string[];
+  errors?: string;
   info?: string;
 }
 

@@ -32,7 +32,7 @@ const FormUIGenerator =
                 disabled={loading}
                 placeholder={item.placeholder}
                 errors={errors[item.name]}
-                options={options[item.name]}
+                options={options && options[item.name]}
               />
             </InputWrapper>
           );

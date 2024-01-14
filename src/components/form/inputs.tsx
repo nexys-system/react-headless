@@ -3,7 +3,7 @@ import React from "react";
 import * as T from "../../lib/form/type";
 
 export const getClassName = (
-  errors?: string[],
+  errors?: string,
   mainClass = "border p-2 rounded"
 ): string => {
   const isInvalid: boolean = !!errors;
@@ -32,7 +32,7 @@ export const InputWrapper = ({
         id="validationServer03Feedback"
         className="text-red-500 text-xs italic mt-1"
       >
-        {errors[0]}
+        {errors}
       </div>
     )}
   </div>

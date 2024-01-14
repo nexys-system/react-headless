@@ -2,10 +2,12 @@ import React from "react";
 
 import * as T from "./type";
 import { isNotPartial } from "./utils";
+import { FormErrorsGeneric } from "../type";
 
 interface FormWrapperProps<A, B> {
-  onSuccess: (formData: A, asyncCallResponse?: B) => void;
-  clientValidationFunction?: <A>(_a: Partial<A>) => T.FormErrors<A>;
+  onSuccess?: (formData: A, asyncCallResponse?: B) => void;
+  onErrors?: (err: any, data: A) => { errors?: FormErrorsGeneric<A> };
+  clientValidationFunction?: <A>(form: Partial<A>) => T.FormErrors<A>;
   asyncCall?: (formData: A) => Promise<B>;
   FormUI: (props: T.FormUIProps<A>) => JSX.Element;
   errors?: T.FormErrors<A>;
@@ -48,7 +50,7 @@ export const FormWrapper = <A, B>({
       setLoading(true);
       asyncCall(formData)
         .then((response) => {
-          onSuccess(formData, response);
+          onSuccess && onSuccess(formData, response);
         })
         .catch((x) => setErrors(x))
         .finally(() => setLoading(false));
@@ -56,14 +58,14 @@ export const FormWrapper = <A, B>({
       return;
     }
 
-    onSuccess(formData);
+    onSuccess && onSuccess(formData);
   };
 
   return (
     <FormUI
       loading={loading}
-      formData={formData}
-      setFormData={setFormData}
+      form={formData}
+      setForm={setFormData}
       errors={errors}
       onSubmit={handleSubmit}
     >
@@ -97,9 +99,9 @@ export const generateFormUI =
               <Input
                 disabled={props.loading}
                 placeholder={placeholder}
-                value={props.formData[name]}
+                value={props.form[name]}
                 onChange={(value) =>
-                  props.setFormData({ ...props.formData, [name]: value })
+                  props.setForm({ ...props.form, [name]: value })
                 }
               />
             </Wrapper>

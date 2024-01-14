@@ -1,32 +1,32 @@
-import React from 'react';
-import * as T from '../../lib/form/type';
-import * as Inputs from '../../components/form/inputs';
-import { FormDataShape } from './type';
+import React from "react";
+import * as T from "../../lib/form/type";
+import * as Inputs from "../../components/form/inputs";
+import { FormDataShape } from "./type";
 
 const FormUI = ({
   form,
   setForm,
   loading,
-  errors
+  errors,
 }: T.FormUIProps<FormDataShape>) => {
   return (
     <>
-      <Inputs.InputWrapper errors={errors['firstName']}>
+      <Inputs.InputWrapper errors={errors["firstName"]}>
         <Inputs.Input
           value={form.firstName}
-          onChange={firstName => setForm({ ...form, firstName })}
+          onChange={(firstName) => setForm({ ...form, firstName })}
           disabled={loading}
-          placeholder={'First Name'}
-          errors={errors['firstName']}
+          placeholder={"First Name"}
+          errors={errors["firstName"]}
         />
       </Inputs.InputWrapper>
-      <Inputs.InputWrapper errors={errors['lastName']}>
+      <Inputs.InputWrapper errors={errors["lastName"]}>
         <Inputs.Input
           value={form.lastName}
-          onChange={lastName => setForm({ ...form, lastName })}
+          onChange={(lastName) => setForm({ ...form, lastName })}
           disabled={loading}
-          placeholder={'Last Name'}
-          errors={errors['lastName']}
+          placeholder={"Last Name"}
+          errors={errors["lastName"]}
         />
       </Inputs.InputWrapper>
 

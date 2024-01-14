@@ -10,7 +10,7 @@ export const enumToOptions = <A>(keys: {
 
 export const isA = <A>(
   a: Partial<A>,
-  formErrors: { [k in keyof A]?: string[] }
+  formErrors: { [k in keyof A]?: string }
 ): a is A => Object.keys(formErrors).length === 0;
 
 const getType = (uiType: FormUIType) => {

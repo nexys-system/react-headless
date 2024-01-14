@@ -1,3 +1,5 @@
+import { FormErrorsGeneric } from "../type";
+
 export type FormErrors<A> = {
   [k in keyof A]?: string;
 };
@@ -5,9 +7,10 @@ export type FormErrors<A> = {
 export interface FormUIProps<A> {
   loading: boolean;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  errors: FormErrors<A>;
-  formData: Partial<A>;
-  setFormData: (x: Partial<A>) => void;
+  errors: FormErrorsGeneric<A>;
+  form: Partial<A>;
+  setForm: (x: Partial<A>) => void;
+  options?: { [k in keyof A]?: { id: number | string; name: string }[] };
   children?: JSX.Element;
 }
 
