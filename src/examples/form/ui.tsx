@@ -31,7 +31,13 @@ const FormUI = ({
         />
       </Inputs.InputWrapper>
 
-      <button disabled={loading} type="submit" className="btn btn-primary">
+      <button
+        disabled={loading}
+        type="submit"
+        className={`px-4 py-2 text-white font-semibold rounded ${
+          loading ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-700"
+        }`}
+      >
         Send
       </button>
     </form>
