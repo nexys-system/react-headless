@@ -22,17 +22,17 @@ export const getClassName = (
 export const InputWrapper = ({
   label,
   children,
-  errors,
+  error,
 }: T.InputWrapperProps) => (
   <div className="mb-3">
     <label className="block text-sm font-medium text-gray-700">{label}</label>
     {children}
-    {errors && (
+    {error && (
       <div
         id="validationServer03Feedback"
         className="text-red-500 text-xs italic mt-1"
       >
-        {errors}
+        {error}
       </div>
     )}
   </div>
@@ -77,13 +77,13 @@ export const Textarea = ({
   />
 );
 
-export const Select = <A extends number | string>({
+export const Select = <A, Id extends number | string>({
   onChange,
   options,
   value,
   errors,
   disabled,
-}: T.InputProps<A>) => (
+}: T.InputProps<A, Id>) => (
   <select
     className={getClassName(errors, "border p-2 rounded bg-white")}
     onChange={(v) => {
@@ -104,7 +104,7 @@ export const Select = <A extends number | string>({
       onChange(value as any as A);
     }}
     disabled={disabled}
-    defaultValue={value}
+    defaultValue={value as any}
   >
     <option></option>
     {options &&
@@ -118,11 +118,14 @@ export const Select = <A extends number | string>({
 
 export const SelectEnum = Select;
 
-export const SelectObject = <A extends number | string>(
-  props: Omit<T.InputProps<A>, "value" | "onChange"> &
-    Pick<T.InputProps<{ id: A; name: string }>, "value" | "onChange">
+export const SelectObject = <A, Id extends number | string>(
+  props: Omit<
+    T.InputProps<{ id: Id; name: string }, Id>,
+    "value" | "onChange"
+  > &
+    Pick<T.InputProps<{ id: Id; name: string }, Id>, "value" | "onChange">
 ) => {
-  const onChange = (id?: A) => {
+  const onChange = (id?: Id) => {
     const option = props.options?.find((x) => x.id === id);
 
     if (option) {
@@ -130,9 +133,11 @@ export const SelectObject = <A extends number | string>(
     }
   };
 
-  const value: A | undefined = props.value?.id;
+  const options = props.options;
 
-  return Select<A>({ ...props, onChange, value });
+  const value: Id | undefined = props.value?.id;
+
+  return Select<Id, Id>({ ...props, onChange, value });
 };
 
 export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
@@ -144,7 +149,9 @@ export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
   />
 );
 
-export const InputGeneric = (uiType: T.FormUIType) => {
+export const InputGeneric = (
+  uiType: T.FormUIType
+): ((props: T.InputProps<any, any>) => JSX.Element) => {
   switch (uiType) {
     case T.FormUIType.Switch:
       return Checkbox;

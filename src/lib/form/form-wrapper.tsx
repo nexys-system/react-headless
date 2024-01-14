@@ -8,10 +8,6 @@ import { FormWrapper as F2 } from "./generator2";
 import { FormUIProps } from "./generator2/type";
 
 export interface FormWrapperProps<A, Out> {
-  data?: {
-    dataIn: Partial<A>;
-    options?: T.FormOptionSets<A>;
-  };
   onSuccess?: (data: A, out?: Out) => void;
   onErrors?: (err: any, data: A) => { errors?: T.FormErrorsGeneric<A> };
 }
@@ -35,11 +31,7 @@ const FormWrapper =
     asyncCall?: (data: FormShape) => Promise<Out>,
     { resetAfterSubmit = true }: Partial<FormWrapperOptions> = {}
   ) =>
-  ({
-    data = { options: {}, dataIn: {} },
-    onSuccess,
-    onErrors,
-  }: FormWrapperProps<FormShape, Out>): JSX.Element => {
+  ({ onSuccess, onErrors }: FormWrapperProps<FormShape, Out>): JSX.Element => {
     const clientValidationFunction = (form: any) =>
       Validation.Main.checkObject(form, shape) as any;
 

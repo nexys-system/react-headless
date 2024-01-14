@@ -11,7 +11,7 @@ const FormUI = ({
 }: T.FormUIProps<FormDataShape>) => {
   return (
     <>
-      <Inputs.InputWrapper errors={errors["firstName"]}>
+      <Inputs.InputWrapper error={errors["firstName"]}>
         <Inputs.Input
           value={form.firstName}
           onChange={(firstName) => setForm({ ...form, firstName })}
@@ -20,7 +20,7 @@ const FormUI = ({
           errors={errors["firstName"]}
         />
       </Inputs.InputWrapper>
-      <Inputs.InputWrapper errors={errors["lastName"]}>
+      <Inputs.InputWrapper error={errors["lastName"]}>
         <Inputs.Input
           value={form.lastName}
           onChange={(lastName) => setForm({ ...form, lastName })}

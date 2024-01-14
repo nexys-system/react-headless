@@ -1,9 +1,9 @@
-import React from 'react';
-import { FormUIProps } from '../../../lib/form/type';
+import React from "react";
+import { FormUIProps } from "../../../lib/form/type";
 
-import * as Inputs from '../../../components/form/inputs';
-import FormWrapper from '../../../lib/form/form-wrapper';
-import Icon from '../../../components/icon';
+import * as Inputs from "../../../components/form/inputs";
+import FormWrapper from "../../../lib/form/form-wrapper";
+import Icon from "../../../components/icon";
 
 export interface FormDataShape {
   name: string;
@@ -14,27 +14,27 @@ const FormUI = ({
   form,
   setForm,
   loading,
-  errors
+  errors,
 }: FormUIProps<FormDataShape>) => {
   return (
     <>
-      <Inputs.InputWrapper label="Name" errors={errors['name']}>
+      <Inputs.InputWrapper label="Name" error={errors["name"]}>
         <Inputs.Input
           value={form.name}
-          onChange={name => setForm({ ...form, name })}
+          onChange={(name) => setForm({ ...form, name })}
           disabled={loading}
-          placeholder={'Name'}
-          errors={errors['name']}
+          placeholder={"Name"}
+          errors={errors["name"]}
         />
       </Inputs.InputWrapper>
 
-      <Inputs.InputWrapper label="Description" errors={errors['description']}>
+      <Inputs.InputWrapper label="Description" error={errors["description"]}>
         <Inputs.Input
           value={form.description}
-          onChange={description => setForm({ ...form, description })}
+          onChange={(description) => setForm({ ...form, description })}
           disabled={loading}
-          placeholder={'Description'}
-          errors={errors['description']}
+          placeholder={"Description"}
+          errors={errors["description"]}
         />
       </Inputs.InputWrapper>
       <button
@@ -51,7 +51,7 @@ const FormUI = ({
 const shape = { name: {}, description: {} };
 
 const apiCall = async (a: FormDataShape) => {
-  console.log('calling API');
+  console.log("calling API");
   return Promise.resolve(Math.random() * 100);
 };
 

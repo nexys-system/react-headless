@@ -18,7 +18,7 @@ const FormUI = ({
 }: FormUIProps<FormDataShape>) => {
   return (
     <>
-      <Inputs.InputWrapper label="Value" errors={errors["value"]}>
+      <Inputs.InputWrapper label="Value" error={errors["value"]}>
         <Inputs.Input
           value={form.value}
           onChange={(value) => setForm({ ...form, value })}
@@ -28,7 +28,7 @@ const FormUI = ({
         />
       </Inputs.InputWrapper>
 
-      <Inputs.InputWrapper label="Type" errors={errors["type"]}>
+      <Inputs.InputWrapper label="Type" error={errors["type"]}>
         <Inputs.SelectEnum
           options={userAuthentiactionOptions}
           value={form.type}
@@ -39,7 +39,7 @@ const FormUI = ({
         />
       </Inputs.InputWrapper>
 
-      <Inputs.InputWrapper label="Is Enabled" errors={errors["isEnabled"]}>
+      <Inputs.InputWrapper label="Is Enabled" error={errors["isEnabled"]}>
         <Inputs.Checkbox
           value={form.isEnabled}
           onChange={(isEnabled) => setForm({ ...form, isEnabled })}

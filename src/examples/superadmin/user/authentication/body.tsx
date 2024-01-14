@@ -56,7 +56,7 @@ const Body = ({ data: dataIn }: { data: UserAuthentication[] }) => {
 
   if (edit) {
     // note: when connecting to an api the update call should be different to the insert call, maybe needs two forms
-    return <Form onSuccess={handleSuccessEdit} data={{ dataIn: edit.data }} />;
+    return <Form onSuccess={handleSuccessEdit} />;
   }
 
   if (isInsert) {

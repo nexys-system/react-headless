@@ -1,15 +1,15 @@
-import React from 'react';
-import Icon from '../../../components/icon';
+import React from "react";
+import Icon from "../../../components/icon";
 
-import Form, { FormDataShape } from './form';
-import List from './list';
+import Form, { FormDataShape } from "./form";
+import List from "./list";
 
 export default () => {
   const [data, setData] = React.useState<
     { id: number; title: string; subtitle: string }[]
   >([
-    { id: 1, title: 'item #1', subtitle: 'sub#1' },
-    { id: 2, title: 'item #2', subtitle: 'sub#2' }
+    { id: 1, title: "item #1", subtitle: "sub#1" },
+    { id: 2, title: "item #2", subtitle: "sub#2" },
   ]);
 
   const [isInsert, setIsInsert] = React.useState<boolean>(false);
@@ -18,8 +18,8 @@ export default () => {
   >(undefined);
 
   const handleRemove = (id: number) => {
-    if (confirm('Are you sure you would like to delete that entry?')) {
-      setData(data.filter(x => x.id !== id));
+    if (confirm("Are you sure you would like to delete that entry?")) {
+      setData(data.filter((x) => x.id !== id));
     }
   };
 
@@ -46,7 +46,7 @@ export default () => {
       throw Error("can't be edited");
     }
 
-    const newData = data.map(x => {
+    const newData = data.map((x) => {
       if (x.id === id) {
         return { title: d.name, subtitle: d.description, id };
       }
@@ -59,7 +59,7 @@ export default () => {
 
   if (edit) {
     // note: when connecting to an api the update call should be different to the insert call, maybe needs two forms
-    return <Form onSuccess={handleSuccessEdit} data={{ dataIn: edit.data }} />;
+    return <Form onSuccess={handleSuccessEdit} />;
   }
 
   if (isInsert) {
@@ -73,7 +73,7 @@ export default () => {
       <br />
       <button
         onClick={() => setIsInsert(true)}
-        type={'button'}
+        type={"button"}
         className="btn btn-primary"
       >
         <Icon name="plus" />

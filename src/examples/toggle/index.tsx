@@ -4,7 +4,7 @@ import { delay } from "../../lib/utils";
 
 import { ToggleFromDef } from "../../components/toggle";
 import { FormUIType, FormViewDef } from "../../lib/form/type";
-import { continents } from "../form";
+import { continents } from "../form/generated";
 
 const continent = continents[0];
 

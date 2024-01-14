@@ -37,7 +37,6 @@ const ToggleHeadless =
       return (
         <LayoutForm setIsForm={setIsForm}>
           <Form
-            data={{ dataIn: data, options }}
             onSuccess={(d) => {
               setData(d);
               setIsForm(false);
