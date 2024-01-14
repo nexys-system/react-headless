@@ -12,9 +12,15 @@ export interface FormUIGeneratorProps {
 const FormUIGenerator =
   ({ InputGeneric, InputWrapper, Button }: FormUIGeneratorProps) =>
   <A,>(def: T.FormDef<A>[]) =>
-  ({ form, setForm, loading, errors }: T.FormUIProps<A>): JSX.Element => {
+  ({
+    form,
+    setForm,
+    loading,
+    errors,
+    onSubmit,
+  }: T.FormUIProps<A>): JSX.Element => {
     return (
-      <>
+      <form onSubmit={onSubmit}>
         {def.map((item, i) => {
           const Input = InputGeneric(item.uiType);
 
@@ -35,7 +41,7 @@ const FormUIGenerator =
         })}
 
         <Button />
-      </>
+      </form>
     );
   };
 

@@ -8,9 +8,10 @@ const FormUI = ({
   setForm,
   loading,
   errors,
+  onSubmit,
 }: T.FormUIProps<FormDataShape>) => {
   return (
-    <>
+    <form onSubmit={onSubmit}>
       <Inputs.InputWrapper error={errors["firstName"]}>
         <Inputs.Input
           value={form.firstName}
@@ -33,7 +34,7 @@ const FormUI = ({
       <button disabled={loading} type="submit" className="btn btn-primary">
         Send
       </button>
-    </>
+    </form>
   );
 };
 

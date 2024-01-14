@@ -15,9 +15,10 @@ const FormUI = ({
   setForm,
   loading,
   errors,
+  onSubmit,
 }: FormUIProps<FormDataShape>) => {
   return (
-    <>
+    <form onSubmit={onSubmit}>
       <Inputs.InputWrapper label="Name" error={errors["name"]}>
         <Inputs.Input
           value={form.name}
@@ -44,7 +45,7 @@ const FormUI = ({
       >
         <Icon name="plus" /> Add
       </button>
-    </>
+    </form>
   );
 };
 

@@ -5,7 +5,6 @@ import * as T from "./type";
 import * as Validation from "@nexys/validation";
 
 import { FormWrapper as F2 } from "./generator2";
-import { FormUIProps } from "./generator2/type";
 
 export interface FormWrapperProps<A, Out> {
   onSuccess?: (data: A, out?: Out) => void;
@@ -26,7 +25,7 @@ interface FormWrapperOptions {
  */
 const FormWrapper =
   <FormShape, Out = any>(
-    FormUIInput: (props: FormUIProps<FormShape>) => JSX.Element,
+    FormUIInput: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
     { resetAfterSubmit = true }: Partial<FormWrapperOptions> = {}

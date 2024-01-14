@@ -1,4 +1,4 @@
-import { SubmitButtonProps } from "../type";
+import { SubmitButtonProps } from "../../type";
 import Spinner from "./spinner";
 
 const getButtonClassName = (context?: "primary") => {

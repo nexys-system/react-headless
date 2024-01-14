@@ -1,7 +1,7 @@
 import React from "react";
 
-import * as T from "./type";
-import { isNotPartial } from "./utils";
+import * as T from "../type";
+import { isNotPartial } from "../utils";
 import { FormErrorsGeneric } from "../type";
 
 interface FormWrapperProps<A, B> {

@@ -1,4 +1,4 @@
-import { FormDef, FormUIType } from "./type";
+import { FormDef, FormErrors, FormUIType } from "./type";
 import * as Validation from "@nexys/validation";
 
 export const enumToOptions = <A>(keys: {
@@ -8,10 +8,10 @@ export const enumToOptions = <A>(keys: {
     .filter((x) => !isNaN(Number(x)))
     .map((x) => ({ id: Number(x) as any as A, name: keys[Number(x)] }));
 
-export const isA = <A>(
-  a: Partial<A>,
-  formErrors: { [k in keyof A]?: string }
-): a is A => Object.keys(formErrors).length === 0;
+export const isNotPartial = <A>(
+  formData: Partial<A>,
+  formErrors: FormErrors<A>
+): formData is A => Object.keys(formErrors).length === 0;
 
 const getType = (uiType: FormUIType) => {
   if ([FormUIType.SelectNumber, FormUIType.Number].includes(uiType)) {

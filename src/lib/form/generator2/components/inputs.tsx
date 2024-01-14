@@ -4,7 +4,7 @@ import {
   OptionUnit,
   UXType,
   WrapperProps,
-} from "../type";
+} from "../../type";
 
 export const Wrapper = ({ label, info, error, children }: WrapperProps) => (
   <div className="p-2 ">
@@ -71,7 +71,7 @@ export const InputOptions = <Id,>({
   value,
   onChange,
   options,
-}: InputOptionProps<OptionUnit<Id>, Id>) => {
+}: InputOptionProps<OptionUnit<Id>, any>) => {
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const v = e.target.value;
 
@@ -105,13 +105,13 @@ export const InputOptionsScalar = <Id,>({
   value,
   onChange,
   options,
-}: InputOptionProps<Id, Id>) => {
+}: InputOptionProps<Id, any>) => {
   const f = options.find((x) => x.id === value);
   return (
     <InputOptions
       options={options}
       value={f}
-      onChange={(v) => onChange(v.id)}
+      onChange={(v) => onChange(v?.id)}
     />
   );
 };

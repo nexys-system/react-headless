@@ -7,7 +7,7 @@ export type FormOptionSets<A> = {
   [k in keyof A]?: { id: number | string; name: string }[];
 };
 
-export interface FormUIProps<FormShape> {
+interface FormUIPropsCore<FormShape> {
   loading: boolean;
   form: Partial<FormShape>;
   errors: FormErrorsGeneric<FormShape>;
@@ -17,12 +17,7 @@ export interface FormUIProps<FormShape> {
   setForm: (f: Partial<FormShape>) => void;
 }
 
-export interface FormUIProp2s<FormShape> {
-  loading: boolean;
-  form: Partial<FormShape>;
-  errors: FormErrorsGeneric<FormShape>;
-  options?: FormOptionSets<FormShape>;
-  setForm: (x: Partial<FormShape>) => void;
+export interface FormUIProps<FormShape> extends FormUIPropsCore<FormShape> {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   children?: JSX.Element;
 }

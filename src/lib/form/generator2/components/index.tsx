@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as T from "./type";
+import * as T from "../../type";
 import { isNotPartial } from "./utils";
 
 interface FormWrapperProps<A, B> {
@@ -62,8 +62,8 @@ export const FormWrapper = <A, B>({
   return (
     <FormUI
       loading={loading}
-      formData={formData}
-      setFormData={setFormData}
+      form={formData}
+      setForm={setFormData}
       errors={errors}
       onSubmit={handleSubmit}
     >
@@ -97,9 +97,9 @@ export const generateFormUI =
               <Input
                 disabled={props.loading}
                 placeholder={placeholder}
-                value={props.formData[name]}
+                value={props.form[name]}
                 onChange={(value) =>
-                  props.setFormData({ ...props.formData, [name]: value })
+                  props.setForm({ ...props.form, [name]: value })
                 }
               />
             </Wrapper>
