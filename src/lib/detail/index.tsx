@@ -11,7 +11,7 @@ const DetailHeadless =
     ToggleFromDef: <A, Out>(
       def: FormViewDef<A>[],
       apiCall: (data: A) => Promise<Out>
-    ) => ({ data: dataIn }: { data: A }) => JSX.Element
+    ) => ({ data }: { data: A }) => JSX.Element
   ) =>
   <A, Out = any>({
     cards: preCards = [],

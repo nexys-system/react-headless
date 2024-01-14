@@ -51,6 +51,7 @@ const cards: T.Card<Profile>[] = [
   { title: "second", Component: ({ data }) => <p>{data.firstName}</p> },
   {
     title: "third",
+    width: 6,
     Component: ({ data }) => {
       return <p>{data.firstName} hered </p>;
     },

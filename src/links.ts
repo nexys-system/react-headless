@@ -11,16 +11,16 @@ export const links: { [menu: string]: { name: string; link: string } } = {
   buttons: { name: "Buttons", link: "/buttons" },
   badge: { name: "Badge", link: "/badge" },
   statusChange: { name: "Status Change", link: "/status-change" },
-  download: { name: "Download", link: "/download" },
+  //download: { name: "Download", link: "/download" },
   simpleList: { name: "Simple list", link: "/simple-list" },
   toggle: { name: "Toggle", link: "/toggle" },
   tabs: { name: "Tabs", link: "/tabs" },
   fileUpload: { name: "File Upload", link: "/file-upload" },
   detail: { name: "Detail", link: "/detail" },
-  auth: { name: "Auth", link: "/auth" },
-  superadmin: { name: "Superadmin", link: "/superadmin" },
-  crudBrowser: { name: "Crud Browser", link: "/crud-browser" },
-  dateRange: { name: "Date Range", link: "/date-range" },
+  //auth: { name: "Auth", link: "/auth" },
+  // superadmin: { name: "Superadmin", link: "/superadmin" },
+  // crudBrowser: { name: "Crud Browser", link: "/crud-browser" },
+  //dateRange: { name: "Date Range", link: "/date-range" },
 };
 
 export const menus: { name: string; link: string }[] = Object.values(links);

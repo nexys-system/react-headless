@@ -1,33 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { menus } from '../links';
-import { title } from '../config';
-const style = {
-  borderTop: '1px solid #e5e5e5',
-  borderBottom: '1px solid #e5e5e5',
-  boxShadow: '0 .25rem .75rem rgba(0, 0, 0, .05)'
-};
+import React from "react";
+import { Link } from "react-router-dom";
+import { menus } from "../links";
+import { title } from "../config";
 
 export default () => (
-  <header>
-    <div
-      style={style}
-      className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white"
-    >
-      <h5 className="my-0 mr-md-auto font-weight-normal">
-        <Link className="nav-link" to={'/'}>
-          {title}
-        </Link>
-      </h5>
-      <ul className="nav justify-content-end">
-        {menus.map((menu, i) => (
-          <li className="nav-item" key={i}>
-            <Link className="nav-link" key={i} to={menu.link}>
+  <header className="bg-white border-b shadow-sm">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center py-3 md:justify-start md:space-x-10">
+        <div className="flex justify-start lg:w-0 lg:flex-1">
+          <Link to="/" className="text-xl font-semibold text-gray-900">
+            {title}
+          </Link>
+        </div>
+        <nav className="hidden md:flex space-x-10">
+          {menus.map((menu, i) => (
+            <Link
+              key={i}
+              to={menu.link}
+              className="text-base font-medium text-gray-500 hover:text-gray-900"
+            >
               {menu.name}
             </Link>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </nav>
+      </div>
     </div>
   </header>
 );

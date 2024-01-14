@@ -1,9 +1,8 @@
 export const getClassName = (isSelected: boolean) => {
-  const classNames = ['nav-link'];
+  const baseClasses = "px-3 py-2 rounded-md text-sm font-medium"; // base styles
+  const activeClasses = isSelected
+    ? "bg-blue-500 text-white"
+    : "text-gray-600 hover:bg-blue-500 hover:text-white";
 
-  if (isSelected) {
-    classNames.push('active');
-  }
-
-  return classNames.join(' ');
+  return `${baseClasses} ${activeClasses}`;
 };

@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const ListItem = ({
   title,
   children,
-  right
+  right,
 }: {
   title: string;
   children?: JSX.Element;
   right?: JSX.Element;
 }) => {
   return (
-    <li className="list-group-item d-flex justify-content-between align-items-start">
-      <div className="ms-2 me-auto">
-        <div className="fw-bold">{title}</div>
+    <li className="flex justify-between items-center py-2">
+      <div className="ml-2 mr-auto">
+        <div className="font-semibold">{title}</div>
         {children}
       </div>
       {right}

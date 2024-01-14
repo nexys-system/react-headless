@@ -4,7 +4,7 @@ import StatusChange, {
 } from "../../lib/status-change";
 
 const Layout = ({ children }: LayoutProps) => (
-  <div className="btn-group">{children}</div>
+  <div className="flex space-x-2">{children}</div>
 );
 
 const Button = ({
@@ -14,15 +14,12 @@ const Button = ({
   handleChange,
   disabled,
 }: ButtonProps) => {
-  const classes = ["btn"];
+  const baseClasses =
+    "px-4 py-2 text-sm font-medium rounded focus:outline-none";
+  const activeClasses =
+    selected === id ? "bg-blue-500 text-white" : "bg-gray-300 text-gray-700";
 
-  if (selected === id) {
-    classes.push("btn-primary");
-  } else {
-    classes.push("btn-secondary");
-  }
-
-  const className = classes.join(" ");
+  const className = `${baseClasses} ${activeClasses}`;
 
   return (
     <button

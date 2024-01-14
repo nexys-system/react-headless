@@ -1,15 +1,10 @@
 import { FormWrapperProps } from "../lib/form/form-wrapper";
 import { ViewStructureUnit } from "../lib/view";
-import ViewGeneric, { RowProps, toViewStructure } from "../lib/view";
+import ViewGeneric, { toViewStructure } from "../lib/view";
 import ToggleHeadless, { LayoutProps } from "../lib/toggle";
 import { FormViewDef } from "../lib/form/type";
 import PreForm from "./form/generator";
-
-const Row = (p: RowProps) => (
-  <li>
-    {p.label}: {p.value}
-  </li>
-);
+import { Row } from "./view";
 
 const View = ViewGeneric(Row);
 
@@ -17,7 +12,7 @@ const LayoutView = ({ setIsForm, children }: LayoutProps) => (
   <>
     {children}
     <button
-      className="btn btn-sm btn-secondary"
+      className="text-xs bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded"
       onClick={() => setIsForm(true)}
     >
       Edit
@@ -29,7 +24,7 @@ const LayoutForm = ({ setIsForm, children }: LayoutProps) => (
   <>
     {children}
     <button
-      className="btn btn-sm btn-secondary"
+      className="text-xs bg-gray-600 hover:bg-gray-700 text-white py-1 px-3 rounded"
       onClick={() => setIsForm(false)}
     >
       Back

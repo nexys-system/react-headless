@@ -1,35 +1,31 @@
-import React from 'react';
+import React from "react";
 
-import ToastUnit from './unit';
+import ToastUnit from "./unit";
 
-import * as Ctx from '../../../lib/context-provider/notification/context';
+import * as Ctx from "../../../lib/context-provider/notification/context";
 import {
   MessageType,
   NotificationType,
-  ToastProp
-} from '../../../lib/context-provider/notification/type';
+  ToastProp,
+} from "../../../lib/context-provider/notification/type";
 
 const Toast = () => {
   const { notifications, rmNotification } = Ctx.useToastContext();
 
   const toasts: ToastProp[] = notifications
-    .filter(x => x.type === NotificationType.toast)
-    .map(x => {
+    .filter((x) => x.type === NotificationType.toast)
+    .map((x) => {
       return {
-        title: 'nexys',
+        title: "nexys",
         content: x.text,
-        timestring: 'sdf',
-        messageType: MessageType.info
+        timestring: "sdf",
+        messageType: MessageType.info,
       };
     });
 
   return (
-    <div
-      aria-live="polite"
-      aria-atomic="true"
-      style={{ position: 'relative', minHeight: '200px' }}
-    >
-      <div style={{ position: 'absolute', top: 0, left: 10 }}>
+    <div className="relative min-h-[200px]">
+      <div className="absolute top-0 left-2.5">
         {toasts.map((t, i) => (
           <ToastUnit key={i} idx={i} onDismiss={rmNotification} {...t} />
         ))}

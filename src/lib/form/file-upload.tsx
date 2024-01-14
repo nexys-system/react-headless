@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export interface FileComponentProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => Promise<void>;
@@ -16,21 +16,20 @@ const FileUpload =
   ({ onSuccess }: FileUploadProps) => {
     const [loading, setLoading] = useState<boolean>(false);
     const handleChange = async ({
-      target
+      target,
     }: React.ChangeEvent<HTMLInputElement>) => {
-      console.log('here');
       setLoading(true);
 
       const { files }: { files: FileList | null } = target;
 
       if (!files) {
-        throw Error('file is undefined');
+        throw Error("file is undefined");
       }
 
       const fileArray: File[] = Array.from(files);
 
       if (fileArray.length === 0) {
-        throw Error('file array is empty');
+        throw Error("file array is empty");
       }
 
       const [file] = fileArray;

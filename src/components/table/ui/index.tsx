@@ -22,12 +22,26 @@ import Icon from "../../icon";
 const Loader = () => <p>Loading...</p>;
 
 const Alert = ({
-  // type = 'success',
   children,
+  type = "info",
 }: {
   children: React.ReactNode | JSX.Element;
   type?: "error" | "success" | "info" | "warning";
-}): JSX.Element => <div className={"alert"}>{children}</div>;
+}): JSX.Element => {
+  let bgColor = "bg-blue-100";
+  switch (type) {
+    case "error":
+      bgColor = "bg-red-100";
+      break;
+    case "success":
+      bgColor = "bg-green-100";
+      break;
+    case "warning":
+      bgColor = "bg-yellow-100";
+      break;
+  }
+  return <div className={`p-4 ${bgColor}`}>{children}</div>;
+};
 
 const GlobalSearch = (props: UIType.GlobalSearchProps) => {
   if (!props.search) {
@@ -35,10 +49,10 @@ const GlobalSearch = (props: UIType.GlobalSearchProps) => {
   }
 
   return (
-    <div className="mb-3 col-sm-3">
+    <div className="mb-3 w-3/4 max-w-sm">
       <input
         type="text"
-        className="form-control"
+        className="form-control p-2 border border-gray-300 rounded"
         onChange={(v) =>
           props.onChange({ name: "globalSearch", value: v.target.value })
         }
@@ -47,6 +61,7 @@ const GlobalSearch = (props: UIType.GlobalSearchProps) => {
     </div>
   );
 };
+
 const PopoverFilter = () => <></>;
 const FilterUnit = () => <></>;
 
@@ -117,14 +132,17 @@ export const OrderController = (props: OrderControllerProps): JSX.Element => {
 
 export const ListWrapper = (props: ListWrapperProps): JSX.Element => {
   const { children } = props;
-  return <div className="table-responsive-sm">{children}</div>;
+  return <div className="overflow-x-auto">{children}</div>;
 };
 
 export const ListContainer = (props: ListContainerProps): JSX.Element => {
   const { children, maxHeight, stickyHeader = false } = props;
   return (
-    <div className={"container"} style={maxHeight ? { maxHeight } : undefined}>
-      <table className={"table table-striped"}>{children}</table>
+    <div
+      className="container mx-auto"
+      style={maxHeight ? { maxHeight } : undefined}
+    >
+      <table className="table-auto w-full">{children}</table>
     </div>
   );
 };
@@ -165,7 +183,7 @@ export const PaginationWrapper = (
 ): JSX.Element => {
   return (
     <nav>
-      <ul className="pagination">{props.children}</ul>
+      <ul className="flex list-none">{props.children}</ul>
     </nav>
   );
 };
@@ -175,17 +193,18 @@ export const PaginationUnit = (
 ): JSX.Element | null => {
   const { isActive, isDisabled, children, onClick } = props;
 
-  // here we disable the button in case it is not valid
   if (isDisabled) {
     return null;
   }
 
   const className =
-    "page-item" + (isActive ? " active" : "") + (isDisabled ? " disabled" : "");
+    "px-4 py-2 mx-1 border border-gray-300 rounded" +
+    (isActive ? " bg-blue-500 text-white" : " bg-white") +
+    (isDisabled ? " opacity-50 cursor-not-allowed" : "");
 
   return (
-    <li className={className}>
-      <button className="page-link" onClick={onClick}>
+    <li className="flex">
+      <button className={className} onClick={onClick}>
         {children}
       </button>
     </li>

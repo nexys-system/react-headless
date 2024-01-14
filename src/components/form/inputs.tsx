@@ -4,14 +4,16 @@ import * as T from "../../lib/form/type";
 
 export const getClassName = (
   errors?: string[],
-  mainClass = "form-control"
+  mainClass = "border p-2 rounded"
 ): string => {
   const isInvalid: boolean = !!errors;
 
   const classes = [mainClass]; //
 
   if (isInvalid) {
-    classes.push("is-invalid");
+    classes.push("border-red-500");
+  } else {
+    classes.push("border-gray-300");
   }
 
   return classes.join(" ");
@@ -23,10 +25,13 @@ export const InputWrapper = ({
   errors,
 }: T.InputWrapperProps) => (
   <div className="mb-3">
-    <label className="form-label">{label}</label>
+    <label className="block text-sm font-medium text-gray-700">{label}</label>
     {children}
     {errors && (
-      <div id="validationServer03Feedback" className="invalid-feedback">
+      <div
+        id="validationServer03Feedback"
+        className="text-red-500 text-xs italic mt-1"
+      >
         {errors[0]}
       </div>
     )}
@@ -65,7 +70,7 @@ export const Textarea = ({
   value,
 }: T.InputProps<string>) => (
   <textarea
-    className={getClassName(errors)}
+    className={getClassName(errors, "border p-2 rounded resize-y")}
     value={value}
     onChange={(v) => onChange(v.target.value)}
     disabled={disabled}
@@ -80,8 +85,7 @@ export const Select = <A extends number | string>({
   disabled,
 }: T.InputProps<A>) => (
   <select
-    className={getClassName(errors, "form-select")}
-    // handle select null again
+    className={getClassName(errors, "border p-2 rounded bg-white")}
     onChange={(v) => {
       const { value } = v.target;
 
@@ -133,6 +137,7 @@ export const SelectObject = <A extends number | string>(
 
 export const Checkbox = ({ value, onChange }: T.InputProps<boolean>) => (
   <input
+    className="form-checkbox h-4 w-4 text-blue-600"
     checked={value}
     type="checkbox"
     onChange={(v) => onChange(Boolean(v.target.value))}
