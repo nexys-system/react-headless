@@ -76,7 +76,7 @@ export const InputOptions = <Id,>({
     const v = e.target.value;
 
     const optionSelected = options.find(
-      ({ id }) => (id as number).toString() === v
+      ({ id }) => (id as unknown as number).toString() === v
     );
     if (optionSelected) {
       onChange(optionSelected);
@@ -87,13 +87,13 @@ export const InputOptions = <Id,>({
 
   return (
     <select
-      value={value?.id as string | number}
+      value={value?.id as unknown as string | number}
       onChange={handleChange}
       className="block w-full px-3 py-2 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-sm"
     >
       <option />
       {options.map(({ id, name }, key) => (
-        <option key={key} value={id as string | number}>
+        <option key={key} value={id as unknown as string | number}>
           {name}
         </option>
       ))}
