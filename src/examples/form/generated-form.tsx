@@ -48,18 +48,24 @@ const asyncCall = () =>
     }, 2000);
   });
 
-const formDef: T.FormDefUnit<FormData>[] = [
+const formDef: T.FormDef<FormData>[] = [
   {
     name: "name",
     label: "Name",
-    uxType: T.FormUIType.Text,
+    uiType: T.FormUIType.Text,
     placeholder: "add something here",
   },
   {
     name: "isUuid",
     label: "Is Uuid",
-    uxType: T.FormUIType.Switch,
+    uiType: T.FormUIType.Switch,
     placeholder: "add something here",
+  },
+  {
+    name: "country",
+    label: "Country",
+    uiType: T.FormUIType.SelectObject,
+    placeholder: "lal",
   },
 ];
 

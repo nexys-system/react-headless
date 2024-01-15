@@ -77,9 +77,12 @@ export interface StructureUnitCore<A> {
 
 export interface FormDef<A> extends StructureUnitCore<A> {
   uiType: FormUIType;
-  optional: boolean;
+  optional?: boolean;
   disabled?: boolean;
   placeholder?: string;
+  description?: string;
+
+  info?: string;
   options?: OptionUnit<any>[];
 }
 
@@ -98,13 +101,4 @@ export interface SubmitButtonProps {
 
 export interface BackButtonProps {
   onClick: () => void;
-}
-
-export interface FormDefUnit<A> {
-  uxType: FormUIType;
-  label: string;
-  description?: string;
-  name: keyof A;
-  placeholder?: string;
-  info?: string;
 }

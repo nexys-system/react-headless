@@ -84,12 +84,12 @@ export const generateFormUI =
     Wrapper: (a: T.WrapperProps) => JSX.Element,
     SubmitButton: (a: T.SubmitButtonProps) => JSX.Element
   ) =>
-  <A,>(formDef: T.FormDefUnit<A>[]) =>
+  <A,>(formDef: T.FormDef<A>[]) =>
   (props: T.FormUIProps<A>): JSX.Element =>
     (
       <form onSubmit={props.onSubmit}>
-        {formDef.map(({ name, uxType, label, placeholder, info }, key) => {
-          const Input = InputGeneric(uxType);
+        {formDef.map(({ name, uiType, label, placeholder, info }, key) => {
+          const Input = InputGeneric(uiType);
 
           return (
             <Wrapper

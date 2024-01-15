@@ -7,47 +7,47 @@ import { InputGeneric, InputWrapper } from "../../components/form/inputs";
 
 import { SubmitButton, BackButton } from "../../components/buttons/with-action";
 
-const formDef2: T.FormDefUnit<any>[] = [
+const formDef: T.FormDef<any>[] = [
   {
     name: "name",
     label: "Name",
-    uxType: T.FormUIType.Text,
+    uiType: T.FormUIType.Text,
     placeholder: "Add name",
     info: "Name of the attribute",
   },
   {
     name: "label",
     label: "Label",
-    uxType: T.FormUIType.Text,
+    uiType: T.FormUIType.Text,
     placeholder: "Add label",
     info: "Label for the attribute",
   },
   {
     name: "placeholder",
     label: "Placeholder",
-    uxType: T.FormUIType.Text,
+    uiType: T.FormUIType.Text,
     placeholder: "placeholder",
   },
   {
     name: "info",
     label: "Info",
-    uxType: T.FormUIType.Text,
+    uiType: T.FormUIType.Text,
     placeholder: "info",
   },
   {
     name: "uxType",
     label: "UX Type",
-    uxType: T.FormUIType.Switch,
+    uiType: T.FormUIType.Switch,
   },
 ];
 
 const FormDefs = () => {
   const [formDefs, setFormDefs] = React.useState<
-    T.FormDefUnit<{ [k: string]: string }>[]
+    T.FormDef<{ [k: string]: string }>[]
   >([]);
   const [addForm, setAddForm] = React.useState<boolean>(false);
 
-  const handleAdd = (a: T.FormDefUnit<{ [k: string]: string }>) => {
+  const handleAdd = (a: T.FormDef<{ [k: string]: string }>) => {
     setFormDefs([...formDefs, a]);
     setAddForm(false);
   };
@@ -67,7 +67,7 @@ const FormDefs = () => {
                 InputGeneric,
                 InputWrapper,
                 SubmitButton
-              )<T.FormDefUnit<{ [k: string]: string }>>(formDef2)}
+              )<T.FormDef<{ [k: string]: string }>>(formDef)}
               onSuccess={handleAdd}
             >
               <BackButton onClick={() => setAddForm(false)} />
