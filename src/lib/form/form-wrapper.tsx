@@ -65,10 +65,6 @@ export const FormWrapper = <A, B>({
   );
 };
 
-interface FormWrapperOptions {
-  resetAfterSubmit: boolean;
-}
-
 /**
  * @type FormShape: shape of the form
  * @param FormUI : UI for the form, must respect FormUIProps
@@ -82,7 +78,7 @@ export const FormWrapperLegacy =
     FormUIInput: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
-    { resetAfterSubmit = true }: Partial<FormWrapperOptions> = {}
+    { resetAfterSubmit = true }: Partial<T.FormWrapperOptions> = {}
   ) =>
   ({
     onSuccess,

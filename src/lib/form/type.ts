@@ -13,6 +13,18 @@ export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
   children?: JSX.Element;
 }
 
+export interface FormWrapperOptions {
+  resetAfterSubmit: boolean;
+}
+
+export interface FormUIGeneratorProps {
+  InputWrapper: (p: InputWrapperProps) => JSX.Element;
+  InputGeneric: (
+    uiType: FormUIType
+  ) => (p: InputProps<any, any>) => JSX.Element; // here cast to any to avoid types issue, if coded properly this should not cause any issues
+  Button: (a: SubmitButtonProps) => JSX.Element;
+}
+
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
 export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
 
@@ -35,6 +47,11 @@ export interface FormUIProps<FormShape> extends FormUIPropsCore<FormShape> {
   children?: JSX.Element;
 }
 
+export interface OptionUnit<Id = string> {
+  id: Id;
+  name: string;
+}
+
 export interface InputProps<A, Id extends string | number = number> {
   value?: A;
   onChange: (a?: A) => void;
@@ -44,24 +61,13 @@ export interface InputProps<A, Id extends string | number = number> {
   options?: OptionUnit<Id>[];
 }
 
-export interface OptionUnit<Id = string> {
-  id: Id;
-  name: string;
-}
-
+// same as input props but options is mandatory
 export interface InputOptionProps<A, Id extends string | number>
   extends InputProps<A, Id> {
   options: OptionUnit<Id>[];
 }
 
 export interface InputWrapperProps {
-  label?: string;
-  error?: string;
-  info?: string;
-  children: JSX.Element;
-}
-
-export interface WrapperProps {
   label?: string;
   error?: string;
   info?: string;

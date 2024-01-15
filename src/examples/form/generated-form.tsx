@@ -67,20 +67,17 @@ const formDef: T.FormDef<FormData>[] = [
   },
 ];
 
-const GeneratedForm = () => {
-  return (
-    <>
-      <FormWrapper
-        FormUI={FormUIGenerator({
-          InputGeneric,
-          InputWrapper,
-          Button: SubmitButton,
-        })(formDef)}
-        onSuccess={console.log}
-        clientValidationFunction={clientValidationFunction}
-        asyncCall={asyncCall}
-      />
-    </>
-  );
-};
+const GeneratedForm = () => (
+  <FormWrapper
+    FormUI={FormUIGenerator({
+      InputGeneric,
+      InputWrapper,
+      Button: SubmitButton,
+    })(formDef)}
+    onSuccess={console.log}
+    clientValidationFunction={clientValidationFunction}
+    asyncCall={asyncCall}
+  />
+);
+
 export default GeneratedForm;

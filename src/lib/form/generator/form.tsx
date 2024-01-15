@@ -2,14 +2,14 @@ import * as T from "../type";
 
 import { defToShape } from "../utils";
 import { FormWrapperLegacy } from "../form-wrapper";
-import FormUIGenerator, { FormUIGeneratorProps } from "./ui";
+import FormUIGenerator from "./ui";
 
-const FormGenerator =
-  (p: FormUIGeneratorProps) =>
+const FormGeneratorLegacy =
+  (p: T.FormUIGeneratorProps) =>
   <FormShape, Out = any>(
     def: T.FormDef<FormShape>[],
     asyncCall?: (data: FormShape) => Promise<Out>,
-    options: { resetAfterSubmit?: boolean } = {}
+    options: Partial<T.FormWrapperOptions> = {}
   ) => {
     const shape = defToShape(def);
     const ui = FormUIGenerator(p)(def);
@@ -17,4 +17,4 @@ const FormGenerator =
     return FormWrapperLegacy(ui, shape, asyncCall, options);
   };
 
-export default FormGenerator;
+export default FormGeneratorLegacy;

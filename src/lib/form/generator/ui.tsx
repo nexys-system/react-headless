@@ -1,16 +1,8 @@
 import React from "react";
 import * as T from "../type";
 
-export interface FormUIGeneratorProps {
-  InputWrapper: (p: T.InputWrapperProps) => JSX.Element;
-  InputGeneric: (
-    uiType: T.FormUIType
-  ) => (p: T.InputProps<any, any>) => JSX.Element; // here cast to any to avoid types issue, if coded properly this should not cause any issues
-  Button: (a: T.SubmitButtonProps) => JSX.Element;
-}
-
 const FormUIGenerator =
-  ({ InputGeneric, InputWrapper, Button }: FormUIGeneratorProps) =>
+  ({ InputGeneric, InputWrapper, Button }: T.FormUIGeneratorProps) =>
   <A,>(def: T.FormDef<A>[]) =>
   ({
     form,
