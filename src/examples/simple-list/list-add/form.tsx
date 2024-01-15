@@ -2,8 +2,9 @@ import React from "react";
 import { FormUIProps } from "../../../lib/form/type";
 
 import * as Inputs from "../../../components/form/inputs";
-import FormWrapper from "../../../lib/form/form-wrapper";
+
 import Icon from "../../../components/icon";
+import { FormWrapperLegacy } from "../../../lib/form/form-wrapper";
 
 export interface FormDataShape {
   name: string;
@@ -44,7 +45,7 @@ const shape = { name: {} };
 const apiCall = async (a: FormDataShape) =>
   Promise.resolve(Math.random() * 100);
 
-const Form = FormWrapper<FormDataShape, number>(FormUI, shape, apiCall, {
+const Form = FormWrapperLegacy<FormDataShape, number>(FormUI, shape, apiCall, {
   resetAfterSubmit: true,
 });
 

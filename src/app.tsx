@@ -23,7 +23,7 @@ import Detail from "./examples/detail";
 import Badge from "./examples/badge";
 import Auth from "./examples/auth";
 import DateRange from "./examples/date-range";
-import Superadmin from "./examples/superadmin";
+
 import CrudBrowser from "./examples/crud-browser";
 import FormBuilder from "./builder/form";
 import TableBuilder from "./builder/table";

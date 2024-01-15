@@ -1,5 +1,18 @@
 import { Render } from "../view";
 
+export interface FormWrapperOnActionProps<A, Out> {
+  onSuccess?: (data: A, out?: Out) => void;
+  onErrors?: (err: any, data: A) => { errors?: FormErrorsGeneric<A> };
+}
+
+export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
+  clientValidationFunction?: <A>(form: Partial<A>) => FormErrors<A>;
+  asyncCall?: (formData: A) => Promise<B>;
+  FormUI: (props: FormUIProps<A>) => JSX.Element;
+  errors?: FormErrors<A>;
+  children?: JSX.Element;
+}
+
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
 export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
 

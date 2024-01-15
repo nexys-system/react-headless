@@ -2,12 +2,10 @@ import React from "react";
 
 import * as T from "../../lib/form/type";
 
-import { FormWrapper, generateFormUI } from "../../lib/form/generator2/index";
-import {
-  InputGeneric,
-  InputWrapper as Wrapper,
-} from "../../components/form/inputs";
+import { FormWrapper } from "../../lib/form/form-wrapper";
+import { InputGeneric, InputWrapper } from "../../components/form/inputs";
 import { SubmitButton } from "../../components/buttons/with-action";
+import FormUIGenerator from "../../lib/form/generator/ui";
 
 enum UIStyle {
   card = 1,
@@ -73,7 +71,11 @@ const GeneratedForm = () => {
   return (
     <>
       <FormWrapper
-        FormUI={generateFormUI(InputGeneric, Wrapper, SubmitButton)(formDef)}
+        FormUI={FormUIGenerator({
+          InputGeneric,
+          InputWrapper,
+          Button: SubmitButton,
+        })(formDef)}
         onSuccess={console.log}
         clientValidationFunction={clientValidationFunction}
         asyncCall={asyncCall}

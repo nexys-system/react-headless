@@ -9,8 +9,9 @@ import {
   Select as InputOptionsScalar,
   InputWrapper as Wrapper,
 } from "../../components/form/inputs";
-import { FormWrapper } from "../../lib/form/generator2";
+
 import { SubmitButton } from "../../components/buttons/with-action";
+import { FormWrapper } from "../../lib/form/form-wrapper";
 
 enum UIStyle {
   card = 1,

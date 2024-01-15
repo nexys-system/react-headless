@@ -2,10 +2,12 @@ import React from "react";
 
 import * as T from "../../lib/form/type";
 
-import { FormWrapper, generateFormUI } from "../../lib/form/generator2";
 import { InputGeneric, InputWrapper } from "../../components/form/inputs";
 
 import { SubmitButton, BackButton } from "../../components/buttons/with-action";
+import { FormWrapper } from "../../lib/form/form-wrapper";
+import FormGenerator from "../../lib/form/generator/form";
+import FormUIGenerator from "../../lib/form/generator/ui";
 
 const formDef: T.FormDef<any>[] = [
   {
@@ -63,11 +65,11 @@ const FormDefs = () => {
         {addForm && (
           <>
             <FormWrapper
-              FormUI={generateFormUI(
+              FormUI={FormUIGenerator({
                 InputGeneric,
                 InputWrapper,
-                SubmitButton
-              )<T.FormDef<{ [k: string]: string }>>(formDef)}
+                Button: SubmitButton,
+              })<T.FormDef<{ [k: string]: string }>>(formDef)}
               onSuccess={handleAdd}
             >
               <BackButton onClick={() => setAddForm(false)} />
@@ -136,11 +138,11 @@ const FormDefs = () => {
         {formDefs.length > 0 && (
           <>
             <FormWrapper
-              FormUI={generateFormUI(
+              FormUI={FormUIGenerator({
                 InputGeneric,
                 InputWrapper,
-                SubmitButton
-              )(formDefs)}
+                Button: SubmitButton,
+              })(formDefs)}
               onSuccess={console.log}
             />
             <hr />

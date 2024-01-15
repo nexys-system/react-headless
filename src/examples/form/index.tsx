@@ -1,6 +1,6 @@
 import React from "react";
 
-import FormWrapper from "../../lib/form/form-wrapper";
+import { FormWrapperLegacy } from "../../lib/form/form-wrapper";
 
 import { FormDataShape, Out } from "./type";
 import FormUI from "./ui";
@@ -11,7 +11,7 @@ import FreeUI from "./free-ui";
 import GeneratedForm from "./generated-form";
 import FormDefs from "./ui-generate";
 
-const Form = FormWrapper<FormDataShape, Out>(FormUI, shape, apiCall);
+const Form = FormWrapperLegacy<FormDataShape, Out>(FormUI, shape, apiCall);
 
 export default () => (
   <>

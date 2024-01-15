@@ -1,8 +1,7 @@
-import { FormWrapperProps } from "../lib/form/form-wrapper";
 import { ViewStructureUnit } from "../lib/view";
 import ViewGeneric, { toViewStructure } from "../lib/view";
 import ToggleHeadless, { LayoutProps } from "../lib/toggle";
-import { FormViewDef } from "../lib/form/type";
+import { FormViewDef, FormWrapperOnActionProps } from "../lib/form/type";
 import PreForm from "./form/generator";
 import { Row } from "./view";
 
@@ -34,7 +33,7 @@ const LayoutForm = ({ setIsForm, children }: LayoutProps) => (
 
 const PreToggle = <A, Out>(
   structure: ViewStructureUnit<A>[],
-  Form: (p: FormWrapperProps<A, Out>) => JSX.Element
+  Form: (p: FormWrapperOnActionProps<A, Out>) => JSX.Element
 ) => ToggleHeadless(structure, Form, View, LayoutView, LayoutForm);
 
 export const ToggleFromDef = <A, Out>(

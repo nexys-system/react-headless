@@ -6,7 +6,7 @@ export interface FormUIGeneratorProps {
   InputGeneric: (
     uiType: T.FormUIType
   ) => (p: T.InputProps<any, any>) => JSX.Element; // here cast to any to avoid types issue, if coded properly this should not cause any issues
-  Button: () => JSX.Element;
+  Button: (a: T.SubmitButtonProps) => JSX.Element;
 }
 
 const FormUIGenerator =
@@ -18,6 +18,7 @@ const FormUIGenerator =
     loading,
     errors,
     onSubmit,
+    children,
   }: T.FormUIProps<A>): JSX.Element => {
     return (
       <form onSubmit={onSubmit}>
@@ -27,7 +28,12 @@ const FormUIGenerator =
           const value = form[item.name];
 
           return (
-            <InputWrapper label={item.label} error={errors[item.name]} key={i}>
+            <InputWrapper
+              key={i}
+              label={item.label}
+              error={errors[item.name]}
+              info={item.info}
+            >
               <Input
                 value={value}
                 onChange={(val) => setForm({ ...form, [item.name]: val })}
@@ -40,7 +46,8 @@ const FormUIGenerator =
           );
         })}
 
-        <Button />
+        <Button disabled={loading} />
+        {children}
       </form>
     );
   };
