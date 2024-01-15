@@ -78,7 +78,9 @@ export const FormWrapper = <A, B>({
 
 export const generateFormUI =
   (
-    InputGeneric: (uxType: T.UXType) => (a: T.InputProps<any>) => JSX.Element,
+    InputGeneric: (
+      uxType: T.FormUIType
+    ) => (a: T.InputProps<any>) => JSX.Element,
     Wrapper: (a: T.WrapperProps) => JSX.Element,
     SubmitButton: (a: T.SubmitButtonProps) => JSX.Element
   ) =>

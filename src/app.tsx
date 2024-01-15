@@ -50,7 +50,7 @@ export default () => (
         <Route path={links.layout.link + "/*"} element={<LayoutComponent />} />
         <Route path={links.view.link} element={<View />} />
         <Route path={links.card.link} element={<Card />} />
-        <Route path={links.form.link} element={<Form />} />
+        <Route path={links.form.link + "/*"} element={<Form />} />
         <Route path={links.loadDataAsync.link} element={<LoadDataAsync />} />
         <Route path={links.notifications.link} element={<Notifications />} />
         <Route path={links.code.link} element={<Code />} />

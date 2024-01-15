@@ -100,14 +100,8 @@ export interface BackButtonProps {
   onClick: () => void;
 }
 
-export enum UXType {
-  text = 1,
-  number = 2,
-  checkbox = 3,
-}
-
 export interface FormDefUnit<A> {
-  uxType: UXType;
+  uxType: FormUIType;
   label: string;
   description?: string;
   name: keyof A;
