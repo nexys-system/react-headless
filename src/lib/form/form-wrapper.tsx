@@ -1,20 +1,69 @@
 // generic wrapper for forms, see args below for details
-import React from 'react';
+import React from "react";
 
-import * as T from './type';
-import * as Validation from '@nexys/validation';
-import { isA } from './utils';
+import * as T from "./type";
+import * as Validation from "@nexys/validation";
+import { isNotPartial } from "./utils";
 
-export interface FormWrapperProps<A, Out> {
-  data?: {
-    dataIn: Partial<A>;
-    options?: {
-      [k in keyof A]?: { id: number | string; name: string }[];
-    };
+export const FormWrapper = <A, B>({
+  onSuccess,
+  clientValidationFunction,
+  FormUI,
+  errors: externalErrors,
+  asyncCall,
+  children,
+}: T.FormWrapperProps<A, B>) => {
+  const [formData, setFormData] = React.useState<Partial<A>>({});
+  const [errors, setErrors] = React.useState<T.FormErrors<A>>(
+    externalErrors || {}
+  );
+  const [loading, setLoading] = React.useState<boolean>(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // client validation
+    const validation = clientValidationFunction
+      ? clientValidationFunction(formData)
+      : {};
+
+    if (!isNotPartial(formData, validation)) {
+      // errors found
+      setErrors(validation);
+      return;
+    }
+
+    // reset errors
+    setErrors({});
+    // and pass value up
+
+    if (asyncCall) {
+      setLoading(true);
+      asyncCall(formData)
+        .then((response) => {
+          onSuccess && onSuccess(formData, response);
+        })
+        .catch((x) => setErrors(x))
+        .finally(() => setLoading(false));
+
+      return;
+    }
+
+    onSuccess && onSuccess(formData);
   };
-  onSuccess?: (data: A, out?: Out) => void;
-  onErrors?: (err: any, data: A) => { errors?: T.FormErrorsGeneric<A> };
-}
+
+  return (
+    <FormUI
+      loading={loading}
+      form={formData}
+      setForm={setFormData}
+      errors={errors}
+      onSubmit={handleSubmit}
+    >
+      {children}
+    </FormUI>
+  );
+};
 
 /**
  * @type FormShape: shape of the form
@@ -22,63 +71,27 @@ export interface FormWrapperProps<A, Out> {
  * @param shape : validation shape
  * @param asyncCall [optional]: async call, typically backend
  * @param onSuccess [optional]: after call to the backend, action
+ * note this is the old version of the formwrapper that maps to the new one
  */
-const FormWrapper =
+export const FormWrapperLegacy =
   <FormShape, Out = any>(
-    FormUI: (props: T.FormUIProps<FormShape>) => JSX.Element,
+    FormUIInput: (props: T.FormUIProps<FormShape>) => JSX.Element,
     shape: Validation.Type.Shape,
     asyncCall?: (data: FormShape) => Promise<Out>,
-    { resetAfterSubmit = true }: { resetAfterSubmit?: boolean } = {}
+    { resetAfterSubmit = true }: Partial<T.FormWrapperOptions> = {}
   ) =>
   ({
-    data = { options: {}, dataIn: {} },
     onSuccess,
-    onErrors
-  }: FormWrapperProps<FormShape, Out>): JSX.Element => {
-    type FormErrors = T.FormErrorsGeneric<FormShape>;
-    const [form, setForm] = React.useState<Partial<FormShape>>(data.dataIn);
-    const [errors, setErrors] = React.useState<FormErrors>({});
-    const [loading, setLoading] = React.useState<boolean>(false);
+    onErrors,
+  }: T.FormWrapperOnActionProps<FormShape, Out>): JSX.Element => {
+    const clientValidationFunction = (form: any) =>
+      Validation.Main.checkObject(form, shape) as any;
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-
-      const validation = Validation.Main.checkObject(form, shape) as FormErrors;
-
-      setErrors(validation);
-
-      if (isA(form, validation)) {
-        // here call the backend
-        setLoading(true);
-        try {
-          const out = asyncCall && (await asyncCall(form));
-          setLoading(false);
-          resetAfterSubmit && setForm({}); // this lines comes before onSuccess, else it creates an error/warning
-          onSuccess && onSuccess(form, out);
-        } catch (err) {
-          if (onErrors) {
-            const { errors } = onErrors(err, form);
-
-            if (errors) {
-              setErrors(errors);
-              setLoading(false);
-            }
-          }
-        }
-      }
-    };
-
-    return (
-      <form onSubmit={handleSubmit}>
-        <FormUI
-          loading={loading}
-          errors={errors}
-          form={form}
-          setForm={setForm}
-          options={data.options || {}}
-        />
-      </form>
-    );
+    return FormWrapper<FormShape, Out>({
+      onSuccess,
+      onErrors,
+      clientValidationFunction,
+      FormUI: FormUIInput,
+      asyncCall,
+    });
   };
-
-export default FormWrapper;

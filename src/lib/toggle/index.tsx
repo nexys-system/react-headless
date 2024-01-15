@@ -1,8 +1,7 @@
 import React from "react";
 
-import { FormWrapperProps } from "../form/form-wrapper";
-
 import { ViewProps, ViewStructureUnit } from "../view";
+import { FormWrapperOnActionProps } from "../form/type";
 
 export interface LayoutProps {
   isForm?: boolean;
@@ -13,7 +12,7 @@ export interface LayoutProps {
 const ToggleHeadless =
   <A,>(
     structure: ViewStructureUnit<A>[],
-    Form: (p: FormWrapperProps<A, any>) => JSX.Element,
+    Form: (p: FormWrapperOnActionProps<A, any>) => JSX.Element,
     View: (p: ViewProps<A>) => JSX.Element,
     LayoutView: (p: LayoutProps) => JSX.Element,
     LayoutForm: (p: LayoutProps) => JSX.Element
@@ -37,7 +36,6 @@ const ToggleHeadless =
       return (
         <LayoutForm setIsForm={setIsForm}>
           <Form
-            data={{ dataIn: data, options }}
             onSuccess={(d) => {
               setData(d);
               setIsForm(false);

@@ -17,7 +17,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "buildpackage": "rm -rf ./dist;tsc -p tsconfig.build.json",
+    "buildPackage": "rm -rf ./dist;tsc -p tsconfig.build.json",
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest run --coverage"

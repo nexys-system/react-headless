@@ -23,7 +23,7 @@ import Detail from "./examples/detail";
 import Badge from "./examples/badge";
 import Auth from "./examples/auth";
 import DateRange from "./examples/date-range";
-import Superadmin from "./examples/superadmin";
+
 import CrudBrowser from "./examples/crud-browser";
 import FormBuilder from "./builder/form";
 import TableBuilder from "./builder/table";
@@ -50,24 +50,26 @@ export default () => (
         <Route path={links.layout.link + "/*"} element={<LayoutComponent />} />
         <Route path={links.view.link} element={<View />} />
         <Route path={links.card.link} element={<Card />} />
-        <Route path={links.form.link} element={<Form />} />
+        <Route path={links.form.link + "/*"} element={<Form />} />
         <Route path={links.loadDataAsync.link} element={<LoadDataAsync />} />
         <Route path={links.notifications.link} element={<Notifications />} />
         <Route path={links.code.link} element={<Code />} />
         <Route path={links.listAssign.link} element={<ListAssign />} />
         <Route path={links.buttons.link} element={<Buttons />} />
         <Route path={links.badge.link} element={<Badge />} />
-        <Route path={links.download.link} element={<Download />} />
+
         <Route path={links.simpleList.link} element={<SimpleList />} />
         <Route path={links.toggle.link} element={<Toggle />} />
         <Route path={links.tabs.link + "/*"} element={<Tabs />} />
         <Route path={links.fileUpload.link} element={<FileUpload />} />
         <Route path={links.detail.link} element={<Detail />} />
         <Route path={links.statusChange.link} element={<StatusChange />} />
+        {/*
+        <Route path={links.download.link} element={<Download />} />
         <Route path={links.superadmin.link + "/*"} element={<Superadmin />} />
-        <Route path={links.crudBrowser.link + "/*"} element={<CrudBrowser />} />
-        <Route path={links.auth.link + "/*"} element={<Auth />} />
-        <Route path={links.dateRange.link} element={<DateRange />} />
+        //<Route path={links.crudBrowser.link + "/*"} element={<CrudBrowser />} />
+        <Route path={links.auth.link + "/*"} element={<Auth />} /> <Route path={links.dateRange.link} element={<DateRange />} />*/}
+
         <Route path={"/builder/form"} element={<FormBuilder />} />
         <Route path={"/builder/table"} element={<TableBuilder />} />
         <Route path={"/"} element={<Public />} />
