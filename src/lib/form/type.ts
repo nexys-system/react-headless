@@ -6,11 +6,12 @@ export interface FormWrapperOnActionProps<A, Out> {
 }
 
 export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
-  clientValidationFunction?: <A>(form: Partial<A>) => FormErrors<A>;
+  clientValidationFunction?: (form: Partial<A>) => FormErrors<A>;
   asyncCall?: (formData: A) => Promise<B>;
   FormUI: (props: FormUIProps<A>) => JSX.Element;
   errors?: FormErrors<A>;
   children?: JSX.Element;
+  formDataDefault?: Partial<A>;
 }
 
 export interface FormWrapperOptions {

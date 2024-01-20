@@ -12,13 +12,15 @@ export const FormWrapper = <A, B>({
   errors: externalErrors,
   asyncCall,
   children,
+  formDataDefault,
 }: T.FormWrapperProps<A, B>) => {
-  const [formData, setFormData] = React.useState<Partial<A>>({});
+  const [formData, setFormData] = React.useState<Partial<A>>(
+    formDataDefault || {}
+  );
   const [errors, setErrors] = React.useState<T.FormErrors<A>>(
     externalErrors || {}
   );
   const [loading, setLoading] = React.useState<boolean>(false);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -84,8 +86,8 @@ export const FormWrapperLegacy =
     onSuccess,
     onErrors,
   }: T.FormWrapperOnActionProps<FormShape, Out>): JSX.Element => {
-    const clientValidationFunction = (form: any) =>
-      Validation.Main.checkObject(form, shape) as any;
+    const clientValidationFunction = (form: Partial<FormShape>) =>
+      Validation.Main.checkObject(form, shape) as T.FormErrors<FormShape>;
 
     return FormWrapper<FormShape, Out>({
       onSuccess,
