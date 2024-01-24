@@ -12,6 +12,7 @@ export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
   errors?: FormErrors<A>;
   children?: JSX.Element;
   formDataDefault?: Partial<A>;
+  options?: FormOptionSets<A>;
 }
 
 export interface FormWrapperOptions {
@@ -29,17 +30,15 @@ export interface FormUIGeneratorProps {
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
 export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
 
-export type FormOptionSets<A> = {
-  [k in keyof A]?: { id: number | string; name: string }[];
+export type FormOptionSets<FormShape> = {
+  [k in keyof FormShape]?: { id: number | string; name: string }[];
 };
 
 interface FormUIPropsCore<FormShape> {
   loading: boolean;
   form: Partial<FormShape>;
   errors: FormErrorsGeneric<FormShape>;
-  options?: {
-    [k in keyof FormShape]?: { id: number | string; name: string }[];
-  };
+  options?: FormOptionSets<FormShape>;
   setForm: (f: Partial<FormShape>) => void;
 }
 

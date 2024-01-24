@@ -1,8 +1,8 @@
 // generic wrapper for forms, see args below for details
 import React from "react";
 
-import * as T from "./type";
 import * as Validation from "@nexys/validation";
+import * as T from "./type";
 import { isNotPartial } from "./utils";
 
 export const FormWrapper = <A, B>({
@@ -13,6 +13,7 @@ export const FormWrapper = <A, B>({
   asyncCall,
   children,
   formDataDefault,
+  options,
 }: T.FormWrapperProps<A, B>) => {
   const [formData, setFormData] = React.useState<Partial<A>>(
     formDataDefault || {}
@@ -61,6 +62,7 @@ export const FormWrapper = <A, B>({
       setForm={setFormData}
       errors={errors}
       onSubmit={handleSubmit}
+      options={options}
     >
       {children}
     </FormUI>
