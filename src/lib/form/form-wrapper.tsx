@@ -14,6 +14,7 @@ export const FormWrapper = <A, B>({
   children,
   formDataDefault,
   options,
+  onCancel,
 }: T.FormWrapperProps<A, B>) => {
   const [formData, setFormData] = React.useState<Partial<A>>(
     formDataDefault || {}
@@ -63,6 +64,7 @@ export const FormWrapper = <A, B>({
       errors={errors}
       onSubmit={handleSubmit}
       options={options}
+      onCancel={onCancel}
     >
       {children}
     </FormUI>

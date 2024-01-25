@@ -13,6 +13,7 @@ export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
   children?: JSX.Element;
   formDataDefault?: Partial<A>;
   options?: FormOptionSets<A>;
+  onCancel?: () => void;
 }
 
 export interface FormWrapperOptions {
