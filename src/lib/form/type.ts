@@ -44,6 +44,7 @@ interface FormUIPropsCore<FormShape> {
 
 export interface FormUIProps<FormShape> extends FormUIPropsCore<FormShape> {
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  onCancel?: () => void;
   children?: JSX.Element;
 }
 
