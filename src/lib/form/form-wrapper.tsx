@@ -47,7 +47,16 @@ export const FormWrapper = <A, B>({
         .then((response) => {
           onSuccess && onSuccess(formData, response);
         })
-        .catch((x) => setErrors(x))
+        .catch((x) => {
+          // here we assume that if the request was returned successfully but with a status that is not 2xx, the following object is returned {status, data} (where data is a json object)
+          // see https://axios-http.com/docs/handling_errors
+          // furhtermore we assume that then the shape returned is {[label]:error}
+          if ("data" in x && typeof x.data === "object") {
+            setErrors(x.data);
+          }
+
+          // tbd
+        })
         .finally(() => setLoading(false));
 
       return;
