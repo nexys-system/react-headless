@@ -1,6 +1,22 @@
 import { FormDef, FormErrors, FormUIType } from "./type";
 import * as Validation from "@nexys/validation";
 
+export const clientValidationFunctionFromShape =
+  <A>(shape: Validation.Type.Shape) =>
+  (input: A): FormErrors<A> => {
+    const e: FormErrors<A> = {};
+
+    const out = Validation.Main.checkObject(input, shape);
+
+    Object.entries(out).forEach(([k, v]: [string, string[]]) => {
+      if (Array.isArray(v) && v.length > 0) {
+        e[k as any as keyof A] = v[0];
+      }
+    });
+
+    return e;
+  };
+
 export const enumToOptions = <A>(keys: {
   [s: number]: string;
 }): { id: A; name: string }[] =>
