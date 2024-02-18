@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface HeaderProps {
   title?: string | JSX.Element;
   description?: string | JSX.Element;
@@ -6,11 +8,11 @@ export interface HeaderProps {
 export interface CardProps {
   title?: string;
   subtitle?: string;
-  children: JSX.Element;
+  children: React.ReactNode;
 }
 
 export interface RowProps {
-  children: JSX.Element[] | JSX.Element;
+  children: React.ReactNode;
 }
 
 export interface ColProps extends RowProps {
