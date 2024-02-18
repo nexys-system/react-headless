@@ -26,7 +26,7 @@ const FormUI = ({
           onChange={(name) => setForm({ ...form, name })}
           disabled={loading}
           placeholder={"Name"}
-          errors={errors["name"]}
+          error={errors["name"]}
         />
       </Inputs.InputWrapper>
 
@@ -36,7 +36,7 @@ const FormUI = ({
           onChange={(description) => setForm({ ...form, description })}
           disabled={loading}
           placeholder={"Description"}
-          errors={errors["description"]}
+          error={errors["description"]}
         />
       </Inputs.InputWrapper>
       <button

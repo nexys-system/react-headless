@@ -43,10 +43,10 @@ type HtmlInputType = "text" | "date" | "time" | "datetime-local";
 
 const InputTextGeneric =
   (type: HtmlInputType = "text") =>
-  ({ onChange, errors, disabled, value, placeholder }: T.InputProps<string>) =>
+  ({ onChange, error, disabled, value, placeholder }: T.InputProps<string>) =>
     (
       <input
-        className={getClassName(errors)}
+        className={getClassName(error)}
         type={type}
         value={value || ""}
         onChange={(v) => onChange(v.target.value)}
@@ -65,12 +65,12 @@ export const Timepicker = InputTextGeneric("time");
 
 export const Textarea = ({
   onChange,
-  errors,
+  error,
   disabled,
   value,
 }: T.InputProps<string>) => (
   <textarea
-    className={getClassName(errors, "border p-2 rounded resize-y")}
+    className={getClassName(error, "border p-2 rounded resize-y")}
     value={value}
     onChange={(v) => onChange(v.target.value)}
     disabled={disabled}
@@ -81,11 +81,11 @@ export const Select = <A, Id extends number | string>({
   onChange,
   options,
   value,
-  errors,
+  error,
   disabled,
 }: T.InputProps<A, Id>) => (
   <select
-    className={getClassName(errors, "border p-2 rounded bg-white")}
+    className={getClassName(error, "border p-2 rounded bg-white")}
     onChange={(v) => {
       const { value } = v.target;
 

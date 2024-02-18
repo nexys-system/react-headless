@@ -25,7 +25,7 @@ const FormUI = ({
           onChange={(name) => setForm({ ...form, name })}
           disabled={loading}
           placeholder={"Name"}
-          errors={errors["name"]}
+          error={errors["name"]}
         />
         <button
           disabled={loading || form.name === "" || !form.name}

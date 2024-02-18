@@ -57,7 +57,7 @@ export interface OptionUnit<Id = string> {
 export interface InputProps<A, Id extends string | number = number> {
   value?: A;
   onChange: (a?: A) => void;
-  errors?: string;
+  error?: string;
   disabled?: boolean;
   placeholder?: string;
   options?: OptionUnit<Id>[];
@@ -72,6 +72,7 @@ export interface InputOptionProps<A, Id extends string | number>
 export interface InputWrapperProps {
   label?: string;
   error?: string;
+  //errors?: string[];
   info?: string;
   children: JSX.Element;
 }

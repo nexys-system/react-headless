@@ -34,7 +34,7 @@ const FormUIGenerator =
                 onChange={(val) => setForm({ ...form, [item.name]: val })}
                 disabled={loading}
                 placeholder={item.placeholder}
-                errors={errors[item.name]}
+                error={errors[item.name]}
                 options={item.options && item.options}
               />
             </InputWrapper>
