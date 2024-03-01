@@ -3,7 +3,7 @@ import React from "react";
 
 import * as Validation from "@nexys/validation";
 import * as T from "./type";
-import { isNotPartial,clientValidationFunctionFromShape } from "./utils";
+import { isNotPartial, validationArraysToStrings } from "./utils";
 
 export const FormWrapper = <A, B>({
   onSuccess,
@@ -33,7 +33,7 @@ export const FormWrapper = <A, B>({
 
     if (!isNotPartial(formData, validation)) {
       // errors found
-      setErrors(clientValidationFunctionFromShape(validation));
+      setErrors(validationArraysToStrings(validation));
       return;
     }
 
