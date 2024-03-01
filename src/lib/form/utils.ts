@@ -3,7 +3,7 @@ import * as Validation from "@nexys/validation";
 
 export const clientValidationFunctionFromShape =
   <A>(shape: Validation.Type.Shape) =>
-  (input: A): FormErrors<A> => {
+  (input: Partial<A>): FormErrors<A> => {
     const e: FormErrors<A> = {};
 
     const out = Validation.Main.checkObject(input, shape);
