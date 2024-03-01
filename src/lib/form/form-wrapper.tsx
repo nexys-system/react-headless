@@ -33,7 +33,7 @@ export const FormWrapper = <A, B>({
 
     if (!isNotPartial(formData, validation)) {
       // errors found
-      setErrors(validationArraysToStrings(validation));
+      setErrors(validation);
       return;
     }
 
@@ -52,7 +52,7 @@ export const FormWrapper = <A, B>({
           // see https://axios-http.com/docs/handling_errors
           // furhtermore we assume that then the shape returned is {[label]:error}
           if ("data" in x && typeof x.data === "object") {
-            setErrors(x.data);
+            setErrors(validationArraysToStrings(x.data));
           }
 
           // tbd
