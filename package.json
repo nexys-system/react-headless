@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "@nexys/validation": "^2.1.5",
-    "react-idle-timer": "^5.2.0"
+    "react-idle-timer": "^5.7.2"
   }
 }
