@@ -1,6 +1,6 @@
 {
   "name": "@nexys/headless",
-  "version": "1.2.14",
+  "version": "1.2.15",
   "license": "AGPL-3.0",
   "keywords": [
     "typescript",
@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "@nexys/validation": "^2.1.5",
-    "react-idle-timer": "^5.2.0"
+    "react-idle-timer": "^5.7.2"
   }
 }
