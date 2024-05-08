@@ -12,7 +12,7 @@ React headless components - Quickly build robust react apps
 
 ## Get started
 
-`yarn add @nexys/react-headless`
+`yarn add @nexys/headless`
 
 ## UI Components
 
