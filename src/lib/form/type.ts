@@ -29,7 +29,12 @@ export interface FormUIGeneratorProps {
 }
 
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
-export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
+export type FormErrorsGeneric<A> = {
+  [K in keyof A]?: A[K] extends object
+    ? FormErrorsGeneric<A[K]>
+    : string;
+};
+
 
 export type FormOptionSets<FormShape> = {
   [k in keyof FormShape]?: { id: number | string; name: string }[];
