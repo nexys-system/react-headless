@@ -26,15 +26,14 @@ const FormUIGenerator =
             <InputWrapper
               key={i}
               label={item.label}
-              error={errors[item.name]}
-              info={item.info}
-            >
+              error={errors[item.name] as string}
+              info={item.info}>
               <Input
                 value={form[item.name]}
                 onChange={(val) => setForm({ ...form, [item.name]: val })}
                 disabled={loading}
                 placeholder={item.placeholder}
-                error={errors[item.name]}
+                error={errors[item.name] as string}
                 options={item.options && item.options}
               />
             </InputWrapper>
