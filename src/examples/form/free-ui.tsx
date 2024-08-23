@@ -68,8 +68,7 @@ const FormUI = ({
       <Wrapper
         label="Country"
         info={"Pick a country from the list"}
-        error={errors["country"]}
-      >
+        error={errors["country"] as string}>
         <InputOptions<number, number>
           options={countries}
           value={form["country"]}
@@ -79,8 +78,7 @@ const FormUI = ({
       <Wrapper
         label="Language"
         info={"Pick a language from the list"}
-        error={errors["lang"]}
-      >
+        error={errors["lang"] as string}>
         <InputOptions<string, string>
           options={langs}
           value={form["lang"]}
@@ -91,8 +89,7 @@ const FormUI = ({
       <Wrapper
         label="UI Style"
         info={"Pick a UI style from the list"}
-        error={errors["uiStyle"]}
-      >
+        error={errors["uiStyle"]}>
         <InputOptionsScalar<UIStyle, UIStyle>
           options={uiStyles}
           value={form["uiStyle"]}
@@ -107,10 +104,10 @@ const FormUI = ({
 
 const clientValidationFunction = (
   v: Partial<FormData>
-): T.FormErrors<FormData> => {
+): T.FormErrorsGeneric<FormData> => {
   console.log(v);
 
-  const e: T.FormErrors<FormData> = {};
+  const e: T.FormErrorsGeneric<FormData> = {};
 
   if (!("name" in v) || v["name"] === "") {
     e.name = "wth dude";

@@ -1,23 +1,35 @@
-import { FormDef, FormErrors, FormUIType } from "./type";
+import { FormDef, FormErrorsGeneric, FormUIType } from "./type";
 import * as Validation from "@nexys/validation";
 
 export const clientValidationFunctionFromShape =
   <A>(shape: Validation.Type.Shape) =>
-  (input: Partial<A>): FormErrors<A> => {
+  (input: Partial<A>): FormErrorsGeneric<A> => {
     const out = Validation.Main.checkObject(input, shape);
     return validationArraysToStrings(out);
   };
 
 export const validationArraysToStrings = <A>(
   out: Validation.Type.Error | Validation.Type.ErrorOut
-): FormErrors<A> => {
-  const e: FormErrors<A> = {};
+): FormErrorsGeneric<A> => {
+  const e: FormErrorsGeneric<A> = {};
 
-  Object.entries(out).forEach(([k, v]: [string, string[]]) => {
-    if (Array.isArray(v) && v.length > 0) {
-      e[k as any as keyof A] = v[0];
-    }
-  });
+  const handleError = (value: any): string => {
+    return Array.isArray(value) && value.length > 0 ? value[0] : "";
+  };
+
+  const traverse = (obj: any, target: any): void => {
+    Object.entries(obj).forEach(([key, value]) => {
+      if (Array.isArray(value)) {
+        target[key as keyof A] = handleError(value);
+      } else if (value && typeof value === "object") {
+        // Create a nested object if needed
+        target[key as keyof A] = target[key as keyof A] || ({} as any);
+        traverse(value, target[key as keyof A]);
+      }
+    });
+  };
+
+  traverse(out, e);
 
   return e;
 };
@@ -31,7 +43,7 @@ export const enumToOptions = <A>(keys: {
 
 export const isNotPartial = <A>(
   formData: Partial<A>,
-  formErrors: FormErrors<A>
+  formErrors: FormErrorsGeneric<A>
 ): formData is A => Object.keys(formErrors).length === 0;
 
 const getType = (uiType: FormUIType) => {

@@ -6,10 +6,10 @@ export interface FormWrapperOnActionProps<A, Out> {
 }
 
 export interface FormWrapperProps<A, B> extends FormWrapperOnActionProps<A, B> {
-  clientValidationFunction?: (form: Partial<A>) => FormErrors<A>;
+  clientValidationFunction?: (form: Partial<A>) => FormErrorsGeneric<A>;
   asyncCall?: (formData: A) => Promise<B>;
   FormUI: (props: FormUIProps<A>) => JSX.Element;
-  errors?: FormErrors<A>;
+  errors?: FormErrorsGeneric<A>;
   children?: JSX.Element;
   formDataDefault?: Partial<A>;
   options?: FormOptionSets<A>;
@@ -29,7 +29,9 @@ export interface FormUIGeneratorProps {
 }
 
 // compare with https://github.com/nexys-system/react-bootstrap-components/blob/master/src/components/headless/form/type.ts
-export type FormErrorsGeneric<A> = { [k in keyof A]?: string };
+export type FormErrorsGeneric<A> = {
+  [K in keyof A]?: A[K] extends object ? FormErrorsGeneric<A[K]> : string;
+};
 
 export type FormOptionSets<FormShape> = {
   [k in keyof FormShape]?: { id: number | string; name: string }[];
@@ -111,10 +113,6 @@ export interface FormDef<A> extends StructureUnitCore<A> {
 export interface FormViewDef<A> extends FormDef<A> {
   render?: Render<A>;
 }
-
-export type FormErrors<A> = {
-  [k in keyof A]?: string;
-};
 
 export interface SubmitButtonProps {
   disabled?: boolean;

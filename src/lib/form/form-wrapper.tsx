@@ -19,7 +19,7 @@ export const FormWrapper = <A, B>({
   const [formData, setFormData] = React.useState<Partial<A>>(
     formDataDefault || {}
   );
-  const [errors, setErrors] = React.useState<T.FormErrors<A>>(
+  const [errors, setErrors] = React.useState<T.FormErrorsGeneric<A>>(
     externalErrors || {}
   );
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -73,8 +73,7 @@ export const FormWrapper = <A, B>({
       errors={errors}
       onSubmit={handleSubmit}
       options={options}
-      onCancel={onCancel}
-    >
+      onCancel={onCancel}>
       {children}
     </FormUI>
   );
@@ -100,7 +99,10 @@ export const FormWrapperLegacy =
     onErrors,
   }: T.FormWrapperOnActionProps<FormShape, Out>): JSX.Element => {
     const clientValidationFunction = (form: Partial<FormShape>) =>
-      Validation.Main.checkObject(form, shape) as T.FormErrors<FormShape>;
+      Validation.Main.checkObject(
+        form,
+        shape
+      ) as T.FormErrorsGeneric<FormShape>;
 
     return FormWrapper<FormShape, Out>({
       onSuccess,

@@ -22,10 +22,10 @@ interface FormData {
 
 const clientValidationFunction = (
   v: Partial<FormData>
-): T.FormErrors<FormData> => {
+): T.FormErrorsGeneric<FormData> => {
   console.log(v);
 
-  const e: T.FormErrors<FormData> = {};
+  const e: T.FormErrorsGeneric<FormData> = {};
 
   if (!("name" in v) || v["name"] === "") {
     e.name = "wth dude";
